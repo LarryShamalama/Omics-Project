@@ -2,8 +2,8 @@
 
 For next meeting:
 
-- [] Read papers (use [Babord](https://babordplus.u-bordeaux.fr/?ct=UB))
-- [] Download dataset on Moodle
+- [  ] Read papers (use [Babord](https://babordplus.u-bordeaux.fr/?ct=UB))
+- [  ] Download dataset on Moodle
 
 #### Agenda
 
