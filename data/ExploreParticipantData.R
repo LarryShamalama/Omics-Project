@@ -1,4 +1,5 @@
 library("ggplot2")
+library('rstudioapi')
 
 # set directory
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
