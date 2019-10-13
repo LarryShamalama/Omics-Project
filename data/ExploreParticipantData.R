@@ -1,8 +1,7 @@
-
 library("ggplot2")
 
 # set directory
-setwd("/Users/thewooz/Documents/Omics-Project/data")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 # import data
 features_all_samples<- read.csv("M2PHDS_19-20_OMICS_CLIN_DATA_MAARS_all_Fri_Apr_04_14h_CEST_2014.csv", sep="\t")
