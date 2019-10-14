@@ -1,4 +1,12 @@
-## MAARS Project
+## Omics Project
+
+Transcriptome and its filtered counterpart are available as .zip files. To unzip them, simply run the following commands in your Terminal:
+
+```
+chmod +x script.sh
+./script.sh
+```
+
 
 For next meeting:
 
