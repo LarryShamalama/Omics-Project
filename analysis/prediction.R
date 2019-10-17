@@ -63,3 +63,7 @@ cv.sl <- CV.SuperLearner(Y=lesion.status,
                          V=5,
                          family=binomial(),
                          SL.library=models)
+
+predictions <- predict.SuperLearner(cv.sl)
+naive.predictions <- as.integer(predictions$pred > 0.5)
+

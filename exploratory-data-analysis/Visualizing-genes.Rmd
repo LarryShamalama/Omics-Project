@@ -1,0 +1,23 @@
+---
+title: "Visualizing-genes"
+author: "Larry"
+date: '2019-10-17'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Boxplots
+
+Here are the boxplots of transcriptomic gene expressions in lesional and non-lesional skin samples:
+
+```{r boxplots}
+transcriptome <- read.csv('../filter-data/transcriptome.csv')
+sample_id <- transcriptome$X
+transcriptome <- transcriptome[,-c(1)]
+rownames(transcriptome) <- sample_id
+
+boxplot()
+```
