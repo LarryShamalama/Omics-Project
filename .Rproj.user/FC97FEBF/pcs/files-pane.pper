@@ -1,0 +1,9 @@
+{
+    "path" : "~/Documents/GitHub/Omics-Project/data",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
