@@ -1,11 +1,11 @@
 ---
-title: "Project 17 oct"
+title: "pca-sneha-updated"
 author: "Sneha"
-date: "10/17/2019"
+date: '2019-10-18'
 output: html_document
 ---
-  
-  ```{r setup, include=FALSE}
+
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -13,12 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r}
-rm(list=ls())
-cat("\014")
-
-library(rstudioapi)
 library(FactoMineR)
-setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 transcriptome <- read.csv("../filter-data/transcriptome.csv")
 all_samples <- read.csv("../filter-data/all.csv")
@@ -33,6 +28,8 @@ plot(TranscripNorm,
      label = "none", 
      habillage = which(names(Trascrip) == "location"))
 ```
+
+Variance plots:
 
 ```{r}
 plot(TranscripNorm, choix = "var", label = "none")
