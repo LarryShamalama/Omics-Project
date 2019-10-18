@@ -1,0 +1,39 @@
+---
+title: "Project 17 oct"
+author: "Sneha"
+date: "10/17/2019"
+output: html_document
+---
+  
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## PCA Analysis
+
+
+```{r}
+rm(list=ls())
+cat("\014")
+
+library(rstudioapi)
+library(FactoMineR)
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+
+transcriptome <- read.csv("../filter-data/transcriptome.csv")
+all_samples <- read.csv("../filter-data/all.csv")
+```
+```{r plots}
+Trascrip <- data.frame(transcriptome[,-1], location = all_samples$lesional)
+
+TranscripNorm <- PCA(Trascrip, quali.sup = which(names(Trascrip) == "location"))
+
+plot(TranscripNorm, 
+     choix = "ind", 
+     label = "none", 
+     habillage = which(names(Trascrip) == "location"))
+```
+
+```{r}
+plot(TranscripNorm, choix = "var", label = "none")
+```
