@@ -2,6 +2,30 @@
 cat('\014')
 rm(list=ls())
 
+packages <- c('ggplot2',
+              'rstudioapi',
+              'data.table',
+              'mixOmics',
+              'SuperLearner',
+              'parallel')
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+for (pkg in packages){
+  tryCatch(
+  if (!(pkg %in% rownames(installed.packages()))){
+    install.packages(pkg)
+  }, error=function(e){
+    BiocManager::install(pkg)
+  })
+}
+
+tryCatch({
+  prin
+}, error=function(e){
+  cat('hello')
+})
 library('ggplot2')
 library('rstudioapi')
 library('data.table')
