@@ -30,6 +30,9 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ```{r}
+rm(list=ls())
+cat("\014")
+
 library(rstudioapi)
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
   
@@ -44,7 +47,7 @@ all_samples <- read.csv("~/Desktop/omics-project/filter-data/all.csv")
 ## Explore data
 summary(transcriptome)
 
-## Get correlation matrix
+## Get correlation matrix ## Dont use this
 correl <- cor(transcriptome[,2:20]use = "complete.obs")
 
 ```
@@ -63,7 +66,7 @@ transcriptome_flip <- data.frame(t(transcriptome[-1])) ## create a matrix
 colnames(transcriptome_flip) <- transcriptome[, 1]
 dim(transcriptome_flip)
 
-tflip_PCA <- PCA(transcriptome_flip)
+tflip_PCA <- PCA(transcriptome_flip) ## dont use
 ```
 
 ```{r} 
@@ -72,7 +75,7 @@ normall_flip <- transcriptome_flip[, -1] ## Dont use this
 ```
  
 ```{r}
-Trascrip <- data.frame(transcriptome_flip, location = all_samples$lesional)
+Trascrip <- data.frame(transcriptome[,-1], location = all_samples$lesional)
 transcriptome_flip$eig ## dont use
 
 TranscripNorm <- PCA(Trascrip, quali.sup = which(names(Trascrip) == "location"))
