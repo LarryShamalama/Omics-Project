@@ -1,0 +1,162 @@
+---
+title: "Project 17 oct"
+author: "Sneha"
+date: "10/17/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+library(rstudioapi)
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+  
+transcriptome <- read.csv("~/Desktop/Omics-Project-master/filter-data/transcriptome.csv")
+all_samples <- read.csv("~/Desktop/Omics-Project-master/filter-data/all_samples.csv")
+```
+
+
+```{r}
+
+## PCA
+## Explore data
+summary(transcriptome)
+
+## Get correlation matrix
+correl <- cor(transcriptome[,2:20]use = "complete.obs")
+
+```
+
+```{r}
+norm <- t(normall) ## dont use
+dim(normall) ## dont use
+normall <- data.frame(transcriptome[,2:619], location = all_samples$lesional) ## dont use
+normall <- data.frame(transcriptome[,2:619]) ## dont use
+library("FactoMineR")
+normPCA <- PCA(normall, quali.sup = which(names(normall) == "location"))## not working
+```
+
+```{r}
+transcriptome_flip <- data.frame(t(transcriptome[-1])) ## create a matrix
+colnames(transcriptome_flip) <- transcriptome[, 1]
+dim(transcriptome_flip)
+
+tflip_PCA <- PCA(transcriptome_flip)
+```
+
+```{r} 
+normall_flip <- transcriptome_flip[, -1] ## Dont use this 
+
+```
+ 
+```{r}
+Trascrip <- data.frame(transcriptome_flip, location = all_samples$lesional)
+transcriptome_flip$eig ## dont use
+
+TranscripNorm <- PCA(Trascrip, quali.sup = which(names(Trascrip) == "location"))
+
+plot(TranscripNorm, choix = "ind", label = "none", habillage = which(names(Trascrip) == "location"))
+
+plot(TranscripNorm, choix = "var", label = "none")
+
+##Plot the eigenvalues graph and illustrate the Kaiser criterion with an horizontal line.
+plot(TranscripNorm$eig[, "eigenvalue"], type = "b", ylab = "Eigenvalue")
+abline(h = ncol(location)/nrow(TranscripNorm$eig), col = "green", lty = "dotted", lwd = 2)
+sum(TranscripNorm$eig[, "eigenvalue"] > ncol(location)/nrow(TranscripNorm$eig))
+
+## Filter out variables which have a cos2 value too low
+## Cos2 : quality of the representation for variables on the factor map
+## The squared loadings for variables are called cos2 ( = cor * cor = coord * coord).
+plot(TranscripNorm, choix = "var", label = "none", lim.cos2.var = 0.85)
+
+plot(TranscripNorm, choix = "ind", label = "none", lim.cos2.var = 0.85)
+
+print(TranscripNorm)
+
+## Variances of the principal components
+##The proportion of variation retained by the principal components (PCs) can be extracted as follow :
+eigenvalues <- TranscripNorm$eig
+head(eigenvalues[, 1:2])
+
+## The amount of variation retained by each PC is called eigenvalues. The first PC corresponds to the direction with the maximum amount of variation in the data set.
+## ~60% of the information (variances) contained in the data are retained by the first two principal components.
+
+
+## Plot the correlations/loadings of the variables with the components
+## The correlation between a variable and a PC is called loading. The variables can be plotted as points in the component space using their loadings as coordinates.
+# Coordinates of variables
+head(TranscripNorm$var$coord)
+
+# Visualization of the variables on the factor map :
+fviz_pca_var(TranscripNorm)
+```
+```{r}
+library("factoextra")
+```
+
+
+```{r}
+## Cos 2
+## Filter out variables which have a cos2 value too low
+## Cos2 : quality of the representation for variables on the factor map
+## The squared loadings for variables are called cos2 ( = cor * cor = coord * coord).
+
+head(TranscripNorm$var$cos2)
+# The sum of the cos2 for variables on the principal components is equal to one. If a variable is perfectly represented by only two components, the sum of the cos2 is equal to one. In this case the variables will be positioned on the circle of correlations.For some of the variables, more than 2 components are required to perfectly represent the data. In this case the variables are positioned inside the circle of correlations.
+#The cos2 values are used to estimate the quality of the representation
+#The closer a variable is to the circle of correlations, the better its representation on the factor map (and the more important it is to interpret these components)
+#Variables that are closed to the center of the plot are less important for the first components.
+
+## The graph below shows the plot of variables on the components. Variables are colored according to the values of the squared cosine :
+fviz_pca_var(TranscripNorm, col.var="cos2") +
+scale_color_gradient2(low="white", mid="blue", 
+                    high="red", midpoint=0.5) + theme_minimal()
+
+plot(TranscripNorm, choix = "var", label = "none", lim.cos2.var = 0.85)
+
+plot(TranscripNorm, choix = "ind", label = "none", lim.cos2.var = 0.85)
+
+print(TranscripNorm)
+```
+
+```{r}
+## Dimension description
+## The function dimdesc()[in FactoMineR] can be used to identify the most correlated variables with a given principal component.
+##A simplified format is :
+
+dimdesc(TranscripNorm, axes = 1:3, proba = 0.05)
+
+# res : an object of class PCA
+#axes : a numeric vector specifying the dimensions to be described
+#prob : the significance level
+
+#It can be used as follow :
+
+Transcrip.desc <- dimdesc(TranscripNorm, axes = c(1,2))
+# Description of dimension 1
+Transcrip.desc$Dim.1
+
+```
+
