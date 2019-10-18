@@ -15,18 +15,21 @@ library(limma)
 
 ## DIFFERENTIAL EXPRESSION
 
+# in the 'description' file, create a new var for 'lesional' such that 0=non-lesion and 1=lesion
+description$lesional_new[description$lesional=="LES"]<- 1
+description$lesional_new[description$lesional=="NON_LES"]<- 0                      
+                         
 # create DGE object
 AD_DGE<- DGEList(counts=transcriptome[,-1], 
                  samples=description, 
                  genes=transcriptome[,1],)
 
 # Estimate common dispersion, add to the DGE object
-# Boris' code:  singhaniaLondonDGE_normfact_commondisp <- edgeR::estimateCommonDisp(singhaniaLondonDGE_normfact)
 AD_DGE_commondisp<- edgeR::estimateCommonDisp(AD_DGE)
 
 # Model Matrix
-design<- as.data.frame(model.matrix(~lesional, data=description))
-design
+design<- as.data.frame(model.matrix(~lesional_new, data=description))
+head(design)
 
 # Identify differentially expressed genes
 fit <- glmFit(AD_DGE_commondisp, design)
