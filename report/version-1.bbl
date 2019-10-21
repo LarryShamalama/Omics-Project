@@ -1,0 +1,110 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Bin%
+\ \BBA {} Leung%
+}{%
+Bin%
+\ \BBA {} Leung%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+bin2016genetic}
+\APACinsertmetastar {%
+bin2016genetic}%
+\begin{APACrefauthors}%
+Bin, L.%
+\BCBT {}\ \BBA {} Leung, D\BPBI Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Genetic and epigenetic studies of atopic dermatitis}
+  {Genetic and epigenetic studies of atopic dermatitis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Allergy, Asthma \& Clinical Immunology}{12}{1}{52}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Guttman-Yassky%
+, Waldman%
+, Ahluwalia%
+, Ong%
+\BCBL {}\ \BBA {} Eichenfield%
+}{%
+Guttman-Yassky%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+guttman2017atopic}
+\APACinsertmetastar {%
+guttman2017atopic}%
+\begin{APACrefauthors}%
+Guttman-Yassky, E.%
+, Waldman, A.%
+, Ahluwalia, J.%
+, Ong, P\BPBI Y.%
+\BCBL {}\ \BBA {} Eichenfield, L\BPBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Atopic dermatitis: pathogenesis} {Atopic dermatitis:
+  pathogenesis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Semin Cutan Med Surg}{36}{3}{100--103}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nutten%
+}{%
+Nutten%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+nutten2015atopic}
+\APACinsertmetastar {%
+nutten2015atopic}%
+\begin{APACrefauthors}%
+Nutten, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Atopic dermatitis: global epidemiology and risk factors}
+  {Atopic dermatitis: global epidemiology and risk factors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Annals of Nutrition and Metabolism}{66}{Suppl.
+  1}{8--16}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Peng%
+\ \BBA {} Novak%
+}{%
+Peng%
+\ \BBA {} Novak%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+peng2015pathogenesis}
+\APACinsertmetastar {%
+peng2015pathogenesis}%
+\begin{APACrefauthors}%
+Peng, W.%
+\BCBT {}\ \BBA {} Novak, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Pathogenesis of atopic dermatitis} {Pathogenesis of
+  atopic dermatitis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Clinical \& Experimental Allergy}{45}{3}{566--574}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
