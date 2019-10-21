@@ -153,7 +153,6 @@
 \begin{tabular}{c} Creel, Kristin \\ ISPED \\ University of Bordeaux \\ \texttt{kristin.creel@etu.u-bordeaux.fr} \end{tabular} \and
 \begin{tabular}{c} Dong, Larry \\ Department of Epidemiology, Biostatistics \\ and Occupational Health \\ McGill University \\ \texttt{larry.dong@mail.mcgill.ca} \end{tabular} \and
 \begin{tabular}{c} Nama Ravi, Sneha Keerthi \\ ISPED \\ University of Bordeaux \\ \texttt{sneha-keerthi.nama-ravi@etu.u-bordeaux.fr} \end{tabular}}
-\markboth{BIOS 624}{}
 \maketitle
 
 % Write abstract here
@@ -161,18 +160,18 @@
 
 \SweaveOpts{concordance=TRUE}
 
-Atopic dermatitis (AD) or atopic eczema is an itchy, inflammatory skin condition characterised by poorly defined erythema with edema vesicles, and weeping in the acute stage and lichenification in the chronic stage. The global prevalence is 15-20 $\%$ in children and 1-3$\%$ in adults, posing a significant burden on health-care resources and patients’ quality of life\cite{nutten2015atopic}.\\
+Atopic dermatitis (AD) or atopic eczema is an itchy, inflammatory skin condition characterised by poorly defined erythema with edema vesicles, and weeping in the acute stage and lichenification in the chronic stage. The global prevalence is 15-20 $\%$ in children and 1-3$\%$ in adults, posing a significant burden on health-care resources and patients’ quality of life \cite{nutten2015atopic}.\\
 
-The etiological factors associated with the initiation and progress of the disease are known to be genetic, environmental and immunological that affects the epithelial barrier-immunity interplay\cite{peng2015pathogenesis}.\\
+The etiological factors associated with the initiation and progress of the disease are known to be genetic, environmental and immunological that affects the epithelial barrier-immunity interplay \cite{peng2015pathogenesis}.\\
 
 Clinical investigations and discoveries in molecular medicine have positively identified 46 genes linked to AD. Mutations in filaggrin (FLG) genes (influencing intermediate filament protein filaggrin expression) are most common in the AD diseased population, it affects 10-50$\%$ of AD patients worldwide.\\
 
 Few additional barrier genes encoded by the epidermal differentiation complex (EDC) locus chromosome 1q21, including claudins, loricrin (LOR), involucrin (IVL), SPINK5, AND tmem79/matt, are also associated with AD.\\
 
-The genes of innate immune system like NOD1, NOD2, TLR2, CD14, and DEFB1, that encode the integral factors in cutaneous immunologic response to non- specific antigens may also experience mutations and cause AD\cite{guttman2017atopic}.\\
+The genes of innate immune system like NOD1, NOD2, TLR2, CD14, and DEFB1, that encode the integral factors in cutaneous immunologic response to non- specific antigens may also experience mutations and cause AD \cite{guttman2017atopic}.\\
 
 Studies have identified FLG gene mutation to be the most significant risk factor for AD, followed by the genes in the type 2 T helper lymphocyte (Th2) signalling pathways. 
-Additionally, gene profiling assays demonstrated AD is associated with decreased gene expression of epidermal differentiation complex genes and elevated Th2 and Th17 genes. Hypomethylation of TSLP and FCER1G in AD were also reported; and miR-155, which targets the immune suppressor CTLA-4, was found to be significantly over-expressed in infiltrating T cells in AD skin lesions\cite{bin2016genetic}.\\
+Additionally, gene profiling assays demonstrated AD is associated with decreased gene expression of epidermal differentiation complex genes and elevated Th2 and Th17 genes. Hypomethylation of TSLP and FCER1G in AD were also reported; and miR-155, which targets the immune suppressor CTLA-4, was found to be significantly over-expressed in infiltrating T cells in AD skin lesions \cite{bin2016genetic}.\\
 
 
 \bibliographystyle{apacite}

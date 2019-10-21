@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 00:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -587,92 +587,107 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 158.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 158.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 157.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 157.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 ** WARNING: \and is valid only when in conference or peerreviewca
-modes (line 158).
+modes (line 157).
 (./version-1-concordance.tex)
-Underfull \hbox (badness 2617) in paragraph at lines 165--166
+Underfull \hbox (badness 2617) in paragraph at lines 164--165
 \T1/aer/m/n/10 in-flam-ma-tory skin con-di-tion char-ac-terised by poorly
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 \T1/aer/m/n/10 en-vi-ron-men-tal and im-muno-log-i-cal that af-fects the
  []
 
 
-Underfull \hbox (badness 4634) in paragraph at lines 167--168
-\T1/aer/m/n/10 ep-ithe-lial barrier-immunity interplay[]Peng & No-vak,
+Underfull \hbox (badness 1394) in paragraph at lines 166--167
+\T1/aer/m/n/10 ep-ithe-lial barrier-immunity in-ter-play []Peng & No-vak,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 169--170
+Underfull \hbox (badness 1735) in paragraph at lines 168--169
 []\T1/aer/m/n/10 Clinical in-ves-ti-ga-tions and dis-cov-er-ies in molec-u-lar
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 169--170
+Underfull \hbox (badness 1400) in paragraph at lines 168--169
 \T1/aer/m/n/10 AD. Mu-ta-tions in fi-lag-grin (FLG) genes (in-flu-enc-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
 
-Underfull \hbox (badness 2608) in paragraph at lines 171--172
+Underfull \hbox (badness 2608) in paragraph at lines 170--171
 \T1/aer/m/n/10 in-clud-ing claudins, lori-crin (LOR), in-volu-crin (IVL),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
 
-Underfull \hbox (badness 3525) in paragraph at lines 173--174
+Underfull \hbox (badness 3525) in paragraph at lines 172--173
 \T1/aer/m/n/10 fac-tors in cu-ta-neous im-muno-logic re-sponse to non-
  []
 
 
-Underfull \hbox (badness 1762) in paragraph at lines 173--174
-\T1/aer/m/n/10 spe-cific anti-gens may also ex-pe-ri-ence mu-ta-tions and
+Underfull \hbox (badness 2027) in paragraph at lines 172--173
+\T1/aer/m/n/10 AD []Guttman-Yassky, Wald-man, Ahluwalia, Ong, &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 175--177
+Underfull \hbox (badness 1694) in paragraph at lines 174--176
 []\T1/aer/m/n/10 Studies have iden-ti-fied FLG gene mu-ta-tion to be
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 175--177
+Underfull \hbox (badness 2111) in paragraph at lines 174--176
 \T1/aer/m/n/10 demon-strated AD is as-so-ci-ated with de-creased gene
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 1533) in paragraph at lines 174--176
+\T1/aer/m/n/10 ex-pres-sion of epi-der-mal dif-fer-en-ti-a-tion com-plex genes
+ []
+
+
+Underfull \hbox (badness 2261) in paragraph at lines 174--176
+\T1/aer/m/n/10 of TSLP and FCER1G in AD were also re-ported;
+ []
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 174--176
+\T1/aer/m/n/10 and miR-155, which tar-gets the im-mune sup-pres-sor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
@@ -688,7 +703,7 @@ Here is how much of TeX's memory you used:
  10180 multiletter control sequences out of 15000+600000
  104619 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,38p,438b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,38p,439b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
@@ -696,7 +711,7 @@ nts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmtt10.pfb>
-Output written on version-1.pdf (1 page, 85713 bytes).
+Output written on version-1.pdf (1 page, 84302 bytes).
 PDF statistics:
  33 PDF objects out of 1000 (max. 8388607)
  22 compressed objects within 1 object stream
