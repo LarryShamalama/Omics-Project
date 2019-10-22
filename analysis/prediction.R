@@ -17,15 +17,10 @@ for (pkg in packages){
   if (!(pkg %in% rownames(installed.packages()))){
     install.packages(pkg)
   }, error=function(e){
-    BiocManager::install(pkg)
+    BiocManager::install(pkg) # try installing with BiocManager
   })
 }
 
-tryCatch({
-  prin
-}, error=function(e){
-  cat('hello')
-})
 library('ggplot2')
 library('rstudioapi')
 library('data.table')
@@ -37,17 +32,17 @@ library('parallel')
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 # loading datasets
-all_patients  <- read.csv('../filter-data/all.csv')
+all_patients  <- read.csv('../filter-data/all2.csv')
 all_samples   <- read.csv('../filter-data/ad_full.csv')
-transcriptome <- read.csv('../filter-data/transcriptome.csv') # takes a while to load
+transcriptome <- read.csv('../filter-data/transcriptome2.csv') # takes a while to load
 
-stopifnot(dim(transcriptome)[1] == dim(all_samples)[1])
+stopifnot(dim(transcriptome)[1] == dim(all_patients)[1])
 
 sample_id <- transcriptome$X
 transcriptome <- transcriptome[,-c(1)]
 rownames(transcriptome) <- sample_id
 
-lesion.status <- all_samples$lesional
+lesion.status <- all_patients$lesional
 lesion.status <- as.integer(ifelse(lesion.status == 'LES', 1, 0)) # binary encoding
 
 n_components <- 8
@@ -73,7 +68,7 @@ cat('Maximum number of selected genes:', n_components*n_keep, '\n')
 
 models <- list('SL.ranger', 
                'SL.glm', 
-               'SL.ksvm',
+               #'SL.ksvm',
                'SL.xgboost',
                'SL.nnet',
                'SL.mean')
@@ -96,8 +91,7 @@ cv.sl <- CV.SuperLearner(Y=lesion.status,
                          X=transcriptome[cumul_gene_names],
                          V=num_folds, # ideally use n for leave-out-one cross-validation
                          family=binomial(),
-                         SL.library=models,
-                         parallel='multicore')
+                         SL.library=models)
 
 predictions <- predict.SuperLearner(cv.sl)$pred
 
