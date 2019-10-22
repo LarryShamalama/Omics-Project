@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 00:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 OCT 2019 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -90,14 +90,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count91
 \@IEEEtranrubishbin=\box26
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/apacite/apacite.sty
-Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count92
-\bibleftmargin=\skip44
-\bibindent=\skip45
-\bibparsep=\skip46
-\bibitemsep=\skip47
-\biblabelsep=\skip48
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/carlisle/plain.sty
+Package: plain 1996/04/22 Plain TeX emulation (DPC)
+\tabs@latex=\box27
+\tabsyet@latex=\box28
+\tabsdone@latex=\box29
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -129,7 +131,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -147,30 +149,30 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count93
+\inf@bad=\count92
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count94
-\leftroot@=\count95
+\uproot@=\count93
+\leftroot@=\count94
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count96
-\DOTSCASE@=\count97
+\classnum@=\count95
+\DOTSCASE@=\count96
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
+\Mathstrutbox@=\box30
+\strutbox@=\box31
 \big@size=\dimen121
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count98
-\c@MaxMatrixCols=\count99
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
 \dotsspace@=\muskip11
-\c@parentequation=\count100
-\dspbrk@lvl=\count101
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
 \tag@help=\toks17
-\row@=\count102
-\column@=\count103
-\maxfields@=\count104
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
 \andhelp@=\toks18
 \eqnshift@=\dimen122
 \alignsep@=\dimen123
@@ -179,8 +181,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \totwidth@=\dimen126
 \lineht@=\dimen127
 \@envbody=\toks19
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip45
+\multlinetaggap=\skip46
 \mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
@@ -197,12 +199,12 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \cmidrulesep=\dimen135
 \cmidrulekern=\dimen136
 \defaultaddspace=\dimen137
-\@cmidla=\count105
-\@cmidlb=\count106
+\@cmidla=\count104
+\@cmidlb=\count105
 \@aboverulesep=\dimen138
 \@belowrulesep=\dimen139
-\@thisruleclass=\count107
-\@lastruleclass=\count108
+\@thisruleclass=\count106
+\@lastruleclass=\count107
 \@thisrulewidth=\dimen140
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -225,12 +227,12 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
 \col@sep=\dimen141
-\ar@mcellbox=\box29
+\ar@mcellbox=\box32
 \extrarowheight=\dimen142
 \NC@list=\toks21
-\extratabsurround=\skip52
-\backup@length=\skip53
-\ar@cellbox=\box30
+\extratabsurround=\skip47
+\backup@length=\skip48
+\ar@cellbox=\box33
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
@@ -262,27 +264,27 @@ footnotesize {#1.}~~ }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent
 \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfon
 t \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont 
 \footnotesize \box \@tempboxa \hfil }\fi \fi \fi .
-\c@ContinuedFloat=\count109
+\c@ContinuedFloat=\count108
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/arydshln/arydshln.sty
 Package: arydshln 2016/04/28 v1.73 
 \dashlinedash=\dimen150
 \dashlinegap=\dimen151
-\adl@box=\box31
+\adl@box=\box34
 \adl@height=\dimen152
 \adl@heightsave=\dimen153
 \adl@depth=\dimen154
 \adl@depthsave=\dimen155
 \adl@finaldepth=\dimen156
-\adl@columns=\count110
-\adl@ncol=\count111
-\adl@currentcolumn=\count112
-\adl@currentcolumnsave=\count113
-\adl@totalheight=\count114
-\adl@totalheightsave=\count115
-\adl@dash=\count116
-\adl@gap=\count117
-\adl@cla=\count118
-\adl@clb=\count119
+\adl@columns=\count109
+\adl@ncol=\count110
+\adl@currentcolumn=\count111
+\adl@currentcolumnsave=\count112
+\adl@totalheight=\count113
+\adl@totalheightsave=\count114
+\adl@dash=\count115
+\adl@gap=\count116
+\adl@cla=\count117
+\adl@clb=\count118
 \adl@everyvbox=\toks22
 \adl@LTpagetotal=\dimen157
 )
@@ -297,11 +299,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count120
+\FV@CodeLineNo=\count119
 \FV@InFile=\read1
-\FV@TabBox=\box32
-\c@FancyVerbLine=\count121
-\FV@StepNumber=\count122
+\FV@TabBox=\box35
+\c@FancyVerbLine=\count120
+\FV@StepNumber=\count121
 \FV@OutFile=\write3
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
@@ -509,25 +511,19 @@ LaTeX Font Info:    Try loading font information for TS1+cmr on input line 149.
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 149.
-\c@maskedRefs=\count123
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/apacite/english.apc
-File: english.apc 2013/07/21 v6.03 apacite language file
-LaTeX Info: Redefining \BPBI on input line 129.
-LaTeX Info: Redefining \BHBI on input line 130.
-)
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
+\scratchcounter=\count122
 \scratchdimen=\dimen158
-\scratchbox=\box33
-\nofMPsegments=\count125
-\nofMParguments=\count126
+\scratchbox=\box36
+\nofMPsegments=\count123
+\nofMParguments=\count124
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count127
+\MPscratchCnt=\count125
 \MPscratchDim=\dimen159
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
 \everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -612,11 +608,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 166--167
-\T1/aer/m/n/10 ep-ithe-lial barrier-immunity in-ter-play []Peng & No-vak,
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
@@ -652,11 +643,6 @@ Underfull \hbox (badness 3525) in paragraph at lines 172--173
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 172--173
-\T1/aer/m/n/10 AD []Guttman-Yassky, Wald-man, Ahluwalia, Ong, &
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
@@ -672,21 +658,6 @@ Underfull \hbox (badness 2111) in paragraph at lines 174--176
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 174--176
-\T1/aer/m/n/10 ex-pres-sion of epi-der-mal dif-fer-en-ti-a-tion com-plex genes
- []
-
-
-Underfull \hbox (badness 2261) in paragraph at lines 174--176
-\T1/aer/m/n/10 of TSLP and FCER1G in AD were also re-ported;
- []
-
-
-Underfull \hbox (badness 2334) in paragraph at lines 174--176
-\T1/aer/m/n/10 and miR-155, which tar-gets the im-mune sup-pres-sor
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
@@ -697,24 +668,25 @@ pdftex.map}
 
 ] (./version-1.aux) ) 
 Here is how much of TeX's memory you used:
- 6426 strings out of 492649
- 95289 string characters out of 6129622
- 168473 words of memory out of 5000000
- 10180 multiletter control sequences out of 15000+600000
- 104619 words of font info for 128 fonts, out of 8000000 for 9000
+ 6139 strings out of 492649
+ 91475 string characters out of 6129622
+ 160165 words of memory out of 5000000
+ 9891 multiletter control sequences out of 15000+600000
+ 105276 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,38p,439b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,38p,458b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb>
-Output written on version-1.pdf (1 page, 84302 bytes).
+m/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb>
+Output written on version-1.pdf (1 page, 97753 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 37 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  5 words of extra memory for PDF output out of 10000 (max. 10000000)
 
