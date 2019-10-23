@@ -18,7 +18,7 @@ library(limma)
 # in the 'description' file, create a new var for 'lesional' such that 0=non-lesion and 1=lesion
 description$lesional_new[description$lesional=="LES"]<- 1
 description$lesional_new[description$lesional=="NON_LES"]<- 0                      
-                         
+
 # create DGE object
 AD_DGE<- DGEList(counts=transcriptome[,-1], 
                  samples=description, 
@@ -51,6 +51,5 @@ fit <- lmFit(v, design)
 fit <- eBayes(fit, robust = TRUE)
 voomlimma_signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
 summary(voomlimma_signif)
-
 
 
