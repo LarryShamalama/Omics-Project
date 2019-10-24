@@ -44,10 +44,10 @@ samples$lesional_new[samples$lesional=="NON_LES"]<- 0
 
 # create the model matrix for paired data
 #design<- as.data.frame(model.matrix(~lesional_new, data=samples ))
-paired.design<- as.data.frame(model.matrix(~MAARS_identifier + lesional_new, data=samples))
+paired.design<- as.data.frame(model.matrix(~lesional_new + MAARS_identifier, data=samples))
 
 
-# fitting linear model
+# fitting linear model    NOTE:  getting a warning message about NAs
 fit <- lmFit(transcriptome, design=paired.design)
 # eBayes makes the variance more flexible
 fit <- eBayes(fit, robust=TRUE)
@@ -55,7 +55,8 @@ fit <- eBayes(fit, robust=TRUE)
 
 # significance test
 signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
-summary(signif)
+summary(signif)[ ,2]
 
-
+#write genes to a csv file
+write.fit(fit, signif, "myoutputdata.csv", adjust="BH")
 
