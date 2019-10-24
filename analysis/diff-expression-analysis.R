@@ -41,12 +41,17 @@ transcriptome <- t(transcriptome)
 #lesion <- 2-as.integer(samples$lesional)
 samples$lesional_new[samples$lesional=="LES"]<- 1
 samples$lesional_new[samples$lesional=="NON_LES"]<- 0   
-design <- as.data.frame(model.matrix(~lesional_new, data=samples ))
+
+# create the model matrix for paired data
+#design<- as.data.frame(model.matrix(~lesional_new, data=samples ))
+paired.design<- as.data.frame(model.matrix(~MAARS_identifier + lesional_new, data=samples))
+
 
 # fitting linear model
-fit <- lmFit(transcriptome, design=design)
+fit <- lmFit(transcriptome, design=paired.design)
 # eBayes makes the variance more flexible
 fit <- eBayes(fit, robust=TRUE)
+
 
 # significance test
 signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
