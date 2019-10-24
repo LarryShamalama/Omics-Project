@@ -1,15 +1,50 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{benjamini2010discovering}
+Yoav Benjamini.
+\newblock Discovering the false discovery rate.
+\newblock {\em Journal of the Royal Statistical Society: series B (statistical
+  methodology)}, 72(4):405--416, 2010.
 
 \bibitem{bin2016genetic}
 Lianghua Bin and Donald~YM Leung.
 \newblock Genetic and epigenetic studies of atopic dermatitis.
 \newblock {\em Allergy, Asthma \& Clinical Immunology}, 12(1):52, 2016.
 
+\bibitem{burgess2018understanding}
+Christopher~P Burgess, Irina Higgins, Arka Pal, Loic Matthey, Nick Watters,
+  Guillaume Desjardins, and Alexander Lerchner.
+\newblock Understanding disentangling in $\beta$-vae.
+\newblock {\em arXiv preprint arXiv:1804.03599}, 2018.
+
+\bibitem{friedman2001elements}
+Jerome Friedman, Trevor Hastie, and Robert Tibshirani.
+\newblock {\em The elements of statistical learning}, volume~1.
+\newblock Springer series in statistics New York, 2001.
+
 \bibitem{guttman2017atopic}
 Emma Guttman-Yassky, Andrea Waldman, Jusleen Ahluwalia, Peck~Y Ong, and
   Lawrence~F Eichenfield.
 \newblock Atopic dermatitis: pathogenesis.
 \newblock {\em Semin Cutan Med Surg}, 36(3):100--103, 2017.
+
+\bibitem{hanley1982meaning}
+James~A Hanley and Barbara~J McNeil.
+\newblock The meaning and use of the area under a receiver operating
+  characteristic (roc) curve.
+\newblock {\em Radiology}, 143(1):29--36, 1982.
+
+\bibitem{higgins2017beta}
+Irina Higgins, Loic Matthey, Arka Pal, Christopher Burgess, Xavier Glorot,
+  Matthew Botvinick, Shakir Mohamed, and Alexander Lerchner.
+\newblock beta-vae: Learning basic visual concepts with a constrained
+  variational framework.
+\newblock {\em ICLR}, 2(5):6, 2017.
+
+\bibitem{maaten2008visualizing}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using t-sne.
+\newblock {\em Journal of machine learning research}, 9(Nov):2579--2605, 2008.
 
 \bibitem{nutten2015atopic}
 Sophie Nutten.
@@ -20,5 +55,11 @@ Sophie Nutten.
 W~Peng and N~Novak.
 \newblock Pathogenesis of atopic dermatitis.
 \newblock {\em Clinical \& Experimental Allergy}, 45(3):566--574, 2015.
+
+\bibitem{smyth2004linear}
+Gordon Smyth.
+\newblock Linear models and empirical bayes methods for assessing differential
+  expression in microarray experiments.
+\newblock {\em Stat. Appl. Genet. Mol. Biol.}, 1.
 
 \end{thebibliography}

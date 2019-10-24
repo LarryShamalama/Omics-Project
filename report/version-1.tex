@@ -3,6 +3,7 @@
 % some very useful LaTeX packages include:
 \usepackage{cite}
 \usepackage{plain}
+\usepackage{cancel}
 \renewcommand{\citedash}{--}    
 %\usepackage{cite}      % Written by Donald Arseneau
                         % V1.6 and later of IEEEtran pre-defines the format
@@ -133,6 +134,9 @@
 \usepackage{array}
 \usepackage{caption}
 \usepackage{arydshln}
+\usepackage{amsfonts}
+
+\def\one{\mathbf{1}}
 
 \setlength{\dashlinedash}{.4pt}
 \setlength{\dashlinegap}{.8pt}
@@ -162,7 +166,20 @@
 
 \input{version-1-concordance}
 
+\section*{Abstract}
+
+\textbf{Background --- } test1
+
+\textbf{Methods ---} test2
+
+\textbf{Results ---} test3
+
+\textbf{Conclusion ---} test4
+
+\textbf{Keywords:} Atopic dermatitis, transcriptomics, differential gene expression, unsupervised learning, prediction model.
+
 \section{Introduction}
+test\\
 
 Atopic dermatitis (AD) or atopic eczema is an itchy, inflammatory skin condition characterised by poorly defined erythema with edema vesicles, and weeping in the acute stage and lichenification in the chronic stage. The global prevalence is 15-20 $\%$ in children and 1-3$\%$ in adults, posing a significant burden on health-care resources and patients’ quality of life \cite{nutten2015atopic}.\\
 
@@ -181,32 +198,47 @@ Additionally, gene profiling assays demonstrated AD is associated with decreased
 
 \subsection{Data Source}
 
-Data came from MAARS
+Data came from MAARS\\
 
-\subsubsection{Data Cleaning}
+\subsubsection*{Data Cleaning}
 
 \subsection{Exploratory Data Analysis}
 
+Exploratory data analysis was conducted to better understand the data at hand from a data-driven perspective. To this end, several clustering methods were used to help depict possible underlying patterns from the MAARS transcriptomic data: principal component analysis (PCA), t-distributed stochastic neighbor embedding (t-SNE) and hierarchical clustering\cite{maaten2008visualizing}\cite{friedman2001elements}. In statistical machine learning, clustering techniques falls under unsupervised learning, which is a paradigm that attempts to perform inference on data without response variables or ``labels" \cite{friedman2001elements}. In the recent years, this area of machine learning has gathered much attention from researchers; data separability without the use of labels is known as disentangling in the autoencoder literature\cite{higgins2017beta}\cite{burgess2018understanding}. Here, the sample labels are the lesional status of the skin sample and the primary purpose of performing such unsupervised analyses was to visually assess the separability of the samples using their transcriptomic information.
+
 \subsection{Statistical Analysis}
-
-The overarching goal of the statistical analysis was the determine the relevant genes from a transcriptomic datatset that are predictive of AD. The analysis plan was performed two-fold; the identification of genes highly associated with AD was first performed followed by assess the predictability of lesional status using a prediction model.
-
-are firstly identified using a multiple testing framework with many parallel linear models. Secondly, sparse partial least squares (SPLS) was performed in determining genes that can best explain the variability in the outcome variable, a sample being lesional or not.
-
-The statistical analysis plan was performed two-fold. 
 
 \subsubsection{Differential Gene Expression Analysis}
 
-Let $\mathcal{X} = 
-\begin{bmatrix}
-  1 & X_1\\
-  1 & 
-\end{bmatrix}$
-Let $\mathcal{X}$ be a $(n \times 2)$ model matrix where the only covariate $X_i \in \{0, 1\}$ represents the lesional stats of sample $i$.
+The overarching goal of the statistical analysis was the determine the relevant genes from a transcriptomic datatset that are predictive of AD. The analysis plan was performed two-fold; the identification of genes highly associated with AD was first performed using differential gene expression analysis within a multiple hypothesis testing framework. The transcriptomic data was available as a continuous variable since the microarray data has been normalized.\\
 
-\subsubsection{Prediction Model}
+Let $Y_{ij} \in \mathbb{R}$ denote the gene expression level of gene $j$ in sample $i$ and let $X_i \in \{0, 1\}$ represent its lesional status. The following linear model was fitted:
+\begin{align*}
+  Y_{ij} &= \beta_{0j} + \beta_{1j}X_i + \sum_{k:\,k\in\mathcal{P}}\beta_{k}\one_{pat(i) = k} + \epsilon_{ij}\\
+  &=\beta_{0j} + \beta_{1j}X_i + \beta_{pat(i)}\one_{pat(i)} + \epsilon_{ij}
+\end{align*}
+
+where the $\mathcal{P}$ is the set of all patients and $pat(i) \in \mathcal{P}$ is used to represent the patient to which belongs sample $i$. The coefficient $\beta_k$ accounts for the intersample correlation for samples which are obtained from the same patient. By construction, $\one_{pat(i) = k} = 1$ for exactly one $k \in \mathcal{P}$ and $\big\vert \mathcal{P}\big\vert < n$.\\
+
+Originally developped for two-color microarray experiments, it is now commonplace to employ an empirical Bayes method to analyze differential gene expression with linear models like the one above\cite{smyth2004linear}. In a hypothesis framework, the following distributional assumptions for $\beta_{1j}$ are assumed for all genes $j$:
+\begin{align*}
+  H_0:\qquad \beta_{1j} \,\big\vert\, \sigma^2_j &\sim \mathcal{N}\left(0, \sigma^2_j\right)\\
+  H_1:\qquad \beta_{1j} \,\big\vert\, \sigma^2_j &\,\,\cancel{\sim}\,\, \mathcal{N}\left(0, \sigma^2_j\right)
+\end{align*}
+
+whereby $p$-values were ultimately obtained and adjusted using the Benjamini-Hochberg procedure to reduce the error in false discovery rate prone to be inflated due to performing multiple parallel statistical tests\cite{benjamini2010discovering}.\\
+
+A prediction model was then implemented to assess predictability of sample lesional status. MENTION VARIABLE SELECTION. The receiving operating characteristic (ROC) curve is often used to evaluate data-driven binary prediction models and the area under this curve was used here to quantify the goodness of the prediction model\cite{hanley1982meaning}.\\
 
 \section{Results}
+
+In 
+
+\begin{figure*}[!htp]
+  \centering
+  \includegraphics{../exploratory-data-analysis/pca-plot.png}
+  \label{test}
+\end{figure*}
 
 \section{Discussion}
 

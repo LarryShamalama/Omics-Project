@@ -1578,9 +1578,9 @@
 \def\thesubsubsection{\thesubsection.\arabic{subsubsection}}
 \def\theparagraph{\thesubsubsection.\arabic{paragraph}}
 \else
-\def\thesection{\Roman{section}}                             % I
+\def\thesection{\arabic{section}}                             % I
 % V1.7, \mbox prevents breaks around - 
-\def\thesubsection{\mbox{\thesection-\Alph{subsection}}}     % I-A
+\def\thesubsection{\mbox{\thesection-\arabic{subsection}}}     % I-A
 % V1.7 use I-A1 format used by IEEE rather than I-A.1
 \def\thesubsubsection{\thesubsection\arabic{subsubsection}}  % I-A1
 \def\theparagraph{\thesubsubsection\alph{paragraph}}         % I-A1a
@@ -1611,8 +1611,8 @@
   \fi
 \else% not compsoc
   \def\thesectiondis{\thesection.}                   % I.
-  \def\thesubsectiondis{\Alph{subsection}.}          % B.
-  \def\thesubsubsectiondis{\arabic{subsubsection})}  % 3)
+  \def\thesubsectiondis{\thesection .\arabic{subsection}.}          % B.
+  \def\thesubsubsectiondis{\thesection .\arabic{subsection}.\arabic{subsubsection})}  % 3)
   \def\theparagraphdis{\alph{paragraph})}            % d)
 \fi
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 OCT 2019 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  24 OCT 2019 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -100,6 +100,9 @@ Package: plain 1996/04/22 Plain TeX emulation (DPC)
 \tabs@latex=\box27
 \tabsyet@latex=\box28
 \tabsdone@latex=\box29
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -287,6 +290,13 @@ Package: arydshln 2016/04/28 v1.73
 \adl@clb=\count118
 \adl@everyvbox=\toks22
 \adl@LTpagetotal=\dimen157
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Sweave.sty
 Package: Sweave 
@@ -492,25 +502,25 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))) (./version-1.aux)
 \openout1 = `version-1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 150.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 150.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 154.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 154.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 150.
+LaTeX Font Info:    ... okay on input line 154.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -583,102 +593,181 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 158.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 158.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 162.
+LaTeX Font Info:    Try loading font information for U+msa on input line 162.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 162.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for T1+aett on input line 162.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 ** WARNING: \and is valid only when in conference or peerreviewca
-modes (line 158).
+modes (line 162).
 (./version-1-concordance.tex)
-Underfull \hbox (badness 2617) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 184--185
 \T1/aer/m/n/10 in-flam-ma-tory skin con-di-tion char-ac-terised by poorly
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 \T1/aer/m/n/10 en-vi-ron-men-tal and im-muno-log-i-cal that af-fects the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 171--172
+Underfull \hbox (badness 1735) in paragraph at lines 188--189
 []\T1/aer/m/n/10 Clinical in-ves-ti-ga-tions and dis-cov-er-ies in molec-u-lar
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 171--172
+Underfull \hbox (badness 1400) in paragraph at lines 188--189
 \T1/aer/m/n/10 AD. Mu-ta-tions in fi-lag-grin (FLG) genes (in-flu-enc-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
-Underfull \hbox (badness 2608) in paragraph at lines 173--174
+Underfull \hbox (badness 2608) in paragraph at lines 190--191
 \T1/aer/m/n/10 in-clud-ing claudins, lori-crin (LOR), in-volu-crin (IVL),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
 
-Underfull \hbox (badness 3525) in paragraph at lines 175--176
+Underfull \hbox (badness 3525) in paragraph at lines 192--193
 \T1/aer/m/n/10 fac-tors in cu-ta-neous im-muno-logic re-sponse to non-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
-(./version-1.bbl [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/p
-dftex.map}
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
 
 
-]) [2
+Underfull \hbox (badness 3861) in paragraph at lines 213--214
+ \T1/aer/m/it/10 2.3.1) Dif-fer-en-tial Gene Ex-pres-sion Anal-y-sis: [][] \T1/
+aer/m/n/10 The
+ []
 
-] (./version-1.aux) ) 
+
+Underfull \hbox (badness 2698) in paragraph at lines 213--214
+\T1/aer/m/n/10 over-ar-ch-ing goal of the sta-tis-ti-cal anal-y-sis was the
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 213--214
+\T1/aer/m/n/10 de-ter-mine the rel-e-vant genes from a tran-scrip-tomic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+[1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
+
+ []
+
+
+Underfull \hbox (badness 4859) in paragraph at lines 231--232
+\T1/aer/m/n/10 pre-dictabil-ity of sam-ple le-sional sta-tus. MEN-TION
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+\T1/aer/m/n/10 VARI-ABLE SE-LEC-TION. The re-ceiv-ing op-er-at-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+<../exploratory-data-analysis/pca-plot.png, id=14, 635.37375pt x 495.8525pt>
+File: ../exploratory-data-analysis/pca-plot.png Graphic file (type png)
+<use ../exploratory-data-analysis/pca-plot.png>
+Package pdftex.def Info: ../exploratory-data-analysis/pca-plot.png  used on inp
+ut line 239.
+(pdftex.def)             Requested size: 412.80157pt x 322.16411pt.
+(./version-1.bbl
+Underfull \hbox (badness 1721) in paragraph at lines 38--43
+\T1/aer/m/n/8 Xavier Glo-rot, Matthew Botvinick, Shakir Mo-hamed, and
+ []
+
+) [2] [3 <../exploratory-data-analysis/pca-plot.png>] (./version-1.aux) ) 
 Here is how much of TeX's memory you used:
- 6141 strings out of 492649
- 91487 string characters out of 6129622
- 163163 words of memory out of 5000000
- 9891 multiletter control sequences out of 15000+600000
- 105975 words of font info for 132 fonts, out of 8000000 for 9000
+ 6296 strings out of 492649
+ 93831 string characters out of 6129622
+ 166530 words of memory out of 5000000
+ 10010 multiletter control sequences out of 15000+600000
+ 113527 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,38p,456b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
-.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.p
-fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
-b>
-Output written on version-1.pdf (2 pages, 147518 bytes).
+ 41i,18n,38p,1154b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on version-1.pdf (3 pages, 228347 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 5 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 10 words of extra memory for PDF output out of 10000 (max. 10000000)
 
