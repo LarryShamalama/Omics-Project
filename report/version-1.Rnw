@@ -167,18 +167,17 @@
 
 \section*{Abstract}
 
-\textbf{Background --- } test1
+\textbf{Background --- }
 
-\textbf{Methods ---} test2
+\textbf{Methods ---} 
 
-\textbf{Results ---} test3
+\textbf{Results ---} 
 
-\textbf{Conclusion ---} test4
+\textbf{Conclusion ---}
 
 \textbf{Keywords:} Atopic dermatitis, transcriptomics, differential gene expression, unsupervised learning, prediction model.
 
 \section{Introduction}
-test\\
 
 Atopic dermatitis (AD) or atopic eczema is an itchy, inflammatory skin condition characterised by poorly defined erythema with edema vesicles, and weeping in the acute stage and lichenification in the chronic stage. The global prevalence is 15-20 $\%$ in children and 1-3$\%$ in adults, posing a significant burden on health-care resources and patients’ quality of life \cite{nutten2015atopic}.\\
 
@@ -190,20 +189,28 @@ Few additional barrier genes encoded by the epidermal differentiation complex (E
 
 The genes of innate immune system like NOD1, NOD2, TLR2, CD14, and DEFB1, that encode the integral factors in cutaneous immunologic response to non- specific antigens may also experience mutations and cause AD \cite{guttman2017atopic}.\\
 
-Studies have identified FLG gene mutation to be the most significant risk factor for AD, followed by the genes in the type 2 T helper lymphocyte (Th2) signalling pathways. 
-Additionally, gene profiling assays demonstrated AD is associated with decreased gene expression of epidermal differentiation complex genes and elevated Th2 and Th17 genes. Hypomethylation of TSLP and FCER1G in AD were also reported; and miR-155, which targets the immune suppressor CTLA-4, was found to be significantly over-expressed in infiltrating T cells in AD skin lesions \cite{guttman2017atopic, bin2016genetic}.
+Studies have identified FLG gene mutation to be the most significant risk factor for AD, followed by the genes in the type 2 T helper lymphocyte (Th2) signalling pathways.\\
+
+Additionally, gene profiling assays demonstrated AD is associated with decreased gene expression of epidermal differentiation complex genes and elevated Th2 and Th17 genes. Hypomethylation of TSLP and FCER1G in AD were also reported; and miR-155, which targets the immune suppressor CTLA-4, was found to be significantly over-expressed in infiltrating T cells in AD skin lesions \cite{guttman2017atopic, bin2016genetic}.\\
+
+This study attempts to examine the degree of dissimilarity between the transcriptomic expression between lesional and non-lesional samples in participants with atopic dermatitis. (ELABORATE MORE HERE...)
 
 \section{Materials and Methods}
 
 \subsection{Data Source}
 
-Data came from MAARS\\
+The data at hand comes from the Microbes in Allergy and Autoimmunity Related to the Skin (MAARS). The purpose of this multidisciplinary research consortium is to better understand the characteristics surrounding two major chronic inflammatory skin diseases: atopic dermatitis and psoriasis\cite{MAARS}. In the MAARS study, these two illnesses that (AFFECT X PEOPLE IN THE WORLD) are investigated from different scientific perspectives and one of the research directions involved exploring the transcriptomic data of lesional and non-lesional samples in patients with atopic dermatitis, psoriasis and neither of the two studied skin diseases.
 
-\subsubsection*{Data Cleaning}
+% the relationship between the host and its microbiome 
+
+\subsubsection*{Data Management}
+
+Demographic data for all patients were available alongside their known allergies, concomitant medication and transcriptomic data for sequenced samples. Because it is only of interest to assess RNA expression levels in samples from patients with atopic dermatitis, two sets of data was discarded prior to conducting subsequent analyses: participants with AD who have no sequenced samples and genetic information for samples from healthy individuals and ones with psoriasis. The normalization procedure for transcriptomic data was already performed prior to obtaining the data for this anlysis. No genetic information was missing, so statistical methods for imputation was not needed for this study.
+
 
 \subsection{Exploratory Data Analysis}
 
-Exploratory data analysis was conducted to better understand the data at hand from a data-driven perspective. To this end, several clustering methods were used to help depict possible underlying patterns from the MAARS transcriptomic data: principal component analysis (PCA), t-distributed stochastic neighbor embedding (t-SNE) and hierarchical clustering\cite{maaten2008visualizing}\cite{friedman2001elements}. In statistical machine learning, clustering techniques falls under unsupervised learning, which is a paradigm that attempts to perform inference on data without response variables or ``labels" \cite{friedman2001elements}. In the recent years, this area of machine learning has gathered much attention from researchers; data separability without the use of labels is known as disentangling in the autoencoder literature\cite{higgins2017beta}\cite{burgess2018understanding}. Here, the sample labels are the lesional status of the skin sample and the primary purpose of performing such unsupervised analyses was to visually assess the separability of the samples using their transcriptomic information.
+Exploratory data analysis was conducted to better understand the data at hand from a data-driven perspective. To this end, an MA diagram was plotted alongside several clustering methods which were used to help depict possible underlying patterns from the MAARS transcriptomic data: principal component analysis (PCA) and hierarchical clustering\cite{maaten2008visualizing}\cite{friedman2001elements}. In statistical machine learning, clustering techniques falls under unsupervised learning, which is a paradigm that attempts to perform inference on data without response variables or ``labels" \cite{friedman2001elements}. In the recent years, this area of machine learning has gathered much attention from researchers; data separability without the use of labels is known as disentangling in the autoencoder literature\cite{higgins2017beta}\cite{burgess2018understanding}. Here, the sample labels are the lesional status of the skin sample and the primary purpose of performing such unsupervised analyses was to visually assess the separability of the samples using their transcriptomic information.
 
 \subsection{Statistical Analysis}
 
@@ -225,7 +232,7 @@ Originally developped for two-color microarray experiments, it is now commonplac
   H_1:\qquad \beta_{1j} \,\big\vert\, \sigma^2_j &\,\,\cancel{\sim}\,\, \mathcal{N}\left(0, \sigma^2_j\right)
 \end{align*}
 
-whereby $p$-values were ultimately obtained and adjusted using the Benjamini-Hochberg procedure to reduce the error in false discovery rate prone to be inflated due to performing multiple parallel statistical tests\cite{benjamini2010discovering}. A significance level of $0.05$ was used in determining the genes highly associated with the outcome of interest, the lesional status of sequenced samples.\\
+whereby $p$-values were ultimately obtained and adjusted using the Benjamini-Hochberg procedure to reduce the error in false discovery rate prone to be inflated due to performing multiple parallel statistical tests\cite{benjamini2010discovering}. A significance level of $0.05$ was used in determining the genes highly associated with the outcome of interest, the lesional status of sequenced samples; a volcano plot was used to highlight potential significant genes.\\
 
 A ensemble learning prediction model was then implemented to assess predictability of sample lesional status; this binary model was chosen due to its strengths in obtaining better predictions as it weights multiple models according to how well each perform on this specific task\cite{friedman2001elements}. MENTION VARIABLE SELECTION. The receiving operating characteristic (ROC) curve is often used to evaluate data-driven binary prediction models and the area under this curve (AUROC) was used here to quantify the goodness of the prediction model\cite{hanley1982meaning}. Internal validation was performed using leave-one-out cross-validation method whereby the AUROC was evaluated at every iteration\cite{efron1994introduction}. %An additional sensitivity analysis of the prediction model was conducted via bootstrap resampling whereby a thousand samples of the data were sampled without replacement to create an empirical $95\%$ confidence interval for the overall AUROC\cite{efron1994introduction}.
 
@@ -233,15 +240,40 @@ A ensemble learning prediction model was then implemented to assess predictabili
 
 \section{Results}
 
-In \ref{pca}, a simple 2D visualization of the results obtained from PCA is available, whereby lesional samples are displayed in black and non-lesional samples are displayed in red.
+In Fig. 1, a simple 2D visualization of the results obtained from PCA is available, whereby lesional samples are displayed in black and non-lesional samples are displayed in red.
 
-\begin{figure*}[!htp]
-  \centering
-  \includegraphics[width=\textwidth]{../exploratory-data-analysis/pca-plot.png}
-  \label{pca}
-\end{figure*}
+\begin{figure}[!htp]
+    \begin{center}
+    \begin{minipage}{0.5 \textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{../exploratory-data-analysis/pca-plot.png}
+      \label{pca}
+    \end{minipage}
+  \end{center}
+\end{figure}
+
 
 The horizontal axis represents the first component obtained through PCA and the vertical axis the second; they respectively explain $8.78\%$ and $6.02\%$ of the variance in the transcriptomic data.
+
+\begin{figure}[!htp]
+  \begin{center}
+    \begin{minipage}{0.5 \textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{../analysis/Volcqno-plot1.png}
+      \label{volcano}
+    \end{minipage}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!htp]
+  \begin{center}
+    \begin{minipage}{0.5 \textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{../analysis/MA-plot-AD-paired-design.png}
+      \label{MA}
+    \end{minipage}
+  \end{center}
+\end{figure}
 
 \section{Discussion}
 

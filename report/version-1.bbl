@@ -17,6 +17,11 @@ Christopher~P Burgess, Irina Higgins, Arka Pal, Loic Matthey, Nick Watters,
 \newblock Understanding disentangling in $\beta$-vae.
 \newblock {\em arXiv preprint arXiv:1804.03599}, 2018.
 
+\bibitem{efron1994introduction}
+Bradley Efron and Robert~J Tibshirani.
+\newblock {\em An introduction to the bootstrap}.
+\newblock CRC press, 1994.
+
 \bibitem{friedman2001elements}
 Jerome Friedman, Trevor Hastie, and Robert Tibshirani.
 \newblock {\em The elements of statistical learning}, volume~1.
