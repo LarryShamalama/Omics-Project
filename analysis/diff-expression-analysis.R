@@ -44,30 +44,26 @@ samples$lesional_new[samples$lesional=="NON_LES"]<- 0
 
 library(gdata)
 # create the model matrix for paired data
-#design<- as.data.frame(model.matrix(~lesional_new, data=samples ))
+#   drop the unused dummy variables with drop.levels
 paired.design<- as.data.frame(model.matrix(~lesional_new + drop.levels(MAARS_identifier), data=samples))
 
-# fitting linear model    NOTE:  getting a warning message about NAs
+# fitting linear model
 fit <- lmFit(transcriptome, design=paired.design)
-# eBayes makes the variance more flexible
+# squeezes genewise residual variance towards a common value
 fit <- eBayes(fit, robust=TRUE)
 
-# significance test
+# significance tests - identify which genes are differentially expressed
 signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
 summary(signif)[ ,2]
 
 
-#### ignore all this
-# list of p-values for lesional/non-lesional per gene
-gene_pvalues<- as.data.frame(fit$p.value[,2])
-# calculate absolute value
-gene_pvalues$absvalue<- abs(gene_pvalues$lesional_new)
-# order by increasing abs value p-values
-gene_pvalues<- order(gene_pvalues, by=absvalue)
-####
+# extract top-ranked genes from the linear fit model, sorted by F statitic
+top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by = "F", n=Inf)
+gene_pvalues<- top.table[ ,(ncol(top.table)-2):ncol(top.table)]
+
+# save gene pvalues
+save(gene_pvalues,file="../filter-data/gene_pvalues.Rda")
 
 
-#write genes to a csv file
-write.fit(fit, signif, "myoutputdata.csv", adjust="BH")
 
 
