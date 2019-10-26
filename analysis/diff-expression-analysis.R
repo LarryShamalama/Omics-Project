@@ -1,5 +1,5 @@
 #  Gene Differentiation 
-#  L.Dong
+#  L.Dong and K.Creel
 #  24-10-2019
 
 # clear the environment
@@ -61,16 +61,15 @@ summary(signif)[ ,2]
 top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by = "P", n=Inf, coef=2)
 gene_pvalues<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
 
-
 # check to see how many genes are p<.05
 length(which(top.table$adj.P.Val < 0.05))
 
-
-row.names(gene_pvalues)<- substr(gene_pvalues,1,nchar(row.names(gene_pvalues))-3)
-
-
 # save gene pvalues
 save(gene_pvalues,file="../filter-data/gene_pvalues.Rda")
+
+
+# remove the _at at the end of gene (only do this when exporting, otherwise the gene name won't match the other files)
+gene_names<- substr(row.names(gene_pvalues),1,nchar(row.names(gene_pvalues))-3)
 
 # save gene names to a .csv
 write.csv(rownames(gene_pvalues), "/Users/thewooz/Documents/Omics-Project/filter-data/genelist.csv")
