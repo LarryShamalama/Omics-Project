@@ -57,9 +57,13 @@ signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
 summary(signif)[ ,2]
 
 
-# extract top-ranked genes from the linear fit model
+# extract genes p-values 
+#  NOTE:  code is giving ONLY the significant genes
 top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by = "P", n=Inf, coef=2)
-gene_pvalues<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
+#gene_pvalues_all<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
+#gene_pvalues_sig<- gene_pvalues_all[which(gene_pvalues_all$adj.P.Val<.05), ]
+gene_pvalues_sig<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
+
 
 # check to see how many genes are p<.05
 length(which(top.table$adj.P.Val < 0.05))
