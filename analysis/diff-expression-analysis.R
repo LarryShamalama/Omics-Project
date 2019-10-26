@@ -57,7 +57,7 @@ signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
 summary(signif)[ ,2]
 
 
-# extract top-ranked genes from the linear fit model, sorted by F statitic
+# extract top-ranked genes from the linear fit model
 top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by = "P", n=Inf, coef=2)
 gene_pvalues<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
 
@@ -65,8 +65,13 @@ gene_pvalues<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
 # check to see how many genes are p<.05
 length(which(top.table$adj.P.Val < 0.05))
 
+
+row.names(gene_pvalues)<- substr(gene_pvalues,1,nchar(row.names(gene_pvalues))-3)
+
+
 # save gene pvalues
 save(gene_pvalues,file="../filter-data/gene_pvalues.Rda")
 
-
+# save gene names to a .csv
+write.csv(rownames(gene_pvalues), "/Users/thewooz/Documents/Omics-Project/filter-data/genelist.csv")
 
