@@ -1,0 +1,178 @@
+---
+title: "Preliminary Data Exploration"
+output:
+  html_document:
+    theme: united
+    toc: yes
+    toc_float:
+      collapsed: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Introduction
+
+This R Markdown document details the steps of preliminary exploratory analysis conducted on the MAARS dataset for preparing for the analysis to determine the connections between atopic dermititis lesioned and non-lesioned skin samples. 
+
+
+## Preparation
+
+Load libraries, load data, and prepare the data. 
+
+```{r prep, message=FALSE}
+# load libraries
+#library(rstudioapi)
+library(ggplot2)
+library(dplyr)
+library(qdapTools)
+library(kableExtra)
+
+# set working directory
+#setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+setwd("/Users/thewooz/Documents/Omics-Project")
+
+# load the data
+all_data<- read.csv("/Users/thewooz/Documents/Omics-Project/filter-data/all.csv")
+ad_full<-  read.csv("/Users/thewooz/Documents/Omics-Project/filter-data/ad_full.csv")
+
+# order the clinical groups
+all_data$clinical_group<- factor(all_data$clinical_group, levels=c("AD","PSO","CTRL"))
+
+# rename the factors for lesional/non-lesional
+levels(all_data$lesional) <- c("Lesional","Non-Lesional")
+
+# reduce the all_data file to include just the AD samples
+ad_data<- subset(all_data, all_data$clinical_group == 'AD')
+```
+
+
+## Describe the Samples
+
+Counts of lesional vs. non-lesional samples among each of the clinical groups.
+
+```{r describe, message=FALSE}
+# table of percent of SAMPLES per clinical group and lesional/non-lesional
+clingroup<- round(prop.table(table(all_data$clinical_group, all_data$lesional))*100,2)
+clingroup %>% kable(caption = "Percent of Lesional Samples per Clinical Group") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+# bar chart for SAMPLES per clinical group and lesional/non-lesionsl
+ggplot2::ggplot(data=all_data, aes(clinical_group, fill=lesional))+
+  geom_bar(stat="count", position="stack")+
+  scale_fill_manual(values=c("red4","steelblue4"),name="Lesional/Non-Lesional", labels=c("Lesional","Non-Lesional"))+
+  theme_minimal()+
+  xlab("Clinical Group")+
+  ylab("Number of Samples")+
+  ggtitle("Number of Lesional Samples per Clinical Group")
+```
+
+
+## Describe the Participants
+
+Create a dataset of unique participants and describe their characteristics
+
+```{r participants, message=FALSE}
+# create dataset of unique participants
+reduce<- all_data[ ,c(6,2,7:34)]
+undup_pts<- reduce[!duplicated(reduce$MAARS_identifier), ]
+
+# report up to 4 digits
+options(digits=4)
+
+# gender (percent)
+gender<- 
+  undup_pts %>%
+  group_by(clinical_group, Gender) %>%
+  summarise(n = n()) %>% 
+  mutate(RelativeFrequency = paste0(round(100 * n/sum(n), 2), "%"))
+gender %>% kable(caption = "Gender (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+# age (min, max, mean, SD)
+age<-
+  undup_pts %>%
+  group_by(clinical_group) %>%
+  summarize(Min=min(CUSTOM_Age, na.rm=TRUE),
+            Max=max(CUSTOM_Age, na.rm=TRUE), 
+            Mean=mean(CUSTOM_Age, na.rm=TRUE), 
+            SD=sd(CUSTOM_Age, na.rm=TRUE))
+age %>% kable(caption = "Age (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+# boxplot for age
+ggplot2::ggplot(data=undup_pts, aes(x=clinical_group, y=CUSTOM_Age))+
+  geom_boxplot()+
+  theme_minimal()+
+  xlab("Clinical Group")+
+  ylab("Age")+
+  ggtitle("Age per Clinical Group")
+
+```
+
+
+
+##  Clinical Characteristics of the AD Group
+
+```{r clinical, message=FALSE}
+# create dataframe of unique AD patients
+undup_AD<- undup_pts[which(undup_pts$clinical_group=='AD'), ]
+
+# number/percent of AD patients with each type of allergy
+allergies<- (mtabulate(undup_AD[grep('Allergies',names(undup_AD), value=T)]))
+allergies$Percent<- allergies[,2]/allergies[,1]+allergies[,2]
+row.names(allergies)<- c("Psuedo Drug","Dust Mite","Food","Pollen","Contact", "Drug","Animal")
+p_allergies<-allergies[ ,2:3]
+colnames(p_allergies)[colnames(p_allergies)=="True"]<- "n"
+p_allergies %>% kable(caption = "Allergies (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+# number/percent of AD patients taking each type of medication
+meds<- (mtabulate(undup_AD[grep('Medication',names(undup_AD), value=T)]))
+meds$percent<- meds[,2]/meds[,1]+meds[,2]
+row.names(meds)<- c("Anti-Hypertensive","Anti-Inflammatory","Other Hormones","Thyroid Hormones","Statins", "Insulin","Other")
+p_meds<- meds[ ,2:3]
+colnames(p_meds)[colnames(p_meds)=="True"]<- "n"
+p_meds %>% kable(caption = "Medications (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+# number/percent of AD patients with each type of chronic disease
+chrondis<- (mtabulate(undup_AD[grep('chronic',names(undup_AD), value=T)]))
+chrondis$percent<- chrondis[,2]/chrondis[,1]+chrondis[,2]
+row.names(chrondis)<- c("Hyperlipidemia","Other","Diabetes (non-insulin)","Thyroid Dysfuntion","Asthma", "Hypertension")
+p_chrondis<- chrondis[ ,2:3]
+colnames(p_chrondis)[colnames(p_chrondis)=="True"]<- "n"
+p_chrondis %>% kable(caption = "Chronic Disease (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+# number/percent of AD patients with skin malignancy or other malignancy
+malig<- (mtabulate(undup_AD[grep('Malig',names(undup_AD), value=T)]))
+malig$percent<- malig[,2]/malig[,1]+malig[,2]
+row.names(malig)<- c("Skin malignancy","Other malignancy")
+p_malig<- malig[ ,2:3]
+colnames(p_malig)[colnames(p_malig)=="True"]<- "n"
+p_malig %>% kable(caption = "Malignancies (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+# number/percent of AD patients with a family history of AD
+famhist<-as.data.frame(addmargins(table(undup_AD$CUSTOM_Fam._hist._Atopic_dermatitis)))
+famhist$Percent<- (famhist$Freq/famhist[4,2])*100
+famhist<- famhist[2:3, ]
+famhist$Var1<- as.factor(c("Family history of AD", "No family history of AD"))
+colnames(famhist)[colnames(famhist)=="Freq"]<- "n"
+colnames(famhist)[colnames(famhist)=="Var1"]<- ""
+rownames(famhist) <- NULL
+famhist %>% kable(caption = "Family History (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+```
+
+
+
+## Interpretation
+
+Patients in the AD group are more likely to be male (55.8%). The psoriasis group is also predominately male (78.5%) while the control group is predominantly female (63.7%).
+
+The mean age of AD participants is nearly 44 years, with a minimum age of 20 and a maximum age of 83. The psoriasis group is slightly older on average (mean=49) and the control group is generally younger (mean=35).
+
+A substantial portion of the AD group report allergies to substances, including pollen (48.2%), food (37.8%), and animals (33.6%)
+
+Just under half (43.0%) of the AD group report a family history of AD. 
+  
+
+
+
+
