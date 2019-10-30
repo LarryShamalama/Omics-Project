@@ -71,7 +71,7 @@ ggplot2::ggplot(data=all_data, aes(clinical_group, fill=lesional))+
 
 ## Describe the Participants
 
-Create a dataset of unique participants and describe their characteristics
+Create a dataset of unique participants in all clinical groups and describe their characteristics.
 
 ```{r participants, message=FALSE}
 # create dataset of unique participants
@@ -87,7 +87,7 @@ gender<-
   group_by(clinical_group, Gender) %>%
   summarise(n = n()) %>% 
   mutate(RelativeFrequency = paste0(round(100 * n/sum(n), 2), "%"))
-gender %>% kable(caption = "Gender (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+gender %>% kable(caption = "Gender") %>% kable_styling(bootstrap_options = "striped", full_width = F)
 
 # age (min, max, mean, SD)
 age<-
@@ -97,7 +97,7 @@ age<-
             Max=max(CUSTOM_Age, na.rm=TRUE), 
             Mean=mean(CUSTOM_Age, na.rm=TRUE), 
             SD=sd(CUSTOM_Age, na.rm=TRUE))
-age %>% kable(caption = "Age (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+age %>% kable(caption = "Age") %>% kable_styling(bootstrap_options = "striped", full_width = F)
 
 # boxplot for age
 ggplot2::ggplot(data=undup_pts, aes(x=clinical_group, y=CUSTOM_Age))+
@@ -106,6 +106,17 @@ ggplot2::ggplot(data=undup_pts, aes(x=clinical_group, y=CUSTOM_Age))+
   xlab("Clinical Group")+
   ylab("Age")+
   ggtitle("Age per Clinical Group")
+
+```
+
+## Race of AD Group Patients
+
+```{r race}
+race_tab<- as.data.frame(table(ad_full$patient.Diagnostic...Phenotypic.Data.Ethnicity.Family.History.Ethnicity..Ethnicity.))
+options(digits = 3)
+race_tab<- mutate(race_tab, Percent=Freq/sum(Freq)*100)
+race_tab %>% kable(caption = "Race (AD Group)") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
 
 ```
 
@@ -168,7 +179,7 @@ Patients in the AD group are more likely to be male (55.8%). The psoriasis group
 
 The mean age of AD participants is nearly 44 years, with a minimum age of 20 and a maximum age of 83. The psoriasis group is slightly older on average (mean=49) and the control group is generally younger (mean=35).
 
-A substantial portion of the AD group report allergies to substances, including pollen (48.2%), food (37.8%), and animals (33.6%)
+A substantial portion of the AD group report allergies to substances, including pollen (48.2%), food (37.8%), and animals (33.6%). This information may be of imporantance since people with AD are more likely to develop hay fever and are advised to avoid allergens in an effort to prevent a flare-up of eczema. ^[McIntosh,J. (2017, Nov 14). What's to know about eczema? https://www.medicalnewstoday.com/articles/14417.php.]
 
 Just under half (43.0%) of the AD group report a family history of AD. 
   
