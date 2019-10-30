@@ -81,7 +81,7 @@ age<-
             SD=sd(CUSTOM_Age, na.rm=TRUE))
 age %>% kable(caption = "Age") %>% kable_styling(bootstrap_options = "striped", full_width = F)
 
-# histogram age age
+# histogram: age
 ggplot2::ggplot(data=undup_AD, aes(x=CUSTOM_Age))+
   geom_histogram()+
   theme_minimal()+
@@ -93,7 +93,7 @@ ggplot2::ggplot(data=undup_AD, aes(x=CUSTOM_Age))+
 
 ##  Clinical Characteristics of the AD Group
 
-Describe the clinical characteristics of the AD group provided in the dataset. 
+Describe the clinical characteristics of the AD group. 
 
 ```{r clinicalchars, message=FALSE}
 

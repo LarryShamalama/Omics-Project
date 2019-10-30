@@ -1737,7 +1737,7 @@ SD
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># histogram age age
+<pre class="r"><code># histogram: age
 ggplot2::ggplot(data=undup_AD, aes(x=CUSTOM_Age))+
   geom_histogram()+
   theme_minimal()+
@@ -1748,7 +1748,7 @@ ggplot2::ggplot(data=undup_AD, aes(x=CUSTOM_Age))+
 </div>
 <div id="clinical-characteristics-of-the-ad-group" class="section level2">
 <h2>Clinical Characteristics of the AD Group</h2>
-<p>Describe the clinical characteristics of the AD group provided in the dataset.</p>
+<p>Describe the clinical characteristics of the AD group.</p>
 <pre class="r"><code># number/percent of AD patients with each type of allergy
 allergies&lt;- (mtabulate(undup_AD[grep('Allergies',names(undup_AD), value=T)]))
 allergies$Percent&lt;- allergies[,2]/allergies[,1]+allergies[,2]
