@@ -1,0 +1,111 @@
+---
+title: "Final OMICS Analysis codes"
+author: "Sneha"
+date: "10/29/2019"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+
+
+
+
+```
+
+## Slide with Plot
+
+```{r pressure}
+## MA plot - For visual representation of genes
+## To determine the upregulated and downregulated genes
+smoothScatter(fit$Amean, fit$coefficients[,2], nrpoints = 500, xlab = "A", ylab = "M", cex.main = 0.9, main = "MA plot")
+abline(h=1)
+abline(h= -1)
+
+## Volcano plot
+## It is a scatterplot of -log odd of p-value by log2 fold change. To visualize the genes with large fold changes that are significant. Upregulated genes are towards the right and downregulated genes are towards the lef and statistically significant genes are towards the top. 
+lod <- -log10(fit$p.value[,2])
+o1 <- which(fit$coefficients[,2]>1 | fit$coefficients[,2]< -1)
+o2 <- which(fit$p.value[,2]<0.05)
+o=intersect(o1,o2)
+plot(fit$coefficients[,2], lod,
+ xlab ="Log2 Fold Change",
+ ylab ="t-statistic p-values (-log10)",
+ cex.main=0.95, cex=0.35, main="volcano plot")
+points(fit$coefficients[o1], lod[o1], pch = 19, cex = 0.35, col = "blue")
+points(fit$coefficients[o2], lod[o2], pch = 19, cex = 0.35, col = "red")
+points(fit$coefficients[o], lod[o], pch = 19, cex = 0.35, col = "green")
+legend("bottomleft", c("mean dif.", "mod.t", "intersect"), lty = 1, col = c("blue", "red", "green"), cex = 0.7)
+abline(h= -log10(0.05))
+abline(v=1)
+abline(v=-1)
+
+lod <- -log10(fit$p.value[,2])
+o1 <- which(fit$coefficients>1 | fit$coefficients< -1)
+o2 <- which(fit$p.value[,2]<0.05)
+o=intersect(o1,o2)
+plot(fit$coefficients[,2], lod,
+ xlab ="Log2 Fold Change",
+ ylab ="t-statistic p-values (-log10)",
+ cex.main=0.95, cex=0.35, main="volcano plot")
+points(fit$coefficients[o1], lod[o1], pch = 19, cex = 0.35, col = "blue")
+points(fit$coefficients[o2], lod[o2], pch = 19, cex = 0.35, col = "red")
+points(fit$coefficients[o], lod[o], pch = 19, cex = 0.35, col = "green")
+legend("bottomleft", c("mean dif.", "mod.t", "intersect"), lty = 1, col = c("blue", "red", "green"), cex = 0.7)
+abline(h= -log10(0.05))
+abline(v=1)
+abline(v=-1)
+## Heat maps (Quality Control) for the final list of genes
+
+heatmap_genes <- as.matrix(gene_pvalues)
+heatmap(heatmap_genes)
+
+
+
+## PCA 
+library("FactoMineR")
+  
+PCA_Transcriptome <- data.frame(t(transcriptome), lesion = SamplesAD$all_samples.lesional)
+TransNormPCA <- PCA(PCA_Transcriptome, quali.sup = which(names(PCA_Transcriptome) == "lesion"), graph = FALSE)
+plot(TransNormPCA,choix = "ind", label = "none", habillage = which(names(PCA_Transcriptome) == "lesion"))
+
+
+##Plot the eigenvalues graph and illustrate the Kaiser criterion with an horizontal line.
+plot(TransNormPCA$eig[, "eigenvalue"], type = "b", ylab = "Eigenvalue")
+abline(h = ncol(PCA_Transcriptome)/nrow(TransNormPCA$eig), col = "red", lty = "dotted", lwd = 2)
+sum(TransNormPCA$eig[, "eigenvalue"] > ncol(PCA_Transcriptome)/nrow(TransNormPCA$eig))
+
+
+## To determine the cos2 value and plot a variables factor map using cos2 value
+library("ggplot2")
+library("factoextra")
+
+head(TransNormPCA$var$cos2)
+
+fviz_pca_var(TransNormPCA, col.var="cos2") +
+scale_color_gradient2(low="white", mid="blue", 
+                    high="red", midpoint=0.5) + theme_minimal()
+plot(TransNormPCA, choix = "var", label = "none", lim.cos2.var = 0.8) + scale_color_gradient2(low="white", mid="blue", 
+                    high="red") + theme_minimal()
+
+## Filter out variables with cos2 value too low
+plot(TransNormPCA, choix = "var", label = "none", lim.cos2.var = 0.80)
+```
+
