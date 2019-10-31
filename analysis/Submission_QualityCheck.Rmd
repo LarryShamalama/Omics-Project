@@ -1,5 +1,5 @@
 ---
-title: "Differential Gene Expression"
+title: "Quality Check"
 output:
   html_document:
     theme: united
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-Methods for differential gene expression (DGE) were utilized to identify genes that are expressed differently between healthy skins samples and lesioned skin samples from atopic dermatitis (AD) patients. 
+Although the data provided was previously normalized, it will be checked for normality, a dendogram will be created, and PCA will be conducted. 
 
 ## Preparation
 
@@ -23,9 +23,9 @@ Load libraries, load data, and prepare the data.
 
 ```{r prep, message=FALSE}
 # load libraries
-library(limma)
-library(data.table)
-library(gdata)
+#library(limma)
+#library(data.table)
+#library(gdata)
 
 # set working directory
 setwd("/Users/thewooz/Documents/Omics-Project")
@@ -59,41 +59,35 @@ samples_AD$lesional_new[samples_AD$lesional=="LES"]<- 1
 samples_AD$lesional_new[samples_AD$lesional=="NON_LES"]<- 0   
 ```
 
-## Linear Model
 
-Create the model matrix for paired data, dropping the dummy variables.
+## Verify Normality of the Samples
 
-```{r model}
-paired.design<- as.data.frame(model.matrix(~lesional_new + drop.levels(MAARS_identifier), data=samples_AD))
+```{r normality}
+bp_col<- samples_AD$lesional
+levels(bp_col) <- c("red4", "steelblue4")
+boxplot(transcriptome_AD[,-1], col=as.character(bp_col), 
+        xlab="Sample", ylab="Intensity", axes=F)
+axis(2)
+box()
 ```
 
-Fit the linear model and apply eBayes which computes moderated t-statistics, moderated F-statistic, and log-odds of differential expression by empirical Bayes moderation of the standard errors towards a common value.
+
+## Dendrogram of AD Genes
+
+Create a dendrogram of the genes sampled for the AD group. 
+
 
 ```{r}
-fit <- lmFit(transcriptome_AD, design=paired.design)
-fit <- eBayes(fit, robust=TRUE)
+dist_data<- dist(t(transcriptome_AD))
+plot(flashClust::hclust(dist_data, method="ward"), labels=samples_AD$lesional)
+
 ```
 
-## Significance Test
 
-Identify which genes are differentially expressed. Use a p-value of .05 adjusted for multiple tests using the  Benjamini-Hochberg method and a minimum log2-fold-change of 1. 
+## Principle Component Analysis (PCA)
 
-```{r tests}
-signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
-summary(signif)[ ,2]
-```
 
-## Extract Significant Genes
 
-Use topTable to produce an R dataframe with the significant genes as well as their adjusted p-values.
+## Heatmap Clustering
 
-```{r extract}
-# extract genes p-values 
-top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by = "P", n=Inf, coef=2)
-# assign to a dataframe
-gene_pvalues_sig<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
-
-# save gene pvalues as an R dataset
-save(gene_pvalues_sig,file="/Users/thewooz/Documents/Omics-Project/filter-data/gene_pvalues_sig.Rda")
-```
 

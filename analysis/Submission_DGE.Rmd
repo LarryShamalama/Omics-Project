@@ -1,0 +1,100 @@
+---
+title: "Differential Gene Expression"
+output:
+  html_document:
+    theme: united
+    toc: yes
+    toc_float:
+      collapsed: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Introduction
+
+Methods for differential gene expression (DGE) were utilized to identify genes that are expressed differently between healthy skins samples and lesioned skin samples from atopic dermatitis (AD) patients. 
+
+## Preparation
+
+Load libraries, load data, and prepare the data. 
+
+```{r prep, message=FALSE}
+# load libraries
+library(limma)
+library(data.table)
+library(gdata)
+
+# set working directory
+setwd("/Users/thewooz/Documents/Omics-Project")
+
+# read in sample information, keeping those that are AD
+samples <- read.csv('/Users/thewooz/Documents/Omics-Project/filter-data/all.csv')
+samples_AD <- subset(samples, samples$clinical_group == 'AD')
+
+# read in transcriptome data, change row names and remove the var 'X'
+transcriptome <- read.csv('/Users/thewooz/Documents/Omics-Project/filter-data/transcriptome.csv')
+rownames(transcriptome) <- transcriptome$X
+transcriptome <- transcriptome[,-c(1)]
+
+# keep the transcriptomes that are AD
+transcriptome_AD <- transcriptome[rownames(transcriptome) %in% samples_AD$sample_id, ]
+
+# create an index, matching the sample_id to the row in the transcriptome
+indices <- match(samples_AD$sample_id, rownames(transcriptome_AD))
+# stop the process if there's any lines that have NA (sample_id has not matching transcriptome)
+stopifnot(sum(is.na(indices)) == 0)
+
+# order the transcriptome data according to the vector
+transcriptome_AD <- transcriptome_AD[indices,]
+# stop if not every row matches a sample_id
+stopifnot(all(rownames(transcriptome_AD) == samples_AD$sample_id))
+# transpose transcriptome data
+transcriptome_AD <- t(transcriptome_AD)
+
+# recode lesional/non-lesional
+samples_AD$lesional_new[samples_AD$lesional=="LES"]<- 1
+samples_AD$lesional_new[samples_AD$lesional=="NON_LES"]<- 0   
+```
+
+## Linear Model
+
+Create the model matrix for paired data, dropping the dummy variables.
+
+```{r model}
+paired.design<- as.data.frame(model.matrix(~lesional_new + drop.levels(MAARS_identifier), data=samples_AD))
+```
+
+Fit the linear model and apply eBayes which computes moderated t-statistics, moderated F-statistic, and log-odds of differential expression by empirical Bayes moderation of the standard errors towards a common value.
+
+```{r}
+fit <- lmFit(transcriptome_AD, design=paired.design)
+fit <- eBayes(fit, robust=TRUE)
+```
+
+
+
+## Significance Test
+
+Identify which genes are differentially expressed. Use a p-value of .05 adjusted for multiple tests using the  Benjamini-Hochberg method and a minimum log2-fold-change of 1. 
+
+```{r tests}
+signif <- decideTests(fit, adjust.method = "BH", p.value = 0.05, lfc = 1)
+summary(signif)[ ,2]
+```
+
+## Extract Significant Genes
+
+Use topTable to produce an R dataframe with the significant genes as well as their adjusted p-values.
+
+```{r extract}
+# extract genes p-values 
+top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by = "P", n=Inf, coef=2)
+# assign to a dataframe
+gene_pvalues_sig<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
+
+# save gene pvalues as an R dataset
+save(gene_pvalues_sig,file="/Users/thewooz/Documents/Omics-Project/filter-data/gene_pvalues_sig.Rda")
+```

@@ -64,9 +64,17 @@ top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by 
 #gene_pvalues_sig<- gene_pvalues_all[which(gene_pvalues_all$adj.P.Val<.05), ]
 gene_pvalues_sig<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
 
+# Arul's code:
+topTable(BayesFit, adjust.method = "BH")
+
+test<- topTable(fit, adjust.method = "BH", n=Inf)
+test2<- test[ ,(ncol(test)-3):ncol(test)]
+names(test)
+summary(test)
 
 # check to see how many genes are p<.05
-length(which(top.table$adj.P.Val < 0.05))
+length(which(test2$P.Val < 0.05))
+
 
 # save gene pvalues
 save(gene_pvalues,file="../filter-data/gene_pvalues.Rda")
