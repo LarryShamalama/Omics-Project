@@ -23,9 +23,7 @@ Load libraries, load data, and prepare the data.
 
 ```{r prep, message=FALSE}
 # load libraries
-#library(limma)
-#library(data.table)
-#library(gdata)
+
 
 # set working directory
 setwd("/Users/thewooz/Documents/Omics-Project")

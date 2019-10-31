@@ -69,11 +69,26 @@ paired.design<- as.data.frame(model.matrix(~lesional_new + drop.levels(MAARS_ide
 
 Fit the linear model and apply eBayes which computes moderated t-statistics, moderated F-statistic, and log-odds of differential expression by empirical Bayes moderation of the standard errors towards a common value.
 
-```{r}
+```{r linearfit}
 fit <- lmFit(transcriptome_AD, design=paired.design)
 fit <- eBayes(fit, robust=TRUE)
 ```
 
+
+## MA Plot
+
+Create an MA plot to visually represent the genes and determine those which are up- and down-regulated.
+
+```{r MA}
+smoothScatter(fit$Amean, fit$coefficients[,2], 
+              nrpoints = 500, 
+              xlab = "A (log-intensity averages)", 
+              ylab = "M (log-intensity ratios)", 
+              cex.main = 0.9, 
+              main = "MA plot")
+abline(h=1)
+abline(h= -1)
+```
 
 
 ## Significance Test
