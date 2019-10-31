@@ -1,0 +1,116 @@
+---
+title: "PCA- Final code draft"
+author: "Sneha"
+date: "10/31/2019"
+output: html_document
+---
+```{r}
+library(rstudioapi)
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+all_samples  <- read.csv('../filter-data/all.csv')
+all_samples  <- all_samples[all_samples$clinical_group == 'AD',]
+
+SamplesAD <- data.frame(all_samples$sample_id,
+                        all_samples$clinical_group,
+                        all_samples$lesional)
+```
+
+```{r}
+## Loading required library
+library("FactoMineR")
+library("factoextra")
+
+```
+
+```{r}
+## Creating a new dataframe that will include only AD patients
+transcriptome <- read.csv('../filter-data/transcriptome.csv') # takes time to load
+rownames(transcriptome) <- transcriptome$X
+transcriptome <- transcriptome[,-c(1)]
+
+
+transcriptome <- transcriptome[rownames(transcriptome) %in% all_samples$sample_id,]
+indices <- match(all_samples$sample_id, rownames(transcriptome))
+stopifnot(sum(is.na(indices)) == 0)
+
+transcriptome <- transcriptome[indices,]
+stopifnot(all(rownames(transcriptome) == all_samples$sample_id))
+transcriptome <- t(transcriptome)
+```
+
+
+```{r}
+## Apply the PCA function to the transcriptome dataframe (include the lesional status of individuals)
+
+PCA_Transcriptome <- data.frame(t(transcriptome), lesion = SamplesAD$all_samples.lesional)
+
+PCA_Transcriptome$lesion <- ifelse(PCA_Transcriptome$lesion == 'LES', 'Lesion', 'Non-lesion')
+
+TransNormPCA <- PCA(PCA_Transcriptome, quali.sup = which(names(PCA_Transcriptome) == "lesion"), graph=FALSE)
+
+## Generate an individual factor map
+
+plot(TransNormPCA, choix = "ind", label = "none", habillage = which(names(PCA_Transcriptome) == "lesion"))
+
+### Explanation: This plot shows clusters of samples based on their similarity. We can observe that the two groups are not clustered and are not correlated. 
+```
+
+```{r}
+##Using FactoMineR packgage plot the eigenvalues graph and illustrate the Kaiser criterion with an horizontal line.
+
+plot(TransNormPCA$eig[, "eigenvalue"], type = "b", ylab = "Eigenvalue")
+abline(h = ncol(PCA_Transcriptome)/nrow(TransNormPCA$eig), col = "red", lty = "dotted", lwd = 2)
+sum(TransNormPCA$eig[, "eigenvalue"] > ncol(PCA_Transcriptome)/nrow(TransNormPCA$eig))
+
+### Explanation - Eigenvalue explains the amount of variance retained by each principal component. 
+
+## Using factoextra package
+## Extract the eigen values/variances of principal components
+eig.val <- get_eigenvalue(TransNormPCA)
+
+### Explanation: # eigen values for each dimention or component is described in the first coloumn, the proportion of variation is explainedby each eigen value is in the second coloumn and the cumulative percentage is explained in the third column (successive proportions of variation explained to obtain a running total). In our analysis first 2 components result to  approx 15% variance. 
+
+## Visualize the eigen values- scree plot
+fviz_eig(TransNormPCA)
+
+### Explanation: Scree plot is an alternative way to look at the eigenvalue. The variance of the first 10 principal components can be visualized in this plot. We see that PC1 and PC2 has variance of approx. 8 and 6. Scree plot is an alternative way to look at the eigenvalues ordered from largest to smallest in top 10 components. 
+
+## Extract the results for individuals and variables, respectively
+ind <- get_pca_ind(TransNormPCA) 
+### Explanation:  provides a list of matrices containing all the results of the active variables (coordinates, correlations, squared cosine, contributions)
+
+var <- get_pca_var(TransNormPCA) 
+### Explanation: provides a list of matrices containing all the results of the active variables (coordinates, squared cosine, contributions)
+
+## Visualize the results for for individuals and variables
+fviz_pca_var(TransNormPCA)
+fviz_pca_ind(TransNormPCA)
+
+## Dimension description 1 and 2 
+TNP.desc <- dimdesc(TransNormPCA, axes = c(1,2), proba = 0.05)
+
+# These tables give the correlation coefficient and the p-value of the variables which are significantly correlated to the principal dimensions. 
+TNP.desc$Dim.1
+TNP.desc$Dim.2
+
+### Explanation: The tables of the description of the two principal axes show that the genes "ENSG00000182481" is the most correlated to the first dimension and "ENSG00000046604" & " ENSG00000135929" is the most correlated to the second one. This confirms our first interpretation.
+
+## Determine the highest cos2 value and plot a variables factor map using cos2 value
+# The graph below shows the plot of variables on the components. Variables are colored according to the values of the squared cosine.
+
+head(TransNormPCA$var$cos2)
+
+fviz_pca_var(TransNormPCA, col.var="cos2") +
+scale_color_gradient2(low="white", mid="blue", 
+                    high="red", midpoint=0.5) + theme_minimal()
+plot(TransNormPCA, choix = "var", label = "none", lim.cos2.var = 0.8) + scale_color_gradient2(low="white", mid="blue", 
+                    high="red") + theme_minimal()
+
+### Explanation: The correlation between the genes and a principal component is used as a coordinate of the variable on the PC. All the positively correlated variables are grouped together. Negatively correlated variables are positioned on opposite sides of the plot (opp quadrants). The distance between variables and the origin measures the quality of the variables on the factor map. Variables that are away from the origin (cos2 = 0.8) are represented on the factor map.  Cos2 is used to represent the quality of the genes on the factor map. We have a high cos2 value that shows a good representation of the genes on the PC. Our genes are positioned closer to the circumference of the correlation circle. We have removed all the genes that have cos2 value below 0.8
+
+
+
+
+
+```
+
