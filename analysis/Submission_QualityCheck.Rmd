@@ -82,10 +82,3 @@ plot(flashClust::hclust(dist_data, method="ward"), labels=samples_AD$lesional)
 ```
 
 
-## Principle Component Analysis (PCA)
-
-
-
-## Heatmap Clustering
-
-

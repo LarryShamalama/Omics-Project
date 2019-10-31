@@ -1,0 +1,161 @@
+---
+title: "PCA"
+output:
+  html_document:
+    theme: united
+    toc: yes
+    toc_float:
+      collapsed: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Introduction
+
+Conduct PCA analysis and interpret the results.
+
+## Preparation
+
+Load the libraries and the datasets. 
+
+```{r prep, message=FALSE}
+# libraries
+library(rstudioapi)
+library(FactoMineR)
+library(factoextra)
+library(dplyr)
+library(kableExtra)
+
+# set working directory
+setwd("/Users/thewooz/Documents/Omics-Project")
+
+# load the data
+all_samples<- read.csv("/Users/thewooz/Documents/Omics-Project/filter-data/all.csv")
+samples_AD<- all_samples[all_samples$clinical_group == 'AD',]
+
+SamplesAD <- data.frame(samples_AD$sample_id,
+                        samples_AD$clinical_group,
+                        samples_AD$lesional)
+
+# read in transcriptome data, change row names and remove the var 'X'
+transcriptome <- read.csv('/Users/thewooz/Documents/Omics-Project/filter-data/transcriptome.csv')
+rownames(transcriptome) <- transcriptome$X
+transcriptome <- transcriptome[,-c(1)]
+
+# keep the transcriptomes that are AD
+transcriptome_AD <- transcriptome[rownames(transcriptome) %in% samples_AD$sample_id, ]
+
+# create an index, matching the sample_id to the row in the transcriptome
+indices <- match(samples_AD$sample_id, rownames(transcriptome_AD))
+# stop the process if there's any lines that have NA (sample_id has not matching transcriptome)
+stopifnot(sum(is.na(indices)) == 0)
+
+# order the transcriptome data according to the vector
+transcriptome_AD <- transcriptome_AD[indices,]
+# stop if not every row matches a sample_id
+stopifnot(all(rownames(transcriptome_AD) == samples_AD$sample_id))
+# transpose transcriptome data
+transcriptome_AD <- t(transcriptome_AD)
+
+```
+
+## PCA Function
+
+Apply the PCA function to the transcriptome dataframe (include the lesional status of the skin samples)
+
+```{r}
+PCA_Transcriptome <- data.frame(t(transcriptome_AD), lesion = SamplesAD$samples_AD.lesional)
+PCA_Transcriptome$lesion <- ifelse(PCA_Transcriptome$lesion == 'LES', 'Lesioned', 'Non-lesioned')
+
+TransNormPCA <- PCA(PCA_Transcriptome, quali.sup = which(names(PCA_Transcriptome) == "lesion"), graph=FALSE)
+```
+
+## Generate an individual factor map
+
+```{r}
+plot(TransNormPCA, choix = "ind", label = "none", habillage = which(names(PCA_Transcriptome) == "lesion"))
+
+```
+
+Explanation: This plot shows clusters of samples based on their similarity. We can observe that the two groups are not clustered and are not correlated. Lesional status is a major driver of gene expression differences. 
+
+## Eigenvalues
+
+Compute eigenvalues to determine how many components are required to explain the majority of the variance.
+
+```{r}
+# Extract the eigenvalues/variances of principal components
+eig.val <- get_eigenvalue(TransNormPCA)
+
+# print first 5 values
+eig_tab<- head(eig.val, 5)
+eig_tab %>% kable(caption = "First 5 Eigenvalues") %>% kable_styling(bootstrap_options = "striped", full_width = F)
+
+```
+
+Explanation:  Eigenvalue explains the amount of variance retained by each principal component. For each dimension or component, the eigenvalue is described in the first coloumn; the proportion of variation that is explained by the eigenvalue is in the second coloumn; and the cumulative percentage that is explained by the eigenvalue is in the third column (successive proportions of variation explained to obtain a running total). In our analysis, the first two components account for approximately 15% of the variance. The first five components explain approximately one-quarter of the variance. 
+
+
+## Eigenvalues Plot and Scree Plot
+
+Use FactoMineR packgage plot the eigenvalues graph and illustrate the Kaiser criterion with a horizontal line.
+
+```{r}
+# Plot the eigenvalues
+plot(TransNormPCA$eig[, "eigenvalue"], type = "b", ylab = "Eigenvalue")
+abline(h = ncol(PCA_Transcriptome)/nrow(TransNormPCA$eig), col = "red", lty = "dotted", lwd = 2)
+sum(TransNormPCA$eig[, "eigenvalue"] > ncol(PCA_Transcriptome)/nrow(TransNormPCA$eig))
+
+## Visualize the eigen values- scree plot
+fviz_eig(TransNormPCA)
+```
+
+Explanation: The first plot shows the eigenvalues and the Kaiser criterion, which is used as a cut-off mark for keeping components. The scree plot is an alternative way to look at the eigenvalues. The variance of the first 10 principal components can be visualized in this plot. We see that PC1 and PC2 has a variance of approximately 8 and 6 percent, respectively.  
+
+
+## Extract Individual and Variable Results
+
+```{r}
+# Extract the results for individuals and variables, respectively. Obtain a list of matrices containing all of the results of teh active variables (coordinates, correlations, squared cosine, contributions).
+ind <- get_pca_ind(TransNormPCA) 
+var <- get_pca_var(TransNormPCA) 
+
+## Visualize the results for for individuals and variables
+fviz_pca_var(TransNormPCA)
+fviz_pca_ind(TransNormPCA)
+```
+
+
+```{r}
+
+## Dimension description 1 and 2 
+TNP.desc <- dimdesc(TransNormPCA, axes = c(1,2), proba = 0.05)
+
+# These tables give the correlation coefficient and the p-value of the variables which are significantly correlated to the principal dimensions. 
+#TNP.desc$Dim.1
+#TNP.desc$Dim.2
+```
+
+Explanation: The tables of the description of the two principal axes show that the gene "ENSG00000182481" is the most correlated to the first dimension and "ENSG00000046604" & " ENSG00000135929" are the most correlated to the second one. This confirms our first interpretation.
+
+
+## Variables Factor Map
+
+Determine the highest cos2 value and plot a variables factor map using the cos2 value.
+The Variables Factor Map shows the plot of variables on the components. Variables are colored according to the values of the squared cosine.
+
+```{r}
+head(TransNormPCA$var$cos2)
+
+fviz_pca_var(TransNormPCA, col.var="cos2") +
+scale_color_gradient2(low="white", mid="blue", 
+                    high="red", midpoint=0.5) + theme_minimal()
+
+plot(TransNormPCA, choix = "var", label = "none", lim.cos2.var = 0.8) +
+  scale_color_gradient2(low="white", mid="blue", high="red") + theme_minimal()
+```
+
+Explanation: The correlation between the genes and a principal component is used as a coordinate of the variable on the PC. All the positively correlated variables are grouped together. Negatively correlated variables are positioned on opposite sides of the plot (opposite quadrants). The distance between variables and the origin measures the quality of the variables on the factor map. Variables that are further from the origin (cos2 = 0.8) are represented on the factor map. Cos2 is used to represent the quality of the genes on the factor map. We have a high cos2 value that shows a good representation of the genes on the PC. Our genes are positioned closer to the circumference of the correlation circle. We have removed all the genes that have cos2 value below 0.8.

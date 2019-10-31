@@ -1,5 +1,5 @@
 ---
-title: "Differential Gene Expression"
+title: "Prediction with sPLS"
 output:
   html_document:
     theme: united
