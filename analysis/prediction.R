@@ -32,24 +32,38 @@ library('parallel')
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 # loading datasets
-all_patients  <- read.csv('../filter-data/all2.csv')
-all_samples   <- read.csv('../filter-data/ad_full.csv')
-transcriptome <- read.csv('../filter-data/transcriptome2.csv') # takes a while to load
+samples <- read.csv('../filter-data/all.csv')
+samples <- subset(samples, samples$clinical_group == 'AD')
 
-stopifnot(dim(transcriptome)[1] == dim(all_patients)[1])
-
-sample_id <- transcriptome$X
+# read in transcriptome data, change row names and remove the var 'X'
+transcriptome <- read.csv('../filter-data/transcriptome.csv') # takes time to load
+rownames(transcriptome) <- transcriptome$X
 transcriptome <- transcriptome[,-c(1)]
-rownames(transcriptome) <- sample_id
 
-lesion.status <- all_patients$lesional
-lesion.status <- as.integer(ifelse(lesion.status == 'LES', 1, 0)) # binary encoding
+# keep the transcriptomes that are AD
+transcriptome <- transcriptome[rownames(transcriptome) %in% samples$sample_id,]
+# create an index, matching the sample_id to the row in the transcriptome
+indices <- match(samples$sample_id, rownames(transcriptome))
+# stop the process if there's any lines that have NA (sample_id has not matching transcriptome)
+stopifnot(sum(is.na(indices)) == 0)
 
-n_components <- 8
-n_keep       <- 4
+# order the transcriptome data according to the vector
+transcriptome <- transcriptome[indices,]
+# stop if not every row matches a sample_id
+stopifnot(all(rownames(transcriptome) == samples$sample_id))
+# transpose transcriptome data
+transcriptome <- t(transcriptome)
 
-spls <- mixOmics::splsda(transcriptome, 
-                         lesion.status, 
+
+#lesion <- 2-as.integer(samples$lesional)
+samples$lesional_new[samples$lesional=="LES"]<- 1
+samples$lesional_new[samples$lesional=="NON_LES"]<- 0   
+
+n_components <- 10
+n_keep       <- 10
+
+spls <- mixOmics::splsda(t(transcriptome), 
+                         samples$lesional_new, 
                          ncomp=n_components,
                          keepX=rep(n_keep, n_components))
 
@@ -61,7 +75,10 @@ for (i in 1:n_components){
   cumul_gene_names <- c(names(temp_component), cumul_gene_names)
 }
 
-cumul_gene_names <- unique(cumul_gene_names)
+# list of genes selected by spls
+cumul_gene_names <- unique(cumul_gene_names) 
+
+write.table(cumul_gene_names, file='../genelist_spls.txt')
 
 cat('Number of selected genes:', length(cumul_gene_names), '\n')
 cat('Maximum number of selected genes:', n_components*n_keep, '\n')
