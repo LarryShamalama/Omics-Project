@@ -180,19 +180,13 @@
 
 \section{Introduction}
 
-Atopic dermatitis (AD) or atopic eczema is an itchy, inflammatory skin condition characterised by poorly defined erythema with edema vesicles, and weeping in the acute stage and lichenification in the chronic stage. The global prevalence is 15-20 $\%$ in children and 1-3$\%$ in adults, posing a significant burden on health-care resources and patients’ quality of life \cite{nutten2015atopic}.\\
+Atopic dermatitis (AD) or atopic eczema is an itchy, inflammatory skin condition characterised by poorly defined erythema with edema vesicles, and weeping in the acute stage and lichenification in the chronic stage. The global prevalence is $15-20 \%$ in children and $1-3\%$ in adults, posing a significant burden on health-care resources and patients’ quality of life \cite{nutten2015atopic}. The etiological factors associated with the initiation and progress of the disease are known to be genetic, environmental and immunological that affects the epithelial barrier-immunity interplay \cite{peng2015pathogenesis}.\\
 
-The etiological factors associated with the initiation and progress of the disease are known to be genetic, environmental and immunological that affects the epithelial barrier-immunity interplay \cite{peng2015pathogenesis}.\\
-
-Clinical investigations and discoveries in molecular medicine have positively identified 46 genes linked to AD. Mutations in filaggrin (FLG) genes (influencing intermediate filament protein filaggrin expression) are most common in the AD diseased population, it affects 10-50$\%$ of AD patients worldwide.\\
+Clinical investigations and discoveries in molecular medicine have positively identified $46$ genes linked to AD. Mutations in filaggrin (FLG) genes (influencing intermediate filament protein filaggrin expression) are most common in the AD diseased population, it affects $10-50\%$ of AD patients worldwide.\\
 
 Few additional barrier genes encoded by the epidermal differentiation complex (EDC) locus chromosome 1q21, including claudins, loricrin (LOR), involucrin (IVL), SPINK5, AND tmem79/matt, are also associated with AD.\\
 
-The genes of innate immune system like NOD1, NOD2, TLR2, CD14, and DEFB1, that encode the integral factors in cutaneous immunologic response to non- specific antigens may also experience mutations and cause AD \cite{guttman2017atopic}.\\
-
-Studies have identified FLG gene mutation to be the most significant risk factor for AD, followed by the genes in the type 2 T helper lymphocyte (Th2) signalling pathways.\\
-
-Additionally, gene profiling assays demonstrated AD is associated with decreased gene expression of epidermal differentiation complex genes and elevated Th2 and Th17 genes. Hypomethylation of TSLP and FCER1G in AD were also reported; and miR-155, which targets the immune suppressor CTLA-4, was found to be significantly over-expressed in infiltrating T cells in AD skin lesions \cite{guttman2017atopic, bin2016genetic}.\\
+The genes of innate immune system such as NOD1, NOD2, TLR2, CD14, and DEFB1, all of which encode the integral factors in cutaneous immunologic response to non-specific antigens may also experience mutations and cause AD \cite{guttman2017atopic}. Studies have identified FLG gene mutation to be the most significant risk factor for AD, followed by the genes in the type 2 T helper lymphocyte (Th2) signalling pathways. Additionally, gene profiling assays demonstrated AD is associated with decreased gene expression of epidermal differentiation complex genes and elevated Th2 and Th17 genes. Hypomethylation of TSLP and FCER1G in AD were also reported; and miR-155, which targets the immune suppressor CTLA-4, was found to be significantly over-expressed in infiltrating T cells in AD skin lesions \cite{guttman2017atopic, bin2016genetic}.\\
 
 This study attempts to examine the degree of dissimilarity between the transcriptomic expression between lesional and non-lesional samples in participants with atopic dermatitis. (ELABORATE MORE HERE...)
 
@@ -241,14 +235,16 @@ A ensemble learning prediction model was then implemented to assess predictabili
 
 \section{Results}
 
-In Fig. 1, a simple 2D visualization of the results obtained from PCA is available, whereby lesional samples are displayed in black and non-lesional samples are displayed in red.
+
+In Fig. \ref{fig:pca}, a simple 2D visualization of the results obtained from PCA is available, whereby lesional samples are displayed in black and non-lesional samples are displayed in red.
 
 \begin{figure}[!htp]
     \begin{center}
     \begin{minipage}{0.5 \textwidth}
       \centering
       \includegraphics[width=\textwidth]{../exploratory-data-analysis/pca-plot.png}
-      \label{pca}
+      \caption{testing}
+      \label{fig:pca}
     \end{minipage}
   \end{center}
 \end{figure}
@@ -256,15 +252,13 @@ In Fig. 1, a simple 2D visualization of the results obtained from PCA is availab
 
 The horizontal axis represents the first component obtained through PCA and the vertical axis the second; they respectively explain $8.78\%$ and $6.02\%$ of the variance in the transcriptomic data.
 
-\begin{figure}[!htp]
-  \begin{center}
-    \begin{minipage}{0.5 \textwidth}
-      \centering
-      \includegraphics[width=\textwidth]{../analysis/Volcqno-plot1.png}
-      \label{volcano}
-    \end{minipage}
-  \end{center}
-\end{figure}
+A Differential Gene Analysis (DGE) was conducted using a linear model for paired data. The results indicated $81$ genes that differed significantly between the lesioned and non-lesioned skin samples: $65$ that are up-regulated and $16$ that down-regulated. A heatmap illustrating the normalized gene expression levels is displayed below.
+
+\textit{insert heatmap here}
+
+talk about clustering methods
+
+An MA plot was used to visually represent the genes and determine which are up- and down-regulated. In the plot, each dot represents a gene. The x-axis is the average expression of the gene over the mean of normalized counts; the y-axis is the log2 fold change between the lesional statuses. The MA plot below indicates some genes that are up-regulated and fewer that are down-regulated. 
 
 \begin{figure}[!htp]
   \begin{center}
@@ -275,6 +269,46 @@ The horizontal axis represents the first component obtained through PCA and the 
     \end{minipage}
   \end{center}
 \end{figure}
+
+Additionally, an sPLS analysis was conducted to identify genes that can ``best explain" the variability in the lesional status of the sequenced samples. Information regarding the ten first components were retained whereby a different number of genes was selected for each component; the number of variables selected was determined using a 5-fold cross-validation method. This analysis resulted in the identification of 32 genes, 7 of which were found to be common in the two conducted analyses: DGE and sPLS. Genes KRT16, PRSS27, S100A9, S100A12, PI3, GJB2, ARK1B10 were found common in both analyses. Gene annotations using GSAn (Gene Set Annotation) CITATION, which includes a search on the Gene Ontology Database (GOA) as well, were performed for the seven genes that were identified as significant in both the DGE and the sPLS analyses. Using both the gene identifiers and their synonyms, GSAn retained 19 terms, covering 13 out of 16 genes and 6 of them are synthetic terms.
+
+The figure below \ref{fig:gsan-chart} provides information about the annotated genes within (GOA), the genes covered by GSAn, and the group-wise similarity between them. The first gauge shows excellent gene coverage of $100\%$ within the GOA file. The second gauge shows that $81\%$ of the genes were covered with the GSAn analysis. The third gauge shows that $44\%$ of the genes share a term in both datasets. 
+
+\begin{figure*}[!htp]
+  \begin{center}
+    \begin{minipage}{0.5 \textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{gsan-charts.png}
+      \caption{Descriptive statistics of results obtained with GSAn on the 7 genes of interest.}
+      \label{fig:gsan-chart}
+    \end{minipage}
+  \end{center}
+\end{figure*}
+
+Figure \ref{fig:synthetic-annotation} displays the information content and the gene coverage of the synthetic terms. Functional annotation categories from lesional AD samples include serine endopeptidase activity, protein metabolic process, antimicrobial humoral response, cytoskeleton and toll-like receptor binding.
+
+\begin{figure*} %occupies two columns
+  \centering
+  \includegraphics[width=\textwidth]{synthetic-annotation.png}
+  \caption{Summary statistics of information and role of the genes of interest.}
+  \label{fig:synthetic-annotation}
+\end{figure*}
+
+Figure \ref{fig:gene-ontology} provides more detailed information about the representative terms. Further exploration of the tree will provide additional information on the terms sharing the same informative ancestor or the genes annotated by more than one term. Using this information, information can be obtained on the biological role of these genes in the occurrence of lesional AD.
+
+\begin{figure*}[!htp]
+  \begin{center}
+    \begin{minipage}{0.5 \textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{gene-ontology.png}
+      \caption{Diagram showing the groupings of genetic information in the identified genes into three overarching categories: biological processes, cellular components and molecular functions.}
+      \label{fig:gene-ontology}
+    \end{minipage}
+  \end{center}
+\end{figure*}
+
+
+%The results between the DGE and sPLS analysis were compared and seven genes were found to be common in both analyses.  
 
 \section{Discussion}
 

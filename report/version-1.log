@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 OCT 2019 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 NOV 2019 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -623,23 +623,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--184
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-\T1/aer/m/n/10 en-vi-ron-men-tal and im-muno-log-i-cal that af-fects the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-
- []
-
-
-Underfull \hbox (badness 1735) in paragraph at lines 187--188
+Underfull \hbox (badness 1735) in paragraph at lines 185--186
 []\T1/aer/m/n/10 Clinical in-ves-ti-ga-tions and dis-cov-er-ies in molec-u-lar
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 187--188
+Underfull \hbox (badness 1400) in paragraph at lines 185--186
 \T1/aer/m/n/10 AD. Mu-ta-tions in fi-lag-grin (FLG) genes (in-flu-enc-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 187--188
+\T1/aer/m/n/10 in-clud-ing claudins, lori-crin (LOR), in-volu-crin (IVL),
  []
 
 
@@ -648,8 +648,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--188
  []
 
 
-Underfull \hbox (badness 2608) in paragraph at lines 189--190
-\T1/aer/m/n/10 in-clud-ing claudins, lori-crin (LOR), in-volu-crin (IVL),
+Underfull \hbox (badness 2111) in paragraph at lines 189--190
+\T1/aer/m/n/10 demon-strated AD is as-so-ci-ated with de-creased gene
  []
 
 
@@ -658,119 +658,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
  []
 
 
-Underfull \hbox (badness 3525) in paragraph at lines 191--192
-\T1/aer/m/n/10 fac-tors in cu-ta-neous im-muno-logic re-sponse to non-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
-
- []
-
-
-Underfull \hbox (badness 2285) in paragraph at lines 195--196
-\T1/aer/m/n/10 dif-fer-en-ti-a-tion com-plex genes and el-e-vated Th2 and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-
-LaTeX Warning: Citation `MAARS' on page 1 undefined on input line 203.
+LaTeX Warning: Citation `MAARS' on page 1 undefined on input line 197.
 
 [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 3861) in paragraph at lines 220--221
+Underfull \hbox (badness 3861) in paragraph at lines 214--215
  \T1/aer/m/it/10 2.3.1) Dif-fer-en-tial Gene Ex-pres-sion Anal-y-sis: [][] \T1/
 aer/m/n/10 The
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 220--221
+Underfull \hbox (badness 2698) in paragraph at lines 214--215
 \T1/aer/m/n/10 over-ar-ch-ing goal of the sta-tis-ti-cal anal-y-sis was the
  []
 
 
-Underfull \hbox (badness 2799) in paragraph at lines 220--221
+Underfull \hbox (badness 2799) in paragraph at lines 214--215
 \T1/aer/m/n/10 de-ter-mine the rel-e-vant genes from a tran-scrip-tomic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
-<../exploratory-data-analysis/pca-plot.png, id=14, 635.37375pt x 495.8525pt>
+<../exploratory-data-analysis/pca-plot.png, id=15, 635.37375pt x 495.8525pt>
 File: ../exploratory-data-analysis/pca-plot.png Graphic file (type png)
 <use ../exploratory-data-analysis/pca-plot.png>
 Package pdftex.def Info: ../exploratory-data-analysis/pca-plot.png  used on inp
-ut line 250.
+ut line 245.
 (pdftex.def)             Requested size: 258.0pt x 201.34879pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 248--253
+Overfull \hbox (6.0pt too wide) in paragraph at lines 243--249
  []$ 
  []
 
-<../analysis/Volcqno-plot1.png, id=16, 516.42938pt x 398.99063pt>
-File: ../analysis/Volcqno-plot1.png Graphic file (type png)
-<use ../analysis/Volcqno-plot1.png>
-Package pdftex.def Info: ../analysis/Volcqno-plot1.png  used on input line 263.
-
-(pdftex.def)             Requested size: 258.0pt x 199.33653pt.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 261--266
- []$ 
- []
-
-<../analysis/MA-plot-AD-paired-design.png, id=17, 516.42938pt x 398.99063pt>
+[2 <../exploratory-data-analysis/pca-plot.png>]
+<../analysis/MA-plot-AD-paired-design.png, id=27, 516.42938pt x 398.99063pt>
 File: ../analysis/MA-plot-AD-paired-design.png Graphic file (type png)
 <use ../analysis/MA-plot-AD-paired-design.png>
 Package pdftex.def Info: ../analysis/MA-plot-AD-paired-design.png  used on inpu
-t line 273.
+t line 267.
 (pdftex.def)             Requested size: 258.0pt x 199.33653pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 271--276
+Overfull \hbox (6.0pt too wide) in paragraph at lines 265--270
  []$ 
  []
 
-(./version-1.bbl [2 <../exploratory-data-analysis/pca-plot.png>]
+<gsan-charts.png, id=28, 389.455pt x 466.74374pt>
+File: gsan-charts.png Graphic file (type png)
+<use gsan-charts.png>
+Package pdftex.def Info: gsan-charts.png  used on input line 281.
+(pdftex.def)             Requested size: 258.0pt x 309.21269pt.
+<synthetic-annotation.png, id=29, 1225.57875pt x 429.605pt>
+File: synthetic-annotation.png Graphic file (type png)
+<use synthetic-annotation.png>
+Package pdftex.def Info: synthetic-annotation.png  used on input line 292.
+(pdftex.def)             Requested size: 516.0pt x 180.87206pt.
+<gene-ontology.png, id=30, 513.92pt x 252.945pt>
+File: gene-ontology.png Graphic file (type png)
+<use gene-ontology.png>
+Package pdftex.def Info: gene-ontology.png  used on input line 303.
+(pdftex.def)             Requested size: 258.0pt x 126.98552pt.
+(./version-1.bbl
 Underfull \hbox (badness 1721) in paragraph at lines 43--48
 \T1/aer/m/n/8 Xavier Glo-rot, Matthew Botvinick, Shakir Mo-hamed, and
  []
 
-) [3 <../analysis/Volcqno-plot1.png> <../analysis/MA-plot-AD-paired-design.png 
-(PNG copy)>] (./version-1.aux)
+) [3 <../analysis/MA-plot-AD-paired-design.png (PNG copy)>] [4 <./gsan-charts.p
+ng (PNG copy)> <./synthetic-annotation.png (PNG copy)>] [5 <./gene-ontology.png
+>] (./version-1.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6311 strings out of 492649
- 94245 string characters out of 6129622
- 165602 words of memory out of 5000000
- 10022 multiletter control sequences out of 15000+600000
+ 6324 strings out of 492649
+ 94504 string characters out of 6129622
+ 167564 words of memory out of 5000000
+ 10033 multiletter control sequences out of 15000+600000
  113527 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,18n,38p,1143b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,18n,39p,1143b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
@@ -788,10 +769,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on version-1.pdf (3 pages, 287215 bytes).
+Output written on version-1.pdf (5 pages, 397348 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 20 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 30 words of extra memory for PDF output out of 10000 (max. 10000000)
 
