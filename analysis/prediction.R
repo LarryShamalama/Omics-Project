@@ -2,6 +2,15 @@
 cat('\014')
 rm(list=ls())
 
+
+selected_genes <- c('ENSG00000186832', 
+                    'ENSG00000124102', 
+                    'ENSG00000165474', 
+                    'ENSG00000172382', 
+                    'ENSG00000198074', 
+                    'ENSG00000163220', 
+                    'ENSG00000163221') # manually entered
+
 packages <- c('ggplot2',
               'rstudioapi',
               'data.table',
@@ -49,6 +58,8 @@ stopifnot(sum(is.na(indices)) == 0)
 
 # order the transcriptome data according to the vector
 transcriptome <- transcriptome[indices,]
+colnames(transcriptome) <- substr(colnames(transcriptome), 1, nchar(colnames(transcriptome)[1])-3)
+transcriptome <- transcriptome[,colnames(transcriptome) %in% selected_genes]
 # stop if not every row matches a sample_id
 stopifnot(all(rownames(transcriptome) == samples$sample_id))
 
@@ -58,44 +69,13 @@ stopifnot(all(rownames(transcriptome) == samples$sample_id))
 samples$lesional_new[samples$lesional=="LES"]<- 1
 samples$lesional_new[samples$lesional=="NON_LES"]<- 0   
 
-n_components <- 10
-n_keep       <- 10
-
-spls <- mixOmics::splsda(transcriptome, 
-                         samples$lesional_new, 
-                         ncomp=n_components,
-                         keepX=rep(n_keep, n_components))
-
-cvspls <- perf(spls, validation="loo")
-
-cumul_gene_names <- c()
-
-for (i in 1:n_components){
-  temp_component <- spls$loadings$X[,i]
-  temp_component <- temp_component[temp_component != 0]
-  cumul_gene_names <- c(names(temp_component), cumul_gene_names)
-}
-
-# list of genes selected by spls
-cumul_gene_names <- unique(cumul_gene_names) 
-
-write.table(cumul_gene_names, file='../genelist_spls.txt')
-
-cat('Number of selected genes:', length(cumul_gene_names), '\n')
-cat('Maximum number of selected genes:', n_components*n_keep, '\n')
 
 models <- list('SL.ranger', 
                'SL.glm', 
-               #'SL.ksvm',
+               'SL.ksvm',
                'SL.xgboost',
                'SL.nnet',
                'SL.mean')
-
-
-sl <- SuperLearner(Y=lesion.status,
-                   X=transcriptome[cumul_gene_names],
-                   family=binomial(),
-                   SL.library=models)
 
 if (parallel::detectCores() > 8){
   num_folds <- length(lesion.status)
@@ -105,8 +85,9 @@ if (parallel::detectCores() > 8){
   cat('Not enough computational power... using 5-fold cross-validation')
 }
 
-cv.sl <- CV.SuperLearner(Y=lesion.status,
-                         X=transcriptome[cumul_gene_names],
+set.seed(8)
+cv.sl <- CV.SuperLearner(Y=samples$lesional_new,
+                         X=transcriptome,
                          V=num_folds, # ideally use n for leave-out-one cross-validation
                          family=binomial(),
                          SL.library=models)
@@ -115,5 +96,5 @@ predictions <- predict.SuperLearner(cv.sl)$pred
 
 source('utils.R') # importing functions from another R script
 
-plot.roc(predictions, lesion.status)
+plot.roc(predictions, samples$lesional_new)
 ggsave('roc_curve.png', width=7, height=4.5, units='in', dpi=250)

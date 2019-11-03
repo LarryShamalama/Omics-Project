@@ -21,7 +21,7 @@ roc.helper <- function(predictions, labels){
   stopifnot(length(predictions) == length(labels))
   
   n  <- length(predictions)
-  df <- cbind(predictions, lesion.status)
+  df <- cbind(predictions, labels)
   df <- df[order(df[,1], decreasing = TRUE),]
   
   roc.coord <- matrix(data=0, nrow=n, ncol=2)

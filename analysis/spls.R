@@ -58,12 +58,32 @@ stopifnot(all(rownames(transcriptome) == samples$sample_id))
 samples$lesional_new[samples$lesional=="LES"]<- 1
 samples$lesional_new[samples$lesional=="NON_LES"]<- 0   
 
+n_components <- 10
 list.keepX <- c(2:10, 15, 20)
 
-tune <- tune.spls(X=transcriptome,
-                  Y=samples$lesional_new,
-                  ncomp=3,
-                  test.keepX=list.keepX,
-                  validation = "loo",
-                  measure = "MSE",
-                  progressBar = TRUE)
+set.seed(8)
+
+tune.Mfold <- tune.spls(X=transcriptome,
+                        Y=samples$lesional_new,
+                        ncomp=n_components,
+                        test.keepX=list.keepX,
+                        validation = "Mfold",
+                        folds=5, # initially 10
+                        measure = "MSE",
+                        progressBar = TRUE)
+
+
+cumul_gene_names <- c()
+
+spls <- mixOmics::splsda(transcriptome, 
+                         samples$lesional_new, 
+                         ncomp=n_components,
+                         keepX=as.vector(tune.Mfold$choice.keepX))
+
+for (i in 1:n_components){
+  temp_component <- spls$loadings$X[,i]
+  temp_component <- temp_component[temp_component != 0]
+  cumul_gene_names <- c(names(temp_component), cumul_gene_names)
+}
+
+write.table(cumul_gene_names, file='../genelist_spls_Mfold.txt')
