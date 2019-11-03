@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 NOV 2019 20:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 NOV 2019 22:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -638,8 +638,13 @@ Underfull \hbox (badness 6825) in paragraph at lines 185--186
  []
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 185--186
-\T1/aer/m/n/10 dif-fer-en-ti-a-tion com-plex genes and el-e-vated Th2 and
+Underfull \hbox (badness 2951) in paragraph at lines 185--186
+\T1/aer/m/n/10 claudins, lori-crin (LOR), in-volu-crin (IVL), SPINK5,
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 185--186
+\T1/aer/m/n/10 demon-strated AD is as-so-ci-ated with de-creased gene
  []
 
 
@@ -647,33 +652,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
-
-LaTeX Warning: Citation `MAARS' on page 1 undefined on input line 193.
-
-
-LaTeX Warning: Citation `maaten2008visualizing-friedman2001elements' on page 1 
-undefined on input line 204.
-
 [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 3861) in paragraph at lines 210--211
- \T1/aer/m/it/10 2.3.1) Dif-fer-en-tial Gene Ex-pres-sion Anal-y-sis: [][] \T1/
-aer/m/n/10 The
- []
-
-
-Underfull \hbox (badness 2698) in paragraph at lines 210--211
-\T1/aer/m/n/10 over-ar-ch-ing goal of the sta-tis-ti-cal anal-y-sis was the
- []
-
-
-Underfull \hbox (badness 2799) in paragraph at lines 210--211
-\T1/aer/m/n/10 de-ter-mine the rel-e-vant genes from a tran-scrip-tomic
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
@@ -685,31 +667,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 226--227
-\T1/aer/m/n/10 where ob-tained $\OML/cmm/m/it/10 p$\T1/aer/m/n/10 -values were 
-ad-justed us-ing the
- []
-
-
-Underfull \hbox (badness 6348) in paragraph at lines 226--227
-\T1/aer/m/n/10 Benjamini-Hochberg pro-ce-dure to re-duce the er-ror
- []
-
-
-Underfull \hbox (badness 1728) in paragraph at lines 226--227
-\T1/aer/m/n/10 in false dis-cov-ery rate prone to be in-flated due to
- []
-
-
-Underfull \hbox (badness 4518) in paragraph at lines 226--227
-\T1/aer/m/n/10 per-form-ing mul-ti-ple par-al-lel sta-tis-ti-cal tests [1]. A
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
-<../exploratory-data-analysis/pca-plot.png, id=15, 635.37375pt x 495.8525pt>
+<../exploratory-data-analysis/pca-plot.png, id=14, 635.37375pt x 495.8525pt>
 File: ../exploratory-data-analysis/pca-plot.png Graphic file (type png)
 <use ../exploratory-data-analysis/pca-plot.png>
 Package pdftex.def Info: ../exploratory-data-analysis/pca-plot.png  used on inp
@@ -720,128 +681,199 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 238--244
  []$ 
  []
 
+
+Underfull \hbox (badness 3919) in paragraph at lines 248--249
+[]\T1/aer/m/n/10 The hor-i-zon-tal axis rep-re-sents the first prin-ci-ple
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+<scree-plot.png, id=16, 753.81625pt x 590.205pt>
+File: scree-plot.png Graphic file (type png)
+<use scree-plot.png>
+Package pdftex.def Info: scree-plot.png  used on input line 254.
+(pdftex.def)             Requested size: 258.0pt x 201.9999pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 252--258
+ []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 263--264
+[]\T1/aer/m/n/10 A MA plot dis-aplyed in 3[] was used to vi-su-ally
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
 [2 <../exploratory-data-analysis/pca-plot.png>]
 <../analysis/MA-plot-AD-paired-design.png, id=27, 516.42938pt x 398.99063pt>
 File: ../analysis/MA-plot-AD-paired-design.png Graphic file (type png)
 <use ../analysis/MA-plot-AD-paired-design.png>
 Package pdftex.def Info: ../analysis/MA-plot-AD-paired-design.png  used on inpu
-t line 262.
+t line 269.
 (pdftex.def)             Requested size: 258.0pt x 199.33653pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 260--265
+Overfull \hbox (6.0pt too wide) in paragraph at lines 267--272
  []$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
-
  []
 
 <gsan-charts.png, id=28, 389.455pt x 466.74374pt>
 File: gsan-charts.png Graphic file (type png)
 <use gsan-charts.png>
-Package pdftex.def Info: gsan-charts.png  used on input line 276.
-(pdftex.def)             Requested size: 206.40079pt x 247.35875pt.
-<synthetic-annotation.png, id=29, 1225.57875pt x 429.605pt>
-File: synthetic-annotation.png Graphic file (type png)
-<use synthetic-annotation.png>
-Package pdftex.def Info: synthetic-annotation.png  used on input line 288.
-(pdftex.def)             Requested size: 516.0pt x 180.87206pt.
-<gene-ontology.png, id=30, 513.92pt x 252.945pt>
+Package pdftex.def Info: gsan-charts.png  used on input line 275.
+(pdftex.def)             Requested size: 193.5pt x 231.89705pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 273--278
+ []$[]$ 
+ []
+
+<gene-ontology.png, id=29, 513.92pt x 252.945pt>
 File: gene-ontology.png Graphic file (type png)
 <use gene-ontology.png>
-Package pdftex.def Info: gene-ontology.png  used on input line 300.
+Package pdftex.def Info: gene-ontology.png  used on input line 281.
 (pdftex.def)             Requested size: 258.0pt x 126.98552pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
-[]\T1/aer/m/n/10 Differential gene ex-pres-sion anal-y-sis helps in
+Overfull \hbox (6.0pt too wide) in paragraph at lines 279--285
+ []$[]$ 
  []
 
+<synthetic-annotation.png, id=30, 1225.57875pt x 429.605pt>
+File: synthetic-annotation.png Graphic file (type png)
+<use synthetic-annotation.png>
+Package pdftex.def Info: synthetic-annotation.png  used on input line 290.
+(pdftex.def)             Requested size: 438.60315pt x 153.73994pt.
 
-Underfull \hbox (badness 2134) in paragraph at lines 312--313
-\T1/aer/m/n/10 much vari-a-tion in tran-scrip-tomic ex-pres-sion be-tween
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
 
-Underfull \hbox (badness 2547) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
+
+[3 <./scree-plot.png> <../analysis/MA-plot-AD-paired-design.png (PNG copy)> <./
+gsan-charts.png (PNG copy)> <./gene-ontology.png>]
+Underfull \hbox (badness 3861) in paragraph at lines 303--304
+\T1/aer/m/n/10 cat-e-gories from le-sional AD sam-ples in-clude ser-ine
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+\T1/aer/m/n/10 en-dopep-ti-dase ac-tiv-ity, pro-tein metabolic pro-cess,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 310--311
+\T1/aer/m/n/10 all atopic der-mati-tis sam-ples and com-pared le-sional
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 310--311
+\T1/aer/m/n/10 tran-scrip-tomic ex-pres-sion be-tween le-sional and non-
+ []
+
+
+Underfull \hbox (badness 4995) in paragraph at lines 310--311
+\T1/aer/m/n/10 prin-ci-pal com-po-nents. How-ever, as dis-played in 1[],
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 310--311
+\T1/aer/m/n/10 PCA demon-strates that the ge-netic data at hand
+ []
+
+
+Underfull \hbox (badness 3209) in paragraph at lines 310--311
+\T1/aer/m/n/10 war-rants fur-ther in-vesta-ga-tion as le-sional and non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 320--321
 \T1/aer/m/n/10 u-lates ker-atinocyte dif-fer-en-ti-a-tion. Al-ter-ations in
  []
 
-[3 <../analysis/MA-plot-AD-paired-design.png (PNG copy)>] [4 <./gsan-charts.png
- (PNG copy)> <./synthetic-annotation.png (PNG copy)> <./gene-ontology.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
 
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 329--330
 \T1/aer/m/n/10 Ad-di-tion-ally, the sam-ple groups in this study were
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+[4 <./synthetic-annotation.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
-
- []
-
-(./version-1.bbl
-Underfull \hbox (badness 1721) in paragraph at lines 43--48
-\T1/aer/m/n/8 Xavier Glo-rot, Matthew Botvinick, Shakir Mo-hamed, and
- []
-
-) [5] (./version-1.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./version-1.bbl) [5] (./version-1.aux) ) 
 Here is how much of TeX's memory you used:
- 6324 strings out of 492649
- 94525 string characters out of 6129622
- 167560 words of memory out of 5000000
- 10033 multiletter control sequences out of 15000+600000
- 113527 words of font info for 162 fonts, out of 8000000 for 9000
+ 6335 strings out of 492649
+ 94744 string characters out of 6129622
+ 167588 words of memory out of 5000000
+ 10047 multiletter control sequences out of 15000+600000
+ 112197 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,18n,39p,1399b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
-al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on version-1.pdf (5 pages, 398276 bytes).
+ 41i,18n,39p,1399b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmtt10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/latxfont/line10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb>
+Output written on version-1.pdf (5 pages, 412916 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 35 words of extra memory for PDF output out of 10000 (max. 10000000)
 

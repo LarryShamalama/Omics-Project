@@ -189,7 +189,7 @@ This study attempts to examine the degree of dissimilarity between the transcrip
 
 \subsection{Data Source}
 
-The data at hand comes from the Microbes in Allergy and Autoimmunity Related to the Skin (MAARS). The purpose of this multidisciplinary research consortium is to better understand the characteristics surrounding two major chronic inflammatory skin diseases: atopic dermatitis and psoriasis\cite{MAARS}. In the MAARS study, these two illnesses are investigated from different scientific perspectives and one of the research directions involved exploring the transcriptomic data of lesional and non-lesional samples in patients with atopic dermatitis, psoriasis (PSO) and neither of the two studied skin diseases. 
+The data at hand comes from the Microbes in Allergy and Autoimmunity Related to the Skin (MAARS). The purpose of this multidisciplinary research consortium is to better understand the characteristics surrounding two major chronic inflammatory skin diseases: atopic dermatitis and psoriasis\cite{MAARS}. In the MAARS study, these two illnesses are investigated from different scientific perspectives and one of the research directions involved exploring the transcriptomic data of lesional and non-lesional samples in patients with atopic dermatitis, psoriasis (PSO) and neither of the two studied skin diseases.
 
 % the relationship between the host and its microbiome 
 
@@ -200,11 +200,11 @@ Demographic data for all patients were available alongside their known allergies
 
 \subsection{Exploratory Data Analysis}
 
-Exploratory data analysis was conducted to better understand the data at hand from a data-driven perspective. To this end, an MA diagram was plotted alongside several clustering methods which were used to help depict possible underlying patterns from the MAARS transcriptomic data: principal component analysis (PCA) and hierarchical clustering\cite{maaten2008visualizing, friedman2001elements}. In statistical machine learning, clustering techniques falls under unsupervised learning, which is a paradigm that attempts to perform inference on data without response variables or ``labels" \cite{friedman2001elements}. In the recent years, this area of machine learning has gathered much attention from researchers; data separability without the use of labels is known as disentangling in the autoencoder literature\cite{higgins2017beta}\cite{burgess2018understanding}. Here, the sample labels are the lesional status of the skin sample and the primary purpose of performing such unsupervised analyses was to visually assess the separability of the samples using their transcriptomic information.
+Exploratory data analysis was conducted to better understand the data at hand from a data-driven perspective. To this end, an MA diagram was plotted alongside several clustering methods which were used to help depict possible underlying patterns from the MAARS transcriptomic data: principal component analysis (PCA) and hierarchical clustering\cite{maaten2008visualizing, friedman2001elements}. In statistical machine learning, clustering techniques falls under unsupervised learning, which is a paradigm that attempts to perform inference on data without response variables or ``labels" \cite{friedman2001elements}. Here, the sample labels are the lesional status of the skin sample and the primary purpose of performing such unsupervised analyses was to visually assess the separability of the samples using their transcriptomic information.
 
 \subsection{Statistical Analysis}
 
-\subsubsection{Differential Gene Expression Analysis}
+%\subsubsection{Differential Gene Expression Analysis}
 
 The overarching goal of the statistical analysis was the determine the relevant genes from a transcriptomic datatset that are predictive of AD. The analysis plan was performed two-fold; the identification of genes highly associated with AD was first performed using differential gene expression analysis within a multiple hypothesis testing framework. The transcriptomic data was available as a continuous variable since the microarray data has been normalized.\\
 
@@ -222,9 +222,9 @@ Originally developped for two-color microarray experiments, it is now commonplac
   H_1:\qquad \beta_{1j} \,\big\vert\, \sigma^2_j &\,\,\cancel{\sim}\,\, \mathcal{N}\left(0, \sigma^2_j\right)
 \end{align*}
 
-\noindent where the $p$-values were obtained using the rank of each gene's $t$-statistics as described by G. Smyth and were adjusted using the Benjamini-Hochberg procedure to reduce the error in false discovery rate prone to be inflated due to performing multiple parallel statistical tests\cite{smyth2004linear, benjamini2010discovering}. A significance level of $0.05$ was used in determining the genes highly associated with the outcome of interest, the lesional status of sequenced samples; a volcano plot was used to highlight potential significant genes.\\
+\noindent where the $p$-values were obtained using the rank of each gene's $t$-statistics as described by G. Smyth and were adjusted using the Benjamini-Hochberg procedure to reduce the error in false discovery rate prone to be inflated due to performing multiple parallel statistical tests\cite{smyth2004linear, benjamini2010discovering}. A significance level of $0.05$ was used in determining the genes highly associated with the outcome of interest, the lesional status of sequenced samples; an MA plot was used to visually quantify the amount of potentially significant genes.\\
 
-A ensemble learning prediction model was then implemented to assess predictability of sample lesional status; this binary model was chosen due to its strengths in obtaining better predictions as it weights multiple models according to how well each perform on this specific task\cite{friedman2001elements}. MENTION VARIABLE SELECTION. The receiving operating characteristic (ROC) curve is often used to evaluate data-driven binary prediction models and the area under this curve (AUROC) was used here to quantify the goodness of the prediction model\cite{hanley1982meaning}. Internal validation was performed using leave-one-out cross-validation method whereby the AUROC was evaluated at every iteration\cite{efron1994introduction}. %An additional sensitivity analysis of the prediction model was conducted via bootstrap resampling whereby a thousand samples of the data were sampled without replacement to create an empirical $95\%$ confidence interval for the overall AUROC\cite{efron1994introduction}.
+An ensemble learning prediction model was then implemented to assess predictability of sample lesional status; this binary model was chosen due to its strengths in obtaining better predictions as it weights multiple models according to how well each perform on this specific task\cite{friedman2001elements}. MENTION VARIABLE SELECTION. The receiving operating characteristic (ROC) curve is often used to evaluate data-driven binary prediction models and the area under this curve (AUROC) was used here to quantify the goodness of the prediction model\cite{hanley1982meaning}. Internal validation was performed using leave-one-out cross-validation method whereby the AUROC was evaluated at every iteration\cite{efron1994introduction}. %An additional sensitivity analysis of the prediction model was conducted via bootstrap resampling whereby a thousand samples of the data were sampled without replacement to create an empirical $95\%$ confidence interval for the overall AUROC\cite{efron1994introduction}.
 
 %This goodness of fit metric was used on ensemble learning model \cite{efron1994introduction}\\
 
@@ -237,63 +237,44 @@ In Fig. \ref{fig:pca}, a simple 2D visualization of the results obtained from PC
     \begin{minipage}{0.5 \textwidth}
       \centering
       \includegraphics[width=\textwidth]{../exploratory-data-analysis/pca-plot.png}
-      \caption{testing}
+      \caption{2D representation of samples using the two first principle components obtained by PCA.}
       \label{fig:pca}
     \end{minipage}
   \end{center}
 \end{figure}
 
 
-The horizontal axis represents the first component obtained through PCA and the vertical axis the second; they respectively explain $8.78\%$ and $6.02\%$ of the variance in the transcriptomic data.
+The horizontal axis represents the first principle component (PC) obtained through PCA and the vertical axis the second; they respectively explain $8.78\%$ and $6.02\%$ of the variance in the transcriptomic data. The Scree plot available in Fig. \ref{fig:scree-plot} is another method of visualizing the amount of variation explained in each constructed PC. While the one of the primary purposes of this plot would help determine the moderate number of PC dimensions needed to explain the a majority of the variation, this plot can also illustrate the decreasing trend of explained variance across constructed PCs.\\%, the scree plot would have a steep curve, followed by a sharp bend, and then a line that straightens out.\\
 
-A Differential Gene Analysis (DGE) was conducted using a linear model for paired data. The results indicated $81$ genes that differed significantly between the lesioned and non-lesioned skin samples: $65$ that are up-regulated and $16$ that down-regulated. A heatmap illustrating the normalized gene expression levels is displayed below.
+\begin{figure}[!htp]
+    \begin{center}
+    \begin{minipage}{0.5 \textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{scree-plot.png}
+      \caption{Percentage of variation explained by the first 10 principle components obtained by PCA.}
+      \label{fig:scree-plot}
+    \end{minipage}
+  \end{center}
+\end{figure}
 
-\textit{insert heatmap here}
+A Differential Gene Analysis (DGE) was conducted using a linear model for paired data. The results indicated $81$ genes that differed significantly between the lesioned and non-lesioned skin samples: $65$ that are up-regulated and $16$ that down-regulated.\\% A heatmap illustrating the normalized gene expression levels is displayed below.
 
-talk about clustering methods
-
-An MA plot was used to visually represent the genes and determine which are up- and down-regulated. In the plot, each dot represents a gene. The x-axis is the average expression of the gene over the mean of normalized counts; the y-axis is the log2 fold change between the lesional statuses. The MA plot below indicates some genes that are up-regulated and fewer that are down-regulated. 
+A MA plot disaplyed in \ref{fig:MA} was used to visually represent the genes and determine which are up- and down-regulated. In the plot, each dot represents a gene. The x-axis is the average expression of the gene over the mean of normalized counts; the y-axis is the log2 fold change between the lesional statuses. The MA plot below indicates some genes that are up-regulated and fewer that are down-regulated.\\
 
 \begin{figure}[!htp]
   \begin{center}
     \begin{minipage}{0.5 \textwidth}
       \centering
       \includegraphics[width=\textwidth]{../analysis/MA-plot-AD-paired-design.png}
-      \label{MA}
-    \end{minipage}
-  \end{center}
-\end{figure}
-
-Additionally, an sPLS analysis was conducted to identify genes that can ``best explain" the variability in the lesional status of the sequenced samples. Information regarding the ten first components were retained whereby a different number of genes was selected for each component; the number of variables selected was determined using a 5-fold cross-validation method. This analysis resulted in the identification of 32 genes, 7 of which were found to be common in the two conducted analyses: DGE and sPLS. Genes KRT16, PRSS27, S100A9, S100A12, PI3, GJB2, ARK1B10 were found common in both analyses. Gene annotations using GSAn (Gene Set Annotation) CITATION, which includes a search on the Gene Ontology Database (GOA) as well, were performed for the seven genes that were identified as significant in both the DGE and the sPLS analyses. Using both the gene identifiers and their synonyms, GSAn retained 19 terms, covering 13 out of 16 genes and 6 of them are synthetic terms.\\
-
-Figure \ref{fig:gsan-chart} provides information about the annotated genes within (GOA), the genes covered by GSAn, and the group-wise similarity between them. The first gauge shows excellent gene coverage of $100\%$ within the GOA file. The second gauge shows that $81\%$ of the genes were covered with the GSAn analysis. The third gauge shows that $44\%$ of the genes share a term in both datasets. \\
-
-\begin{figure*}[!htp]
-  \begin{center}
+      \caption{MA plot for visualization of upregulated and downregulated genes.}
+      \label{fig:MA}
+    \end{minipage}\\
     \begin{minipage}{0.5 \textwidth}
       \centering
-      \includegraphics[width=0.8\textwidth]{gsan-charts.png}
+      \includegraphics[width=0.75\textwidth]{gsan-charts.png}
       \caption{Descriptive statistics of results obtained with GSAn on the 7 genes of interest.}
       \label{fig:gsan-chart}
-    \end{minipage}
-  \end{center}
-\end{figure*}
-
-
-Figure \ref{fig:synthetic-annotation} displays the information content and the gene coverage of the synthetic terms. Functional annotation categories from lesional AD samples include serine endopeptidase activity, protein metabolic process, antimicrobial humoral response, cytoskeleton and toll-like receptor binding.
-
-\begin{figure*} %occupies two columns
-  \centering
-  \includegraphics[width=\textwidth]{synthetic-annotation.png}
-  \caption{Summary statistics of information and role of the genes of interest.}
-  \label{fig:synthetic-annotation}
-\end{figure*}
-
-
-Figure \ref{fig:gene-ontology} provides more detailed information about the representative terms. Further exploration of the tree will provide additional information on the terms sharing the same informative ancestor or the genes annotated by more than one term. Using this information, information can be obtained on the biological role of these genes in the occurrence of lesional AD.
-
-\begin{figure*}[!htp]
-  \begin{center}
+    \end{minipage}\\
     \begin{minipage}{0.5 \textwidth}
       \centering
       \includegraphics[width=\textwidth]{gene-ontology.png}
@@ -301,33 +282,50 @@ Figure \ref{fig:gene-ontology} provides more detailed information about the repr
       \label{fig:gene-ontology}
     \end{minipage}
   \end{center}
+\end{figure}
+
+\begin{figure*} %occupies two columns
+  \centering
+  \includegraphics[width=0.85\textwidth]{synthetic-annotation.png}
+  \caption{Summary statistics of information and role of the genes of interest.}
+  \label{fig:synthetic-annotation}
 \end{figure*}
 
 
+Additionally, an sPLS analysis was conducted to identify genes that can ``best explain" the variability in the lesional status of the sequenced samples. Information regarding the ten first components were retained whereby a different number of genes was selected for each component; the number of variables selected was determined using a 5-fold cross-validation method. This analysis resulted in the identification of 32 genes, 7 of which were found to be common in the two conducted analyses: DGE and sPLS. Genes KRT16, PRSS27, S100A9, S100A12, PI3, GJB2, ARK1B10 were found common in both analyses. Gene annotations using GSAn (Gene Set Annotation) CITATION, which includes a search on the Gene Ontology Database (GOA) as well, were performed for the seven genes that were identified as significant in both the DGE and the sPLS analyses. Using both the gene identifiers and their synonyms, GSAn retained 19 terms, covering 13 out of 16 genes and 6 of them are synthetic terms.\\
+
+Figure \ref{fig:gsan-chart} provides information about the annotated genes within (GOA), the genes covered by GSAn, and the group-wise similarity between them. The first gauge shows excellent gene coverage of $100\%$ within the GOA file. The second gauge shows that $81\%$ of the genes were covered with the GSAn analysis. The third gauge shows that $44\%$ of the genes share a term in both datasets.\\
+
+
+Figure \ref{fig:gene-ontology} provides more detailed information about the representative terms. Further exploration of the tree will provide additional information on the terms sharing the same informative ancestor or the genes annotated by more than one term. Using this information, information can be obtained on the biological role of these genes in the occurrence of lesional AD.\\
+
+Figure \ref{fig:synthetic-annotation} displays the information content and the gene coverage of the synthetic terms. Functional annotation categories from lesional AD samples include serine endopeptidase activity, protein metabolic process, antimicrobial humoral response, cytoskeleton and toll-like receptor binding.\\
+
 %The results between the DGE and sPLS analysis were compared and seven genes were found to be common in both analyses.  
+
 
 \section{Discussion}
 
-Differential gene expression analysis helps in understanding the patterns of expressed genes in the diseased population which can be used as biomarkers to differentiate the diseased from the controls. The current analysis considered all atopic dermatitis samples and compared lesional and non-lesional subtypes from the same patients. The current analysis was unable to detect much variation in transcriptomic expression between lesional and non-lesional AD skin samples. While some differentiation was identified (up to $25\%$ of the variation explained by five principal components), lesional state does not account for much of the differences in the samples.\\
+Differential gene expression analysis helped understand the patterns of expressed genes in the diseased samples which can be used as biomarkers to differentiate them from the control samples. The current analysis considered all atopic dermatitis samples and compared lesional and non-lesional subtypes from the same patients. The current analysis was able to detect much variation in transcriptomic expression between lesional and non-lesional AD skin samples: up to $25\%$ of the variation in the transcriptomic data can be explained by five principal components. However, as displayed in \ref{fig:pca}, PCA demonstrates that the genetic data at hand warrants further investagation as lesional and non-lesional samples visually appears to form two separate groups. Moreoever, in PCA, aach eigenvector defines a principal component and their corresponding eigenvalue is proportional to its explained variance. The eigenvectors with large eigenvalues are the ones that exhibits the most information; the two first components explain $14.8\%$ of the variance in the transcriptomic data.\\%lesional state does not account for much of the differences in the samples.\\
 
-Unsupervised analysis like PCA and Dendrogram	 were used for data exploration. Principal Components Analysis (PCA) is a statistical technique used to explore data during microarray analysis. It is performed to reduce the dimensionality of data by transforming the correlated variables into a smaller number of uncorrelated variables called components. PCA can determine the key variables in the data that best explain the differences in the observations. The matrix of the data used shows rows as samples (individuals) and columns as genes (variables). Each eigenvector defines a principal component and their corresponding eigenvalue is proportional to its explained variance. It is the variance of the component over all the genes. The eigenvectors with large eigenvalues are the ones that contain most of the information. In our study PC1 and PC2 have an eigenvalue of approximately 2856 and 1965 and it contains the highest variance and information about the genes.\\
+%Unsupervised analysis like PCA and Dendrogram	were used for data exploration. Principal Components Analysis (PCA) is a statistical technique used to explore data during microarray analysis. It is performed to reduce the dimensionality of data by transforming the correlated variables into a smaller number of uncorrelated variables called components. PCA can determine the key variables in the data that best explain the differences in the observations. The matrix of the data used shows rows as samples (individuals) and columns as genes (variables). Each eigenvector defines a principal component and their corresponding eigenvalue is proportional to its explained variance. It is the variance of the component over all the genes. The eigenvectors with large eigenvalues are the ones that exhibits the most information. In our study PC1 and PC2 have an eigenvalue of approximately 2856 and 1965 and it contains the highest variance and information about the genes.\\
 
 The set of seven genes that were identified in both the DGE and sPLS processes were used for gene annotation. The functional annotation of these seven genes shows their roles in inflammatory process (S100A9/A12), lipid metabolism (AKR1B10, AKR1B11) and skin barrier pathways (KRT16 , PRSS27, GJB2, PI3).
 
 \begin{itemize}
-  \item KRT16 gene regulates innate immunity by producing signals in response to any epidermal barrier breach and mutations in this gene contributes to the initiation and exacerbation of AD.
-  \item Peptidase Inhibitor 3 (PI3) is an antimicrobial peptide and prevents elastase-mediated tissue proteolysis. It is increased during the onset of AD.
-  \item Gap Junction Protein Beta 2(GJB2) expression increases the number of keratinocytes and causes thickness of epidermis which is observed in AD patients.
-Alto-keto reductase (AKR1B10 and AKR1B11) regulates keratinocyte differentiation. Alterations in AKR1B10 expression is seen in atopic dermatitis.
-  \item Expression of S100A9 causes abnormal differentiation and hyper proliferation of the epidermal cells; the upregulation of this gene can occur due to stress and certain drugs.
-  \item S100A12 is known to exert antimicrobial activity and the skin barrier genes involved in AD enhances the expression of S100A12 by prevents it from exerting its activity.
+  \item KRT16 gene regulates innate immunity by producing signals in response to any epidermal barrier breach and mutations in this gene contributes to the initiation and exacerbation of AD\cite{meyer2012epidermal, hello2016atopic}.
+  \item Peptidase Inhibitor 3 (PI3) is an antimicrobial peptide and prevents elastase-mediated tissue proteolysis. It is increased during the onset of AD\cite{mansouri2015immune}.
+  \item Gap Junction Protein Beta 2(GJB2) expression increases the number of keratinocytes and causes thickness of epidermis which is observed in AD patients\cite{suriyaphol2014association}.
+  \item Alto-keto reductase (AKR1B10 and AKR1B11) regulates keratinocyte differentiation. Alterations in AKR1B10 expression is seen in atopic dermatitis\cite{ghosh2015multiple, gao2017combined}.
+  \item Expression of S100A9 causes abnormal differentiation and hyper proliferation of the epidermal cells; the upregulation of this gene can occur due to stress and certain drugs\cite{kerkhoff2012novel}.
+  \item S100A12 is known to exert antimicrobial activity and the skin barrier genes involved in AD enhances the expression of S100A12 by prevents it from exerting its activity\cite{mikus2019antimicrobial}.\\
 \end{itemize}
 
 \subsection{Strengths and Limitations}
 
 The current study successfully answered the research question and accepts the null hypothesis that there is no indication of genetic differentiation between lesional and non-lesional skin samples obtained from individuals with atopic dermatitis. One strength of the study is that all of the genes identified in the analysis were found in previous literature to play an important role in pathogenesis of AD.\\
 
-Therefore, our results are consistent with previous findings.  A second strength is that the study used two types of analysis to determine the final list of genes. Additionally, the sample groups in this study were different from each other and showed no correlation. A high number of upregulated genes in DGE analysis were identified.\\
+Therefore, our results are consistent with previous findings. A second strength is that the study used two types of analysis to determine the final list of genes. Additionally, the sample groups in this study were different from each other and showed no correlation. A high number of upregulated genes in DGE analysis were identified.\\
 
 One limitation of the study is that the data provided does not include people of multiple races or age groups which may affect the findings of the studay. lesional and non-lesional. Also, a review of relevant literature shows that the FLG gene is a common cause of AD yet this gene did not appear in the results. Perhaps this gene is found in both lesional and non-lesional samples of individuals with AD and that is why it did not appear in the current analyses. More research is required to fully investigate.\\
 
@@ -340,9 +338,9 @@ The current study did not find substantial evidence to conclude that the genetic
 
 The lack of findings in the current study can lead to research questions that may be of more interest. For example, future research may want to focus on the genetic differences of atopic dermatitis as related to race, age, and allergies.
 \begin{itemize}
-  \item Race: The literature suggests that there is evidence that Black individuals may be more prone to eczema than individuals of other races, while at the same time less likely to be treated for the condition. The racial makeup (nearly $90\%$ White) of the sample provided for analysis does not permit genetic comparisons among the races.
-  \item  AD often changes over time; either improving or worsening as the individual ages. Therefore, it would be of interest to determine how the genetic structure changes over time in individuals and how those changes impact the progression of the condition.
-  \item Allergies:  A substantial portion of the sample provided has allergies to various substances, including pollen ($48.2\%$), food ($37.8\%$), and animals ($33.6\%$). This information may be of importance since people with AD are more likely to develop hay fever and are advised to avoid allergens in an effort to prevent a flare-up of symptoms. Although not the topic of the current paper, investigating the differential gene expression of AD patients with and without various allergies may be of interest.
+  \item Race: The literature suggests that there is evidence that Black individuals may be more prone to eczema than individuals of other races, while at the same time less likely to be treated for the condition. The racial makeup (nearly $90\%$ White) of the sample provided for analysis does not permit genetic comparisons among the races\cite{Eczema, fischer2017racial}.
+  \item AD often changes over time; either improving or worsening as the individual ages. Therefore, it would be of interest to determine how the genetic structure changes over time in individuals and how those changes impact the progression of the condition.
+  \item Allergies:  A substantial portion of the sample provided has allergies to various substances, including pollen ($48.2\%$), food ($37.8\%$), and animals ($33.6\%$). This information may be of importance since people with AD are more likely to develop hay fever and are advised to avoid allergens in an effort to prevent a flare-up of symptoms. Although not the topic of the current paper, investigating the differential gene expression of AD patients with and without various allergies may be of interest\cite{whatstoknow}.
 \end{itemize}
 
 Further research using a more diverse sample of patients is needed to understand the genetic transgression from healthy to disease state in AD. 

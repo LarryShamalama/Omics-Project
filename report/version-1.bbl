@@ -1,5 +1,15 @@
 \begin{thebibliography}{10}
 
+\bibitem{Eczema}
+Eczema in skin of color: What you need to know.
+\newblock \url{https://nationaleczema.org/eczema-in-skin-of-color/}.
+\newblock Accessed: 2019-11-03.
+
+\bibitem{MAARS}
+Microbes in allergy and autoimmunity related to the skin.
+\newblock \url{https://www.maars.eu/}.
+\newblock Accessed: 2019-11-03.
+
 \bibitem{benjamini2010discovering}
 Yoav Benjamini.
 \newblock Discovering the false discovery rate.
@@ -11,21 +21,37 @@ Lianghua Bin and Donald~YM Leung.
 \newblock Genetic and epigenetic studies of atopic dermatitis.
 \newblock {\em Allergy, Asthma \& Clinical Immunology}, 12(1):52, 2016.
 
-\bibitem{burgess2018understanding}
-Christopher~P Burgess, Irina Higgins, Arka Pal, Loic Matthey, Nick Watters,
-  Guillaume Desjardins, and Alexander Lerchner.
-\newblock Understanding disentangling in $\beta$-vae.
-\newblock {\em arXiv preprint arXiv:1804.03599}, 2018.
-
 \bibitem{efron1994introduction}
 Bradley Efron and Robert~J Tibshirani.
 \newblock {\em An introduction to the bootstrap}.
 \newblock CRC press, 1994.
 
+\bibitem{fischer2017racial}
+Alexander~H Fischer, Daniel~B Shin, David~J Margolis, and Junko Takeshita.
+\newblock Racial and ethnic differences in health care utilization for
+  childhood eczema: An analysis of the 2001-2013 medical expenditure panel
+  surveys.
+\newblock {\em Journal of the American Academy of Dermatology},
+  77(6):1060--1067, 2017.
+
 \bibitem{friedman2001elements}
 Jerome Friedman, Trevor Hastie, and Robert Tibshirani.
 \newblock {\em The elements of statistical learning}, volume~1.
 \newblock Springer series in statistics New York, 2001.
+
+\bibitem{gao2017combined}
+Yunlu Gao, Xuemei Yi, and Yangfeng Ding.
+\newblock Combined transcriptomic analysis revealed akr1b10 played an important
+  role in psoriasis through the dysregulated lipid pathway and
+  overproliferation of keratinocyte.
+\newblock {\em BioMed research international}, 2017, 2017.
+
+\bibitem{ghosh2015multiple}
+Debajyoti Ghosh, Lili Ding, Umasundari Sivaprasad, Esmond Geh, Jocelyn~Biagini
+  Myers, Jonathan~A Bernstein, Gurjit K~Khurana Hershey, and Tesfaye~B Mersha.
+\newblock Multiple transcriptome data analysis reveals biologically relevant
+  atopic dermatitis signature genes and pathways.
+\newblock {\em PLoS One}, 10(12):e0144316, 2015.
 
 \bibitem{guttman2017atopic}
 Emma Guttman-Yassky, Andrea Waldman, Jusleen Ahluwalia, Peck~Y Ong, and
@@ -39,12 +65,46 @@ James~A Hanley and Barbara~J McNeil.
   characteristic (roc) curve.
 \newblock {\em Radiology}, 143(1):29--36, 1982.
 
-\bibitem{higgins2017beta}
-Irina Higgins, Loic Matthey, Arka Pal, Christopher Burgess, Xavier Glorot,
-  Matthew Botvinick, Shakir Mohamed, and Alexander Lerchner.
-\newblock beta-vae: Learning basic visual concepts with a constrained
-  variational framework.
-\newblock {\em ICLR}, 2(5):6, 2017.
+\bibitem{hello2016atopic}
+M~Hello, H~Aubert, C~Bernier, A~N{\'e}el, and S~Barbarot.
+\newblock Atopic dermatitis of the adult.
+\newblock {\em La Revue de medecine interne}, 37(2):91--99, 2016.
+
+\bibitem{kerkhoff2012novel}
+Claus Kerkhoff, Andreas Voss, Thomas~E Scholzen, Michelle~M Averill, Kurt~S
+  Z{\"a}nker, and Karin~E Bornfeldt.
+\newblock Novel insights into the role of s 100 a 8/a 9 in skin biology.
+\newblock {\em Experimental dermatology}, 21(11):822--826, 2012.
+
+\bibitem{maaten2008visualizing}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using t-sne.
+\newblock {\em Journal of machine learning research}, 9(Nov):2579--2605, 2008.
+
+\bibitem{mansouri2015immune}
+Yasaman Mansouri and Emma Guttman-Yassky.
+\newblock Immune pathways in atopic dermatitis, and definition of biomarkers
+  through broad and targeted therapeutics.
+\newblock {\em Journal of clinical medicine}, 4(5):858--873, 2015.
+
+\bibitem{whatstoknow}
+James McIntosh.
+\newblock What’s to know about eczema?
+\newblock \url{https://www.medicalnewstoday.com/articles/14417.php}.
+\newblock Accessed: 2019-11-03.
+
+\bibitem{meyer2012epidermal}
+Ulf Meyer-Hoffert.
+\newblock Epidermal serine proteases and their inhibitors in atopic dermatitis.
+\newblock In {\em Atopic Dermatitis-Disease Etiology and Clinical Management}.
+  IntechOpen, 2012.
+
+\bibitem{mikus2019antimicrobial}
+Maria Mikus, Catharina Johansson, Nathalie Acevedo, Peter Nilsson, and Annika
+  Scheynius.
+\newblock The antimicrobial protein s100a12 identified as a potential
+  autoantigen in a subgroup of atopic dermatitis patients.
+\newblock {\em Clinical and translational allergy}, 9(1):6, 2019.
 
 \bibitem{nutten2015atopic}
 Sophie Nutten.
@@ -61,5 +121,11 @@ Gordon Smyth.
 \newblock Linear models and empirical bayes methods for assessing differential
   expression in microarray experiments.
 \newblock {\em Stat. Appl. Genet. Mol. Biol.}, 1.
+
+\bibitem{suriyaphol2014association}
+Gunnaporn Suriyaphol, Sirin Theerawatanasirikul, and Piyarat Chansiripornchai.
+\newblock Association of gap junction beta 2 and transglutaminase 1 gene
+  expression with canine atopic dermatitis.
+\newblock {\em The Thai Journal of Veterinary Medicine}, 44(3):279--285, 2014.
 
 \end{thebibliography}
