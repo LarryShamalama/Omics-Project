@@ -105,6 +105,19 @@ p_allergies<-allergies[ ,2:3]
 colnames(p_allergies)[colnames(p_allergies)=="True"]<- "Freq"
 p_allergies %>% kable(caption = "Allergies") %>% kable_styling(bootstrap_options = "striped", full_width = F)
 
+# bar chart of allergies
+ggplot2::ggplot(data=p_allergies, aes(x=rownames()))+
+  geom_histogram()+
+  theme_minimal()+
+  xlab("Age")+
+  ylab("Number of Participants")+
+  ggtitle("Age of Participants with AD")
+
+p_allergies$Type.of.Allergy<-rownames(p_allergies)
+plot<- ggplot(data=p_allergies, aes(x = Type.of.Allergy, y=Percent)) +
+       geom_bar(stat="identity")
+plot 
+
 # number/percent of AD patients taking each type of medication
 meds<- (mtabulate(undup_AD[grep('Medication',names(undup_AD), value=T)]))
 meds$Percent<- meds[,2]/meds[,1]+meds[,2]
