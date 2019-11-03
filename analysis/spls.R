@@ -61,14 +61,14 @@ samples$lesional_new[samples$lesional=="NON_LES"]<- 0
 n_components <- 10
 list.keepX <- c(2:10, 15, 20)
 
-set.seed(8)
+set.seed(1)
 
 tune.Mfold <- tune.spls(X=transcriptome,
                         Y=samples$lesional_new,
                         ncomp=n_components,
                         test.keepX=list.keepX,
                         validation = "Mfold",
-                        folds=5, # initially 10
+                        folds=10, # initially 10
                         measure = "MSE",
                         progressBar = TRUE)
 

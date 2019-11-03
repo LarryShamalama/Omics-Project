@@ -56,6 +56,50 @@ plot.roc <- function(predictions, labels){
     theme(plot.title = element_text(hjust = 0.5))
 }
 
+plot.roc.conf.int <- function(predictions, labels, bs_predictions){
+  roc.coord <- roc.helper(predictions, labels)
+  n <- length(roc.coord[,1])
+  
+  fpr <- roc.coord$FPR
+  tpr <- c()
+  q <- c(0, 0)
+  auroc.vals <- c()
+  
+  for (i in 1:dim(bs_predictions)[2]){
+    temp.coord <- roc.helper(bs_predictions[,i], labels)
+    
+    temp_tpr <- c()
+    
+    for (f in fpr){
+      temp_tpr <- c(temp_tpr, max(roc.coord[(abs(temp.coord[,1] - f) < 0.0001),]$TPR))
+    }
+    
+    temp_tpr[temp_tpr == -Inf] = 0
+    tpr <- cbind(tpr, temp.coord$TPR)
+    auroc.vals <- c(sum(temp.coord$TPR)/n, auroc.vals)
+  }
+  
+  auroc.confint <- round(as.vector(quantile(auroc.vals, c(0.025, 0.975))), digit=2)
+  
+  for (i in 1:n){
+    q <- rbind(q, quantile(tpr[i,], probs=c(0.025, 0.975))) # 95% conf int
+  }
+  
+  q <- q[-c(1),]
+  roc.coord$lower <- q[,1]
+  roc.coord$upper <- q[,2]
+  
+  library(ggplot2)
+  ggplot(data=roc.coord, aes(FPR, TPR)) +
+    geom_path(aes(y=TPR)) + 
+    geom_ribbon(aes(ymin=lower, ymax=upper), fill='red', alpha='0.5') +
+    labs(x='False Positive Rate (FPR)', 
+         y='True Positive Rate (TPR)') +
+    ggtitle(paste0('ROC Curve\nArea under ROC = ', round(sum(roc.coord$TPR)/n, digits = 2), ' (', auroc.confint[1], ', ', auroc.confint[2], ')')) + 
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+
 
 get_sens_spec <- function(predictions, labels){
   distance <- function(point){

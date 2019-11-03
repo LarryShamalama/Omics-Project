@@ -2,7 +2,7 @@
 cat('\014')
 rm(list=ls())
 
-
+set.seed(1)
 selected_genes <- c('ENSG00000186832', 
                     'ENSG00000124102', 
                     'ENSG00000165474', 
@@ -81,20 +81,46 @@ if (parallel::detectCores() > 8){
   num_folds <- length(lesion.status)
   cat('Using multiprocessing for leave-one-out cross-validation\n')
 } else{
-  num_folds <- 5
+  num_folds <- 10
   cat('Not enough computational power... using 5-fold cross-validation')
 }
 
-set.seed(8)
-cv.sl <- CV.SuperLearner(Y=samples$lesional_new,
-                         X=transcriptome,
-                         V=num_folds, # ideally use n for leave-out-one cross-validation
-                         family=binomial(),
-                         SL.library=models)
 
-predictions <- predict.SuperLearner(cv.sl)$pred
+sl <- SuperLearner(Y=samples$lesional_new,
+                   X=transcriptome,
+                   family=binomial(),
+                   SL.library=models)
+
+bootstrap <- function(X, Y){
+  resample <- sample(1:length(Y), replace=TRUE)
+  
+  return (list(X[resample,], Y[resample]))
+}
+
+predictions  <- predict.SuperLearner(sl)$pred
+num_resample <- 1000
+
+bs_predictions <- c()
+
+for (i in 1:num_resample){
+  bs_sample <- bootstrap(transcriptome, samples$lesional_new)
+  X_temp <- bs_sample[[1]]
+  Y_temp <- bs_sample[[2]]
+  temp.sl <- SuperLearner(Y=Y_temp,
+                          X=X_temp,
+                          family=binomial(),
+                          SL.library=models)
+  
+  bs_predictions <- cbind(predict.SuperLearner(temp.sl)$pred,
+                          bs_predictions)
+  if (i %% 10 == 0){
+    cat('Done', i, 'iterations\n')
+  }
+}
 
 source('utils.R') # importing functions from another R script
 
-plot.roc(predictions, samples$lesional_new)
+plot.roc.conf.int(predictions, 
+                  samples$lesional_new,
+                  bs_predictions)
 ggsave('roc_curve.png', width=7, height=4.5, units='in', dpi=250)
