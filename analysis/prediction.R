@@ -51,8 +51,7 @@ stopifnot(sum(is.na(indices)) == 0)
 transcriptome <- transcriptome[indices,]
 # stop if not every row matches a sample_id
 stopifnot(all(rownames(transcriptome) == samples$sample_id))
-# transpose transcriptome data
-transcriptome <- t(transcriptome)
+
 
 
 #lesion <- 2-as.integer(samples$lesional)
@@ -62,10 +61,12 @@ samples$lesional_new[samples$lesional=="NON_LES"]<- 0
 n_components <- 10
 n_keep       <- 10
 
-spls <- mixOmics::splsda(t(transcriptome), 
+spls <- mixOmics::splsda(transcriptome, 
                          samples$lesional_new, 
                          ncomp=n_components,
                          keepX=rep(n_keep, n_components))
+
+cvspls <- perf(spls, validation="loo")
 
 cumul_gene_names <- c()
 
