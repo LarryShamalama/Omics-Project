@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 NOV 2019 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 07:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -502,25 +502,25 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))) (./version-1.aux)
 \openout1 = `version-1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 154.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 154.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 157.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    ... okay on input line 157.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -593,57 +593,78 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 162.
-LaTeX Font Info:    Try loading font information for U+msa on input line 162.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 165.
+LaTeX Font Info:    Try loading font information for U+msa on input line 165.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 162.
+LaTeX Font Info:    Try loading font information for U+msb on input line 165.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for T1+aett on input line 162.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 165.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 ** WARNING: \and is valid only when in conference or peerreviewca
-modes (line 162).
+modes (line 165).
 (./version-1-concordance.tex)
-Underfull \hbox (badness 2617) in paragraph at lines 183--184
+Underfull \hbox (badness 2617) in paragraph at lines 186--187
 \T1/aer/m/n/10 in-flam-ma-tory skin con-di-tion char-ac-terised by poorly
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 185--186
+Underfull \hbox (badness 1735) in paragraph at lines 188--189
 []\T1/aer/m/n/10 Clinical in-ves-ti-ga-tions and dis-cov-er-ies in molec-u-lar
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 185--186
+Underfull \hbox (badness 1400) in paragraph at lines 188--189
 \T1/aer/m/n/10 AD. Mu-ta-tions in fi-lag-grin (FLG) genes (in-flu-enc-ing
  []
 
 
-Underfull \hbox (badness 6825) in paragraph at lines 185--186
+Underfull \hbox (badness 6825) in paragraph at lines 188--189
 \T1/aer/m/n/10 com-plex (EDC) lo-cus chro-mo-some 1q21, in-clud-ing
  []
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 185--186
+Underfull \hbox (badness 2285) in paragraph at lines 188--189
 \T1/aer/m/n/10 dif-fer-en-ti-a-tion com-plex genes and el-e-vated Th2 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 196--197
+\T1/aer/m/n/10 pur-pose of this mul-ti-dis-ci-plinary re-search con-sor-tium
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 196--197
+\T1/aer/m/n/10 two ill-nesses are in-ves-ti-gated from dif-fer-ent sci-en-tific
+
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 196--197
+\T1/aer/m/n/10 lesional sam-ples in pa-tients with atopic der-mati-tis,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
@@ -651,32 +672,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
 
 ]
-Underfull \hbox (badness 5374) in paragraph at lines 210--211
+Underfull \hbox (badness 5374) in paragraph at lines 213--214
 \T1/aer/m/n/10 gene ex-pres-sion anal-y-sis (DGE) within a mul-ti-ple
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
-\T1/aer/m/n/10 hy-poth-e-sis test-ing frame-work. The tran-scrip-tomic
+Underfull \hbox (badness 3049) in paragraph at lines 213--214
+\T1/aer/m/n/10 a dif-fer-ent num-ber of genes was se-lected for each
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 210--211
-\T1/aer/m/n/10 mi-croar-ray data has been nor-mal-ized. Sec-ondly, an
- []
-
-
-Underfull \hbox (badness 1412) in paragraph at lines 210--211
-\T1/aer/m/n/10 In-for-ma-tion re-gard-ing the ten first com-po-nents were
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
@@ -684,91 +695,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--225
 File: ../exploratory-data-analysis/pca-plot.png Graphic file (type png)
 <use ../exploratory-data-analysis/pca-plot.png>
 Package pdftex.def Info: ../exploratory-data-analysis/pca-plot.png  used on inp
-ut line 238.
+ut line 241.
 (pdftex.def)             Requested size: 258.0pt x 201.34879pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 236--242
+Overfull \hbox (6.0pt too wide) in paragraph at lines 239--245
  []$ 
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 246--247
+Underfull \hbox (badness 3919) in paragraph at lines 249--250
 []\T1/aer/m/n/10 The hor-i-zon-tal axis rep-re-sents the first prin-ci-ple
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 <scree-plot.png, id=16, 753.81625pt x 590.205pt>
 File: scree-plot.png Graphic file (type png)
 <use scree-plot.png>
-Package pdftex.def Info: scree-plot.png  used on input line 252.
+Package pdftex.def Info: scree-plot.png  used on input line 255.
 (pdftex.def)             Requested size: 258.0pt x 201.9999pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 250--256
+Overfull \hbox (6.0pt too wide) in paragraph at lines 253--259
  []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 261--262
+Underfull \hbox (badness 2165) in paragraph at lines 264--265
 []\T1/aer/m/n/10 A MA plot dis-aplyed in 3[] was used to vi-su-ally
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-
- []
-
-<../analysis/MA-plot-AD-paired-design.png, id=17, 516.42938pt x 398.99063pt>
-File: ../analysis/MA-plot-AD-paired-design.png Graphic file (type png)
-<use ../analysis/MA-plot-AD-paired-design.png>
-Package pdftex.def Info: ../analysis/MA-plot-AD-paired-design.png  used on inpu
-t line 267.
-(pdftex.def)             Requested size: 258.0pt x 199.33653pt.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 265--270
- []$ 
- []
-
-<gsan-charts.png, id=18, 389.455pt x 466.74374pt>
-File: gsan-charts.png Graphic file (type png)
-<use gsan-charts.png>
-Package pdftex.def Info: gsan-charts.png  used on input line 273.
-(pdftex.def)             Requested size: 193.5pt x 231.89705pt.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 271--276
- []$[]$ 
- []
-
-<gene-ontology.png, id=19, 513.92pt x 252.945pt>
-File: gene-ontology.png Graphic file (type png)
-<use gene-ontology.png>
-Package pdftex.def Info: gene-ontology.png  used on input line 279.
-(pdftex.def)             Requested size: 258.0pt x 126.98552pt.
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 277--283
- []$[]$ 
- []
-
-<synthetic-annotation.png, id=20, 1225.57875pt x 429.605pt>
-File: synthetic-annotation.png Graphic file (type png)
-<use synthetic-annotation.png>
-Package pdftex.def Info: synthetic-annotation.png  used on input line 288.
-(pdftex.def)             Requested size: 438.60315pt x 153.73994pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
 [2 <../exploratory-data-analysis/pca-plot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+<../analysis/MA-plot-AD-paired-design.png, id=27, 516.42938pt x 398.99063pt>
+File: ../analysis/MA-plot-AD-paired-design.png Graphic file (type png)
+<use ../analysis/MA-plot-AD-paired-design.png>
+Package pdftex.def Info: ../analysis/MA-plot-AD-paired-design.png  used on inpu
+t line 270.
+(pdftex.def)             Requested size: 258.0pt x 199.33653pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 268--273
+ []$ 
+ []
+
+<gsan-charts.png, id=28, 389.455pt x 466.74374pt>
+File: gsan-charts.png Graphic file (type png)
+<use gsan-charts.png>
+Package pdftex.def Info: gsan-charts.png  used on input line 276.
+(pdftex.def)             Requested size: 193.5pt x 231.89705pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 274--279
+ []$[]$ 
+ []
+
+<gene-ontology.png, id=29, 513.92pt x 252.945pt>
+File: gene-ontology.png Graphic file (type png)
+<use gene-ontology.png>
+Package pdftex.def Info: gene-ontology.png  used on input line 282.
+(pdftex.def)             Requested size: 258.0pt x 126.98552pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 280--286
+ []$[]$ 
+ []
+
+<synthetic-annotation.png, id=30, 1225.57875pt x 429.605pt>
+File: synthetic-annotation.png Graphic file (type png)
+<use synthetic-annotation.png>
+Package pdftex.def Info: synthetic-annotation.png  used on input line 291.
+(pdftex.def)             Requested size: 438.60315pt x 153.73994pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
@@ -778,111 +785,118 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--300
  []
 
 
-Underfull \hbox (badness 3861) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 304--305
 \T1/aer/m/n/10 cat-e-gories from le-sional AD sam-ples in-clude ser-ine
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 \T1/aer/m/n/10 en-dopep-ti-dase ac-tiv-ity, pro-tein metabolic pro-cess,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
-
- []
-
-
-Underfull \hbox (badness 2096) in paragraph at lines 308--309
-\T1/aer/m/n/10 all atopic der-mati-tis sam-ples and com-pared le-sional
- []
-
-
-Underfull \hbox (badness 2990) in paragraph at lines 308--309
-\T1/aer/m/n/10 tran-scrip-tomic ex-pres-sion be-tween le-sional and non-
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 308--309
-\T1/aer/m/n/10 prin-ci-pal com-po-nents. How-ever, as dis-played in 1[],
- []
-
-
-Underfull \hbox (badness 3849) in paragraph at lines 308--309
-\T1/aer/m/n/10 PCA demon-strates that the ge-netic data at hand
- []
-
-
-Underfull \hbox (badness 3209) in paragraph at lines 308--309
-\T1/aer/m/n/10 war-rants fur-ther in-vesta-ga-tion as le-sional and non-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
 [3 <./scree-plot.png> <../analysis/MA-plot-AD-paired-design.png (PNG copy)> <./
 gsan-charts.png (PNG copy)> <./gene-ontology.png>]
-Underfull \hbox (badness 2547) in paragraph at lines 318--319
+Underfull \hbox (badness 2096) in paragraph at lines 311--312
+\T1/aer/m/n/10 all atopic der-mati-tis sam-ples and com-pared le-sional
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 311--312
+\T1/aer/m/n/10 tran-scrip-tomic ex-pres-sion be-tween le-sional and non-
+ []
+
+
+Underfull \hbox (badness 4995) in paragraph at lines 311--312
+\T1/aer/m/n/10 prin-ci-pal com-po-nents. How-ever, as dis-played in 1[],
+ []
+
+
+Underfull \hbox (badness 3849) in paragraph at lines 311--312
+\T1/aer/m/n/10 PCA demon-strates that the ge-netic data at hand
+ []
+
+
+Underfull \hbox (badness 3209) in paragraph at lines 311--312
+\T1/aer/m/n/10 war-rants fur-ther in-vesta-ga-tion as le-sional and non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
+
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 321--322
 \T1/aer/m/n/10 u-lates ker-atinocyte dif-fer-en-ti-a-tion. Al-ter-ations in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--321
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
+[4 <./synthetic-annotation.png (PNG copy)>] (./version-1.bbl
+Underfull \hbox (badness 4899) in paragraph at lines 85--89
+[]\T1/aer/m/n/8 M. Mikus, C. Jo-hans-son, N. Acevedo, P. Nils-son, and
+ []
 
-Underfull \vbox (badness 1454) has occurred while \output is active []
-
- [4 <./synthetic-annotation.png (PNG copy)>] (./version-1.bbl) [5] (./version-1
-.aux) ) 
+) [5] (./version-1.aux) ) 
 Here is how much of TeX's memory you used:
  6333 strings out of 492649
  94702 string characters out of 6129622
- 167580 words of memory out of 5000000
+ 166582 words of memory out of 5000000
  10045 multiletter control sequences out of 15000+600000
  112197 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,18n,39p,1399b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
-0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc1
-0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
-b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
-cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
-/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on version-1.pdf (5 pages, 411781 bytes).
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.
+pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/latxfont/lin
+e10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb>
+Output written on version-1.pdf (5 pages, 411667 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream

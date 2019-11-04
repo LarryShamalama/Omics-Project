@@ -4,7 +4,10 @@
 \usepackage{cite}
 \usepackage{plain}
 \usepackage{cancel}
-\renewcommand{\citedash}{--}    
+
+
+
+%\renewcommand{\citedash}{--}    
 %\usepackage{cite}      % Written by Donald Arseneau
                         % V1.6 and later of IEEEtran pre-defines the format
                         % of the cite.sty package \cite{} output to follow
@@ -190,7 +193,7 @@ This study attempts to examine the degree of dissimilarity between the transcrip
 
 \subsection{Data Source}
 
-The data at hand comes from the Microbes in Allergy and Autoimmunity Related to the Skin (MAARS). The purpose of this multidisciplinary research consortium is to better understand the characteristics surrounding two major chronic inflammatory skin diseases: atopic dermatitis and psoriasis\cite{MAARS}. In the MAARS study, these two illnesses are investigated from different scientific perspectives and one of the research directions involved exploring the transcriptomic data of lesional and non-lesional samples in patients with atopic dermatitis, psoriasis (PSO) and neither of the two studied skin diseases.
+The data at hand comes from the Microbes in Allergy and Autoimmunity Related to the Skin (MAARS). The purpose of this multidisciplinary research consortium is to better understand the characteristics surrounding two major chronic inflammatory skin diseases: atopic dermatitis and psoriasis\cite{MAARS}. In the MAARS study, these two illnesses are investigated from different scientific perspectives and one of the research directions involved exploring the transcriptomic data of lesional and non-lesional samples in patients with atopic dermatitis, psoriasis (PSO) and neither of the two studied skin diseases.\\
 
 % the relationship between the host and its microbiome 
 
@@ -201,13 +204,13 @@ Demographic data for all patients were available alongside their known allergies
 
 \subsection{Exploratory Data Analysis}
 
-Exploratory data analysis was conducted to better understand the data at hand from a data-driven perspective. To this end, an MA diagram was plotted alongside several clustering methods which were used to help depict possible underlying patterns from the MAARS transcriptomic data: principal component analysis (PCA) and hierarchical clustering\cite{maaten2008visualizing, friedman2001elements}. In statistical machine learning, clustering techniques falls under unsupervised learning, which is a paradigm that attempts to perform inference on data without response variables or ``labels" \cite{friedman2001elements}. Here, the sample labels are the lesional status of the skin sample and the primary purpose of performing such unsupervised analyses was to visually assess the separability of the samples using their transcriptomic information.
+Exploratory data analysis was conducted to better understand the data at hand from a data-driven perspective. To this end, an MA diagram was plotted alongside several clustering methods which were used to help depict possible underlying patterns from the MAARS transcriptomic data: principal component analysis (PCA) and hierarchical clustering \cite{maaten2008visualizing, friedman2001elements}. In statistical machine learning, clustering techniques falls under unsupervised learning, which is a paradigm that attempts to perform inference on data without response variables or ``labels" \cite{friedman2001elements}. Here, the sample labels are the lesional status of the skin sample and the primary purpose of performing such unsupervised analyses was to visually assess the separability of the samples using their transcriptomic information.
 
 \subsection{Statistical Analysis}
 
 %\subsubsection{Differential Gene Expression Analysis}
 
-The overarching goal of the statistical analysis was to determine the relevant genes from a transcriptomic datatset that are associated to AD. The analysis plan was performed two-fold; the identification of genes highly associated with AD was first performed using differential gene expression analysis (DGE) within a multiple hypothesis testing framework. The transcriptomic data was available as a continuous variable since the microarray data has been normalized. Secondly, an analysis using sparse partial least squares (sPLS) was conducted to identify genes that can ``best explain" the variability in the lesional status of the sequenced samples. Information regarding the ten first components were retained whereby a different number of genes was selected for each component; the number of variables selected was determined using a 5-fold cross-validation method.\\
+The overarching goal of the statistical analysis was to determine the relevant genes from a transcriptomic datatset that are associated to AD. The analysis plan was performed two-fold; the identification of genes highly associated with AD was first performed using differential gene expression analysis (DGE) within a multiple hypothesis testing framework. The transcriptomic data was available as a continuous variable since the microarray data has been normalized. Secondly, an analysis using sparse partial least squares (sPLS) was conducted to identify genes that can ``best explain" the variability in the lesional status of the sequenced samples. Information regarding the ten first components were retained and a different number of genes was selected for each constructed component; the number of variables selected was determined using a 10-fold cross-validation method.\\
 
 Let $Y_{ij} \in \mathbb{R}$ denote the gene expression level of gene $j$ in sample $i$ and let $X_i \in \{0, 1\}$ represent its lesional status. Because multiple samples can come from a same individual, confounding bias caused by intersample correlation could have occured if not taken into account. Let $\mathcal{P}$ denote the set of all patients and $pat(i) \in \mathcal{P}$ is used to represent the patient to which belongs sample $i$. The following linear model was fitted:
 \begin{align*}
@@ -215,15 +218,15 @@ Let $Y_{ij} \in \mathbb{R}$ denote the gene expression level of gene $j$ in samp
 \end{align*}
 % By construction, $\one_{pat(i) = k} = 1$ for exactly one $k \in \mathcal{P}$ and $\big\vert \mathcal{P}\big\vert < n$.\\
 
-\noindent where the coefficient $\beta_{pat(i)}$ accounts for the intersample correlation for samples which are obtained from the same patient. Originally developped for two-color microarray experiments, it is now commonplace to use an empirical Bayes method to analyze differential gene expression with linear models like the one above\cite{smyth2004linear}. In a hypothesis framework, the following distributional assumptions for $\beta_{1j}$ are assumed for all genes $j$:
+\noindent where the coefficient $\beta_{pat(i)}$ accounts for the intersample correlation for samples which are obtained from the same patient. Originally developped for two-color microarray experiments, it is now commonplace to use an empirical Bayes method to analyze differential gene expression with linear models like the one above \cite{smyth2004linear}. In a hypothesis framework, the following distributional assumptions for $\beta_{1j}$ are assumed for all genes $j$:
 \begin{align*}
   H_0:\qquad \beta_{1j} \,\big\vert\, \sigma^2_j &\sim \mathcal{N}\left(0, \sigma^2_j\right)\\
   H_1:\qquad \beta_{1j} \,\big\vert\, \sigma^2_j &\,\,\cancel{\sim}\,\, \mathcal{N}\left(0, \sigma^2_j\right)
 \end{align*}
 
-\noindent where the $p$-values were obtained using the rank of each gene's $t$-statistics as described by G. Smyth and were adjusted using the Benjamini-Hochberg procedure to reduce the error in false discovery rate prone to be inflated due to performing multiple parallel statistical tests\cite{smyth2004linear, benjamini2010discovering}. A significance level of $0.05$ was used in determining the genes highly associated with the outcome of interest, the lesional status of sequenced samples; an MA plot was used to visually quantify the amount of potentially significant genes.\\
+\noindent where the $p$-values were obtained using the rank of each gene's $t$-statistics as described by G. Smyth and were adjusted using the Benjamini-Hochberg procedure to reduce the error in false discovery rate prone to be inflated due to performing multiple parallel statistical tests \cite{smyth2004linear, benjamini2010discovering}. A significance level of $0.05$ was used in determining the genes highly associated with the outcome of interest, the lesional status of sequenced samples; an MA plot was used to visually quantify the amount of potentially significant genes.\\
 
-%An ensemble learning prediction model was then implemented to assess predictability of sample lesional status; this binary model was chosen due to its strengths in obtaining better predictions as it weights multiple models according to how well each perform on this specific task\cite{friedman2001elements}. MENTION VARIABLE SELECTION. The receiving operating characteristic (ROC) curve is often used to evaluate data-driven binary prediction models and the area under this curve (AUROC) was used here to quantify the goodness of the prediction model\cite{hanley1982meaning}. Internal validation was performed using leave-one-out cross-validation method whereby the AUROC was evaluated at every iteration\cite{efron1994introduction}. %An additional sensitivity analysis of the prediction model was conducted via bootstrap resampling whereby a thousand samples of the data were sampled without replacement to create an empirical $95\%$ confidence interval for the overall AUROC\cite{efron1994introduction}.
+%An ensemble learning prediction model was then implemented to assess predictability of sample lesional status; this binary model was chosen due to its strengths in obtaining better predictions as it weights multiple models according to how well each perform on this specific task\cite{friedman2001elements}. MENTION VARIABLE SELECTION. The receiving operating characteristic (ROC) curve is often used to evaluate data-driven binary prediction models and the area under this curve (AUROC) was used here to quantify the goodness of the prediction model\cite{hanley1982meaning}. Internal validation was performed conducted via bootstrap resampling whereby a thousand samples of the data were sampled without replacement to create an empirical $95\%$ confidence interval for the overall AUROC\cite{efron1994introduction}.%using leave-one-out cross-validation method whereby the AUROC was evaluated at every iteration\cite{efron1994introduction}. %An additional sensitivity analysis of the prediction model was
 
 %This goodness of fit metric was used on ensemble learning model \cite{efron1994introduction}\\
 
@@ -312,12 +315,12 @@ Differential gene expression analysis helped understand the patterns of expresse
 The set of seven genes that were identified in both the DGE and sPLS processes were used for gene annotation. The functional annotation of these seven genes shows their roles in inflammatory process (S100A9/A12), lipid metabolism (AKR1B10, AKR1B11) and skin barrier pathways (KRT16 , PRSS27, GJB2, PI3).
 
 \begin{itemize}
-  \item KRT16 gene regulates innate immunity by producing signals in response to any epidermal barrier breach and mutations in this gene contributes to the initiation and exacerbation of AD\cite{meyer2012epidermal, hello2016atopic}.
-  \item Peptidase Inhibitor 3 (PI3) is an antimicrobial peptide and prevents elastase-mediated tissue proteolysis. It is increased during the onset of AD\cite{mansouri2015immune}.
-  \item Gap Junction Protein Beta 2(GJB2) expression increases the number of keratinocytes and causes thickness of epidermis which is observed in AD patients\cite{suriyaphol2014association}.
-  \item Alto-keto reductase (AKR1B10 and AKR1B11) regulates keratinocyte differentiation. Alterations in AKR1B10 expression is seen in atopic dermatitis\cite{ghosh2015multiple, gao2017combined}.
-  \item Expression of S100A9 causes abnormal differentiation and hyper proliferation of the epidermal cells; the upregulation of this gene can occur due to stress and certain drugs\cite{kerkhoff2012novel}.
-  \item S100A12 is known to exert antimicrobial activity and the skin barrier genes involved in AD enhances the expression of S100A12 by prevents it from exerting its activity\cite{mikus2019antimicrobial}.\\
+  \item KRT16 gene regulates innate immunity by producing signals in response to any epidermal barrier breach and mutations in this gene contributes to the initiation and exacerbation of AD \cite{meyer2012epidermal, hello2016atopic}.
+  \item Peptidase Inhibitor 3 (PI3) is an antimicrobial peptide and prevents elastase-mediated tissue proteolysis. It is increased during the onset of AD \cite{mansouri2015immune}.
+  \item Gap Junction Protein Beta 2(GJB2) expression increases the number of keratinocytes and causes thickness of epidermis which is observed in AD patients \cite{suriyaphol2014association}.
+  \item Alto-keto reductase (AKR1B10 and AKR1B11) regulates keratinocyte differentiation. Alterations in AKR1B10 expression is seen in atopic dermatitis \cite{ghosh2015multiple, gao2017combined}.
+  \item Expression of S100A9 causes abnormal differentiation and hyper proliferation of the epidermal cells; the upregulation of this gene can occur due to stress and certain drugs \cite{kerkhoff2012novel}.
+  \item S100A12 is known to exert antimicrobial activity and the skin barrier genes involved in AD enhances the expression of S100A12 by prevents it from exerting its activity \cite{mikus2019antimicrobial}.\\
 \end{itemize}
 
 \subsection{Strengths and Limitations}
@@ -337,14 +340,14 @@ The current study did not find substantial evidence to conclude that the genetic
 
 The lack of findings in the current study can lead to research questions that may be of more interest. For example, future research may want to focus on the genetic differences of atopic dermatitis as related to race, age, and allergies.
 \begin{itemize}
-  \item Race: The literature suggests that there is evidence that Black individuals may be more prone to eczema than individuals of other races, while at the same time less likely to be treated for the condition. The racial makeup (nearly $90\%$ White) of the sample provided for analysis does not permit genetic comparisons among the races\cite{Eczema, fischer2017racial}.
+  \item Race: The literature suggests that there is evidence that Black individuals may be more prone to eczema than individuals of other races, while at the same time less likely to be treated for the condition. The racial makeup (nearly $90\%$ White) of the sample provided for analysis does not permit genetic comparisons among the races \cite{Eczema, fischer2017racial}.
   \item AD often changes over time; either improving or worsening as the individual ages. Therefore, it would be of interest to determine how the genetic structure changes over time in individuals and how those changes impact the progression of the condition.
-  \item Allergies:  A substantial portion of the sample provided has allergies to various substances, including pollen ($48.2\%$), food ($37.8\%$), and animals ($33.6\%$). This information may be of importance since people with AD are more likely to develop hay fever and are advised to avoid allergens in an effort to prevent a flare-up of symptoms. Although not the topic of the current paper, investigating the differential gene expression of AD patients with and without various allergies may be of interest\cite{whatstoknow}.
+  \item Allergies:  A substantial portion of the sample provided has allergies to various substances, including pollen ($48.2\%$), food ($37.8\%$), and animals ($33.6\%$). This information may be of importance since people with AD are more likely to develop hay fever and are advised to avoid allergens in an effort to prevent a flare-up of symptoms. Although not the topic of the current paper, investigating the differential gene expression of AD patients with and without various allergies may be of interest \cite{whatstoknow}.
 \end{itemize}
 
 Further research using a more diverse sample of patients is needed to understand the genetic transgression from healthy to disease state in AD. 
 
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{References}
 
 \end{document}

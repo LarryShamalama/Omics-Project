@@ -1,3 +1,5 @@
+
+```{r }
 # reset console
 cat('\014')
 rm(list=ls())
@@ -130,3 +132,11 @@ source('utils.R') # importing functions from another R script
 plot.roc(predict.SuperLearner(sl)$pred, 
                   samples$lesional_new)
 ggsave('roc_curve.png', width=7, height=4.5, units='in', dpi=250)
+```
+
+
+---
+title: "prediction.R"
+author: "shamalama"
+date: "2019-11-04"
+---

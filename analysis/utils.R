@@ -49,7 +49,7 @@ plot.roc <- function(predictions, labels){
   
   library(ggplot2)
   ggplot(data=roc.coord, aes(FPR, TPR)) +
-    geom_path() + 
+    geom_path(aes(y=TPR)) + 
     labs(x='False Positive Rate (FPR)', 
          y='True Positive Rate (TPR)') +
     ggtitle(paste('ROC Curve\nArea under ROC =', round(sum(roc.coord$TPR)/n, digits = 3))) + 
