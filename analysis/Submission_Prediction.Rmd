@@ -22,7 +22,7 @@ Create a prediction model for detecting lesional status via the genes.
 
 Install packages and load the data. 
 
-```{r}
+```{r message=FALSE}
 # reset console
 cat('\014')
 rm(list=ls())
@@ -54,6 +54,7 @@ library('caret') # invokes xgboost
 library("SuperLearner")
 library('parallel')
 
+
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 # loading datasets
@@ -75,7 +76,7 @@ lesion.status <- as.integer(ifelse(lesion.status == 'LES', 1, 0)) # binary encod
 
 ## sPLS
 
-```{r}
+```{r message=FALSE}
 
 n_components <- 8
 n_keep       <- 4
