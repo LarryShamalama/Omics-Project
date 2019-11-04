@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 07:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 07:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,6 +613,11 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ** WARNING: \and is valid only when in conference or peerreviewca
 modes (line 165).
 (./version-1-concordance.tex)
+
+LaTeX Font Warning: Font shape `T1/aer/bx/sc' undefined
+(Font)              using `T1/aer/bx/n' instead on input line 172.
+
+
 Underfull \hbox (badness 2617) in paragraph at lines 186--187
 \T1/aer/m/n/10 in-flam-ma-tory skin con-di-tion char-ac-terised by poorly
  []
@@ -668,10 +673,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-[1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+Underfull \hbox (badness 1584) in paragraph at lines 202--203
+\T1/aer/m/n/10 tients were avail-able along-side their known al-ler-gies,
+ []
+
+
 Underfull \hbox (badness 5374) in paragraph at lines 213--214
 \T1/aer/m/n/10 gene ex-pres-sion anal-y-sis (DGE) within a mul-ti-ple
  []
@@ -722,7 +735,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 253--259
  []$ 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
@@ -737,7 +750,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
-[2 <../exploratory-data-analysis/pca-plot.png>]
 <../analysis/MA-plot-AD-paired-design.png, id=27, 516.42938pt x 398.99063pt>
 File: ../analysis/MA-plot-AD-paired-design.png Graphic file (type png)
 <use ../analysis/MA-plot-AD-paired-design.png>
@@ -804,8 +816,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
-[3 <./scree-plot.png> <../analysis/MA-plot-AD-paired-design.png (PNG copy)> <./
-gsan-charts.png (PNG copy)> <./gene-ontology.png>]
+
 Underfull \hbox (badness 2096) in paragraph at lines 311--312
 \T1/aer/m/n/10 all atopic der-mati-tis sam-ples and com-pared le-sional
  []
@@ -835,7 +846,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
-
+[3 <../exploratory-data-analysis/pca-plot.png> <./scree-plot.png>]
 Underfull \hbox (badness 2547) in paragraph at lines 321--322
 \T1/aer/m/n/10 u-lates ker-atinocyte dif-fer-en-ti-a-tion. Al-ter-ations in
  []
@@ -860,46 +871,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
-
+[4 <../analysis/MA-plot-AD-paired-design.png (PNG copy)> <./gsan-charts.png (PN
+G copy)> <./gene-ontology.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
-[4 <./synthetic-annotation.png (PNG copy)>] (./version-1.bbl
+(./version-1.bbl [5 <./synthetic-annotation.png (PNG copy)>]
 Underfull \hbox (badness 4899) in paragraph at lines 85--89
 []\T1/aer/m/n/8 M. Mikus, C. Jo-hans-son, N. Acevedo, P. Nils-son, and
  []
 
-) [5] (./version-1.aux) ) 
+) [6
+
+] (./version-1.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6333 strings out of 492649
- 94702 string characters out of 6129622
+ 6340 strings out of 492649
+ 94766 string characters out of 6129622
  166582 words of memory out of 5000000
- 10045 multiletter control sequences out of 15000+600000
- 112197 words of font info for 158 fonts, out of 8000000 for 9000
+ 10047 multiletter control sequences out of 15000+600000
+ 113886 words of font info for 163 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,18n,39p,1399b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
-fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/latxfont/lin
-e10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb>
-Output written on version-1.pdf (5 pages, 411667 bytes).
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on version-1.pdf (6 pages, 425773 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
