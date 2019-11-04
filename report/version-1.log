@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 07:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 09:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -741,11 +741,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--263
  []
 
 
-Underfull \hbox (badness 2165) in paragraph at lines 264--265
-[]\T1/aer/m/n/10 A MA plot dis-aplyed in 3[] was used to vi-su-ally
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
@@ -817,28 +812,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--305
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 311--312
-\T1/aer/m/n/10 all atopic der-mati-tis sam-ples and com-pared le-sional
- []
-
-
-Underfull \hbox (badness 2990) in paragraph at lines 311--312
-\T1/aer/m/n/10 tran-scrip-tomic ex-pres-sion be-tween le-sional and non-
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 311--312
-\T1/aer/m/n/10 prin-ci-pal com-po-nents. How-ever, as dis-played in 1[],
- []
-
-
-Underfull \hbox (badness 3849) in paragraph at lines 311--312
-\T1/aer/m/n/10 PCA demon-strates that the ge-netic data at hand
- []
-
-
-Underfull \hbox (badness 3209) in paragraph at lines 311--312
-\T1/aer/m/n/10 war-rants fur-ther in-vesta-ga-tion as le-sional and non-
+Underfull \hbox (badness 2103) in paragraph at lines 311--312
+\T1/aer/m/n/10 from the con-trol sam-ples. How-ever, as dis-played in
  []
 
 
@@ -914,7 +889,7 @@ ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on version-1.pdf (6 pages, 425773 bytes).
+Output written on version-1.pdf (6 pages, 425793 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream

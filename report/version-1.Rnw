@@ -231,7 +231,7 @@ Let $Y_{ij} \in \mathbb{R}$ denote the gene expression level of gene $j$ in samp
 
 \section{\textbf{Results}}
 
-In Fig. \ref{fig:pca}, a simple 2D visualization of the results obtained from PCA is available, whereby lesional samples are displayed in black and non-lesional samples are displayed in red.
+In Figure \ref{fig:pca}, a simple 2D visualization of the results obtained from PCA is available, whereby lesional samples are displayed in black and non-lesional samples are displayed in red.
 
 \begin{figure}[!htp]
     \begin{center}
@@ -245,7 +245,7 @@ In Fig. \ref{fig:pca}, a simple 2D visualization of the results obtained from PC
 \end{figure}
 
 
-The horizontal axis represents the first principle component (PC) obtained through PCA and the vertical axis the second; they respectively explain $8.78\%$ and $6.02\%$ of the variance in the transcriptomic data. The Scree plot available in Fig. \ref{fig:scree-plot} is another method of visualizing the amount of variation explained in each constructed PC. While the one of the primary purposes of this plot would help determine the moderate number of PC dimensions needed to explain the a majority of the variation, this plot can also illustrate the decreasing trend of explained variance across constructed PCs.\\%, the scree plot would have a steep curve, followed by a sharp bend, and then a line that straightens out.\\
+The horizontal axis represents the first principle component (PC) obtained through PCA and the vertical axis the second; they respectively explain $8.78\%$ and $6.02\%$ of the variance in the transcriptomic data. The Scree plot available in Figure \ref{fig:scree-plot} is another method of visualizing the amount of variation explained in each constructed PC. While the one of the primary purposes of this plot would help determine the moderate number of PC dimensions needed to explain the a majority of the variation, this plot can also illustrate the decreasing trend of explained variance across constructed PCs.\\%, the scree plot would have a steep curve, followed by a sharp bend, and then a line that straightens out.\\
 
 \begin{figure}[!htp]
     \begin{center}
@@ -260,7 +260,7 @@ The horizontal axis represents the first principle component (PC) obtained throu
 
 A Differential Gene Analysis (DGE) was conducted using a linear model for paired data. The results indicated $81$ genes that differed significantly between the lesioned and non-lesioned skin samples: $65$ that are up-regulated and $16$ that down-regulated.\\% A heatmap illustrating the normalized gene expression levels is displayed below.
 
-A MA plot disaplyed in \ref{fig:MA} was used to visually represent the genes and determine which are up- and down-regulated. In the plot, each dot represents a gene. The x-axis is the average expression of the gene over the mean of normalized counts; the y-axis is the log2 fold change between the lesional statuses. The MA plot below indicates some genes that are up-regulated and fewer that are down-regulated.\\
+A MA plot disaplyed in Figure \ref{fig:MA} was used to visually represent the genes and determine which are up- and down-regulated. In the plot, each dot represents a gene. The x-axis is the average expression of the gene over the mean of normalized counts; the y-axis is the log2 fold change between the lesional statuses. The MA plot below indicates some genes that are up-regulated and fewer that are down-regulated.\\
 
 \begin{figure}[!htp]
   \begin{center}
@@ -307,7 +307,7 @@ Figure \ref{fig:synthetic-annotation} displays the information content and the g
 
 \section{\textbf{Discussion}}
 
-Differential gene expression analysis helped understand the patterns of expressed genes in the diseased samples which can be used as biomarkers to differentiate them from the control samples. The current analysis considered all atopic dermatitis samples and compared lesional and non-lesional subtypes from the same patients. The current analysis was able to detect much variation in transcriptomic expression between lesional and non-lesional AD skin samples: up to $25\%$ of the variation in the transcriptomic data can be explained by five principal components. However, as displayed in \ref{fig:pca}, PCA demonstrates that the genetic data at hand warrants further investagation as lesional and non-lesional samples visually appears to form two separate groups. Moreoever, in PCA, aach eigenvector defines a principal component and their corresponding eigenvalue is proportional to its explained variance. The eigenvectors with large eigenvalues are the ones that exhibits the most information; the two first components explain $14.8\%$ of the variance in the transcriptomic data.\\%lesional state does not account for much of the differences in the samples.\\
+The current analysis considered all atopic dermatitis samples and compared lesional and non-lesional subtypes from the same patients. The current analysis was able to detect some degree of variation in transcriptomic expression between lesional and non-lesional AD skin samples: up to $25\%$ of the variation in the transcriptomic data can be explained by five principal components. Differential gene expression analysis helped understand the patterns of expressed genes in the diseased samples which can be used as biomarkers to differentiate them from the control samples. However, as displayed in Figure \ref{fig:pca}, PCA demonstrates that the genetic data at hand warrants further investagation as lesional and non-lesional samples visually appears to form two separate groups. Moreoever, in PCA, each eigenvector defines a principal component and their corresponding eigenvalue is proportional to its explained variance. The eigenvectors with large eigenvalues are the ones that exhibits the most information; the two first components explain $14.8\%$ of the variance in the transcriptomic data.\\%lesional state does not account for much of the differences in the samples.\\
 
 %Unsupervised analysis like PCA and Dendrogram	were used for data exploration. Principal Components Analysis (PCA) is a statistical technique used to explore data during microarray analysis. It is performed to reduce the dimensionality of data by transforming the correlated variables into a smaller number of uncorrelated variables called components. PCA can determine the key variables in the data that best explain the differences in the observations. The matrix of the data used shows rows as samples (individuals) and columns as genes (variables). Each eigenvector defines a principal component and their corresponding eigenvalue is proportional to its explained variance. It is the variance of the component over all the genes. The eigenvectors with large eigenvalues are the ones that exhibits the most information. In our study PC1 and PC2 have an eigenvalue of approximately 2856 and 1965 and it contains the highest variance and information about the genes.\\
 
