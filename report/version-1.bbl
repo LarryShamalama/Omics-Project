@@ -42,6 +42,16 @@ Y.~Benjamini, ``Discovering the false discovery rate,'' {\em Journal of the
   Royal Statistical Society: series B (statistical methodology)}, vol.~72,
   no.~4, pp.~405--416, 2010.
 
+\bibitem{rohart2017mixomics}
+F.~Rohart, B.~Gautier, A.~Singh, and K.-A. L{\^e}~Cao, ``mixomics: An r package
+  for ‘omics feature selection and multiple data integration,'' {\em PLoS
+  computational biology}, vol.~13, no.~11, p.~e1005752, 2017.
+
+\bibitem{smyth2005limma}
+G.~K. Smyth, ``Limma: linear models for microarray data,'' in {\em
+  Bioinformatics and computational biology solutions using R and Bioconductor},
+  pp.~397--420, Springer, 2005.
+
 \bibitem{meyer2012epidermal}
 U.~Meyer-Hoffert, ``Epidermal serine proteases and their inhibitors in atopic
   dermatitis,'' in {\em Atopic Dermatitis-Disease Etiology and Clinical

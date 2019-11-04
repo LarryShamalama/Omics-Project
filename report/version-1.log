@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 13:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,14 +714,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--239
  []
 
 
-LaTeX Warning: Citation `rohart2017mixomics' on page 3 undefined on input line 
-240.
-
-
-LaTeX Warning: Citation `smyth2005limma' on page 3 undefined on input line 240.
-
-
-
 Underfull \hbox (badness 2460) in paragraph at lines 240--241
 \T1/aer/m/n/10 in R ver-sion 3.6.1 us-ing limma ver-sion 3.40.6 and
  []
@@ -883,7 +875,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 354--355
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./gene-ontology.png> <./synthetic-annotation.png>] (./version-1.bbl
-Underfull \hbox (badness 4899) in paragraph at lines 85--89
+Underfull \hbox (badness 1796) in paragraph at lines 46--49
+\T1/aer/m/n/8 in-te-gra-tion,'' \T1/aer/m/it/8 PLoS com-pu-ta-tional bi-ol-ogy\
+T1/aer/m/n/8 , vol. 13, no. 11,
+ []
+
+
+Underfull \hbox (badness 4899) in paragraph at lines 95--99
 []\T1/aer/m/n/8 M. Mikus, C. Jo-hans-son, N. Acevedo, P. Nils-son, and
  []
 
@@ -891,14 +889,11 @@ Underfull \hbox (badness 4899) in paragraph at lines 85--89
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
  6352 strings out of 492649
  94909 string characters out of 6129622
- 166590 words of memory out of 5000000
+ 166598 words of memory out of 5000000
  10055 multiletter control sequences out of 15000+600000
  116039 words of font info for 166 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -921,7 +916,7 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on version-1.pdf (6 pages, 504310 bytes).
+Output written on version-1.pdf (6 pages, 504636 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
