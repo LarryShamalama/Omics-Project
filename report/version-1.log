@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 NOV 2019 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -618,16 +618,6 @@ LaTeX Font Warning: Font shape `T1/aer/bx/sc' undefined
 (Font)              using `T1/aer/bx/n' instead on input line 172.
 
 
-Underfull \hbox (badness 2617) in paragraph at lines 186--187
-\T1/aer/m/n/10 in-flam-ma-tory skin con-di-tion char-ac-terised by poorly
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
-
- []
-
-
 Underfull \hbox (badness 1735) in paragraph at lines 188--189
 []\T1/aer/m/n/10 Clinical in-ves-ti-ga-tions and dis-cov-er-ies in molec-u-lar
  []
@@ -673,14 +663,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<table1.png, id=14, 272.01625pt x 600.2425pt>
+<table1.png, id=16, 272.01625pt x 600.2425pt>
 File: table1.png Graphic file (type png)
 <use table1.png>
 Package pdftex.def Info: table1.png  used on input line 206.
@@ -705,10 +692,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./table1.png>]
+[2 <./table1.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
@@ -741,7 +725,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-<../exploratory-data-analysis/pca-plot.png, id=24, 635.37375pt x 495.8525pt>
+<../exploratory-data-analysis/pca-plot.png, id=27, 635.37375pt x 495.8525pt>
 File: ../exploratory-data-analysis/pca-plot.png Graphic file (type png)
 <use ../exploratory-data-analysis/pca-plot.png>
 Package pdftex.def Info: ../exploratory-data-analysis/pca-plot.png  used on inp
@@ -762,7 +746,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
-<scree-plot.png, id=25, 753.81625pt x 590.205pt>
+<scree-plot.png, id=28, 753.81625pt x 590.205pt>
 File: scree-plot.png Graphic file (type png)
 <use scree-plot.png>
 Package pdftex.def Info: scree-plot.png  used on input line 268.
@@ -782,8 +766,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
-[3 <../exploratory-data-analysis/pca-plot.png> <./scree-plot.png>]
-<../analysis/MA-plot-AD-paired-design.png, id=35, 516.42938pt x 398.99063pt>
+<../analysis/MA-plot-AD-paired-design.png, id=29, 516.42938pt x 398.99063pt>
 File: ../analysis/MA-plot-AD-paired-design.png Graphic file (type png)
 <use ../analysis/MA-plot-AD-paired-design.png>
 Package pdftex.def Info: ../analysis/MA-plot-AD-paired-design.png  used on inpu
@@ -794,7 +777,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 281--286
  []$ 
  []
 
-<gsan-charts.png, id=36, 412.54124pt x 474.77374pt>
+<gsan-charts.png, id=30, 412.54124pt x 474.77374pt>
 File: gsan-charts.png Graphic file (type png)
 <use gsan-charts.png>
 Package pdftex.def Info: gsan-charts.png  used on input line 289.
@@ -804,12 +787,12 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 287--293
  []$[]$ 
  []
 
-<gene-ontology.png, id=37, 1611.01875pt x 470.75874pt>
+<gene-ontology.png, id=31, 1611.01875pt x 470.75874pt>
 File: gene-ontology.png Graphic file (type png)
 <use gene-ontology.png>
 Package pdftex.def Info: gene-ontology.png  used on input line 298.
 (pdftex.def)             Requested size: 464.39685pt x 135.69765pt.
-<synthetic-annotation.png, id=38, 1197.47375pt x 425.59pt>
+<synthetic-annotation.png, id=32, 1197.47375pt x 425.59pt>
 File: synthetic-annotation.png Graphic file (type png)
 <use synthetic-annotation.png>
 Package pdftex.def Info: synthetic-annotation.png  used on input line 306.
@@ -819,10 +802,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
-
+[3 <../exploratory-data-analysis/pca-plot.png> <./scree-plot.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 314--315
 
  []
+
+
+Underfull \vbox (badness 1205) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 317--318
@@ -879,10 +865,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./gene-ontology.png> <./synthetic-annotation.png>] (./version-1.bbl
+[5 <./gene-ontology.png> <./synthetic-annotation.png>] (./version-1.bbl
 Underfull \hbox (badness 4899) in paragraph at lines 85--89
 []\T1/aer/m/n/8 M. Mikus, C. Jo-hans-son, N. Acevedo, P. Nils-son, and
  []
@@ -921,7 +904,7 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on version-1.pdf (6 pages, 504299 bytes).
+Output written on version-1.pdf (6 pages, 504355 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
