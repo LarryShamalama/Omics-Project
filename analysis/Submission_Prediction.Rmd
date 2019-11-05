@@ -55,38 +55,56 @@ library("SuperLearner")
 library('parallel')
 
 
-setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
 # loading datasets
-all_patients  <- read.csv('../filter-data/all2.csv')
-all_samples   <- read.csv('../filter-data/ad_full.csv')
-transcriptome <- read.csv('../filter-data/transcriptome2.csv') # takes a while to load
+samples <- read.csv('../filter-data/all.csv')
+samples <- subset(samples, samples$clinical_group == 'AD')
 
-stopifnot(dim(transcriptome)[1] == dim(all_patients)[1])
-
-sample_id <- transcriptome$X
+# read in transcriptome data, change row names and remove the var 'X'
+transcriptome <- read.csv('../filter-data/transcriptome.csv') # takes time to load
+rownames(transcriptome) <- transcriptome$X
 transcriptome <- transcriptome[,-c(1)]
-rownames(transcriptome) <- sample_id
 
-lesion.status <- all_patients$lesional
-lesion.status <- as.integer(ifelse(lesion.status == 'LES', 1, 0)) # binary encoding
+# keep the transcriptomes that are AD
+transcriptome <- transcriptome[rownames(transcriptome) %in% samples$sample_id,]
+# create an index, matching the sample_id to the row in the transcriptome
+indices <- match(samples$sample_id, rownames(transcriptome))
+# stop the process if there's any lines that have NA (sample_id has not matching transcriptome)
+stopifnot(sum(is.na(indices)) == 0)
+transcriptome <- transcriptome[indices,]
 
+
+
+#lesion <- 2-as.integer(samples$lesional)
+samples$lesional_new[samples$lesional=="LES"]<- 1
+samples$lesional_new[samples$lesional=="NON_LES"]<- 0   
 ```
 
 
 ## sPLS
 
 ```{r message=FALSE}
+n_components <- 10
+list.keepX <- c(2:10, 15, 20)
 
-n_components <- 8
-n_keep       <- 4
+set.seed(1)
 
-spls <- mixOmics::splsda(transcriptome, 
-                         lesion.status, 
-                         ncomp=n_components,
-                         keepX=rep(n_keep, n_components))
+tune.Mfold <- tune.spls(X=transcriptome,
+                        Y=samples$lesional_new,
+                        ncomp=n_components,
+                        test.keepX=list.keepX,
+                        validation = "Mfold",
+                        folds=10, # initially 10
+                        measure = "MSE",
+                        progressBar = TRUE)
+
 
 cumul_gene_names <- c()
+
+spls <- mixOmics::splsda(transcriptome, 
+                         samples$lesional_new, 
+                         ncomp=n_components,
+                         keepX=as.vector(tune.Mfold$choice.keepX))
 
 for (i in 1:n_components){
   temp_component <- spls$loadings$X[,i]
@@ -94,34 +112,50 @@ for (i in 1:n_components){
   cumul_gene_names <- c(names(temp_component), cumul_gene_names)
 }
 
-cumul_gene_names <- unique(cumul_gene_names)
+length(cumul_gene_names)
 
-cat('Number of selected genes:', length(cumul_gene_names), '\n')
-cat('Maximum number of selected genes:', n_components*n_keep, '\n')
+#write.table(cumul_gene_names, file='../genelist_spls_Mfold.txt')
+```
+
+## Prediction model using ensemble learning
+
+This part was ultimately not included in the final report due to logical errors in output and time restrictions.
+
+```{r}
+selected_genes <- c('ENSG00000186832', 
+                    'ENSG00000124102', 
+                    'ENSG00000165474', 
+                    'ENSG00000172382', 
+                    'ENSG00000198074', 
+                    'ENSG00000163220', 
+                    'ENSG00000163221') # manually entered, genes found through DGE and sPLS
 
 models <- list('SL.ranger', 
                'SL.glm', 
-               #'SL.ksvm',
+               'SL.ksvm',
                'SL.xgboost',
                'SL.nnet',
                'SL.mean')
 
 
-sl <- SuperLearner(Y=lesion.status,
-                   X=transcriptome[cumul_gene_names],
+colnames(transcriptome) <- substr(colnames(transcriptome), 1, nchar(colnames(transcriptome)[1])-3)
+transcriptome <- transcriptome[,colnames(transcriptome) %in% selected_genes]
+
+sl <- SuperLearner(Y=samples$lesional_new,
+                   X=transcriptome,
                    family=binomial(),
                    SL.library=models)
 
 if (parallel::detectCores() > 8){
-  num_folds <- length(lesion.status)
+  num_folds <- length(samples$lesional_new)
   cat('Using multiprocessing for leave-one-out cross-validation\n')
 } else{
   num_folds <- 5
   cat('Not enough computational power... using 5-fold cross-validation')
 }
 
-cv.sl <- CV.SuperLearner(Y=lesion.status,
-                         X=transcriptome[cumul_gene_names],
+cv.sl <- CV.SuperLearner(Y=samples$lesional_new,
+                         X=transcriptome,
                          V=num_folds, # ideally use n for leave-out-one cross-validation
                          family=binomial(),
                          SL.library=models)
@@ -130,7 +164,7 @@ predictions <- predict.SuperLearner(cv.sl)$pred
 
 source('utils.R') # importing functions from another R script
 
-plot.roc(predictions, lesion.status)
+plot.roc(predictions, samples$lesional_new)
 ggsave('roc_curve.png', width=7, height=4.5, units='in', dpi=250)
 ```
 

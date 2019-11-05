@@ -1,6 +1,5 @@
 # reset console
 cat('\014')
-rm(list=ls())
 
 packages <- c('ggplot2',
               'rstudioapi',
@@ -58,6 +57,7 @@ stopifnot(all(rownames(transcriptome) == samples$sample_id))
 samples$lesional_new[samples$lesional=="LES"]<- 1
 samples$lesional_new[samples$lesional=="NON_LES"]<- 0   
 
+
 n_components <- 10
 list.keepX <- c(2:10, 15, 20)
 
@@ -76,9 +76,12 @@ tune.Mfold <- tune.spls(X=transcriptome,
 cumul_gene_names <- c()
 
 spls <- mixOmics::splsda(transcriptome, 
-                         samples$lesional_new, 
+                         samples$lesional, 
                          ncomp=n_components,
                          keepX=as.vector(tune.Mfold$choice.keepX))
+
+plotIndiv(spls, comp=1:2, ind.names=FALSE, rep.space='X-variate', legend=TRUE)
+plotVar(spls)
 
 for (i in 1:n_components){
   temp_component <- spls$loadings$X[,i]

@@ -3,7 +3,6 @@
 #  24-10-2019
 
 # clear the environment
-rm(list=ls())
 # clear the console
 cat('\014')
 
@@ -60,7 +59,20 @@ summary(signif)[ ,2]
 # extract genes p-values 
 #  NOTE:  code is giving ONLY the significant genes
 top.table <- topTable(fit, adjust.method="BH", p.value = 0.05, lfc = 1, sort.by = "P", n=Inf, coef=2)
-#gene_pvalues_all<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
+top.table2 <- topTable(fit, adjust.method="BH", p.value = 1, lfc = 0, sort.by = "P", n=Inf, coef=2)
+
+
+# plotting histograms
+library(ggplot2)
+n <- length(top.table2$adj.P.Val)
+df <- data.frame(cbind(c(top.table2$P.Value, top.table2$adj.P.Val), (c(rep('p-value', n), rep('adj. p-value', n)))))
+colnames(df) <- c('p_value', 'cat')
+
+ggplot(df, aes(x=cat, y=p_value)) +
+  geom_boxplot()
+
+
+gene_pvalues_all<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
 #gene_pvalues_sig<- gene_pvalues_all[which(gene_pvalues_all$adj.P.Val<.05), ]
 gene_pvalues_sig<- top.table[ ,(ncol(top.table)-3):ncol(top.table)]
 
