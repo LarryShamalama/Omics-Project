@@ -1,5 +1,5 @@
 ﻿Using both the gene identifiers and their synonyms, GSAn
-retained 7 terms, 3 of them are synthetic covering 6 out of 7 genes 
+retained 7 terms, 3 of them are synthetic covering 6 out of 7 genes
 
 Figure 4 provides information about the annotated
 genes within (GOA), the genes covered by GSAn, and
@@ -10,9 +10,9 @@ file. The second gauge shows that 86% of the genes
 were covered with the GSAn analysis. The third gauge
 shows that 34% of the genes share a term in both datasets.
 
-From the annotation results we can say 5 out of 7 genes are annotated by  response to external biotic stimuli (GO:0043207). 3 out of 7 genes are annotated by protein metabolic process(GO:0019538) and 2 out of 7 by secretory granule lumen(GO:0034774).  
+From the annotation results we can say 5 out of 7 genes are annotated by  response to external biotic stimuli (GO:0043207). 3 out of 7 genes are annotated by protein metabolic process(GO:0019538) and 2 out of 7 by secretory granule lumen(GO:0034774).
 
 Figure 6 displays the information content and the gene
 coverage of the synthetic terms. Functional annotation
 categories from lesional AD samples include protein metabolic process,
-secretory granule lumen and response to external biotic stimuli. 
+secretory granule lumen and response to external biotic stimuli.
